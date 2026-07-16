@@ -1,0 +1,29 @@
+/* BREAKPOINTS */
+$bp-xs: 0;
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-lg: 1260px;
+
+/* CONTAINER WIDTH */
+$container-sm: 750px;
+$container-md: 970px;
+$container-lg: 1170px;
+
+/* COLORS */
+$color-grey: #666;
+$color-white: white;
+$color-black: black;
+$color-dark-grey: #333645;
+$color-blue: #4183d7;
+$color-light-grey: #999aa2;
+
+$color-body-text: $color-grey;
+$color-body-bg: $color-white;
+$color-link: $color-dark-grey;
+$color-btn: $color-white;
+$color-btn-primary-bg: $color-blue;
+$color-btn-default-bg: $color-light-grey;
+$overlay-dark: rgba($color-black, .4);
+
+/*FONTS*/
+$rem-base: 16px;
