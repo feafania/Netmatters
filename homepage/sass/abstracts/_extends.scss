@@ -1,0 +1,96 @@
+@use "variables" as vars;
+@use "functions" as fn;
+
+%d-block {
+    display: block;
+}
+
+%clearfix {
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+}
+
+%flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%grid-base {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-left: fn.to-rem(15px);
+    padding-right: fn.to-rem(15px);
+}
+
+%link-base {
+    color: vars.$color-link;
+    text-decoration: none;
+}
+
+%bg-transparent {
+    background: transparent;
+}
+
+%icon-base {
+    font-family: 'icomoon', sans-serif !important;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%btn-base-inline {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: fn.to-rem(6px) fn.to-rem(12px);
+    font-size: fn.to-rem(14px);
+    line-height: calc(1rem/11.2);
+    border-radius: fn.to-rem(2px);
+    text-transform: uppercase;
+    user-select: none;
+}
+
+%btn-base {
+    height: auto;
+    line-height: fn.to-rem(35px);
+    padding: fn.to-rem(5px) fn.to-rem(15px);
+    text-transform: uppercase;
+    font-size: fn.to-rem(17px);
+    border-radius: fn.to-rem(3px);
+    white-space: normal;
+}
+
+%btn-primary {
+    color: vars.$color-btn;
+    background-color: vars.$color-btn-primary-bg;
+    border-color: vars.$color-btn-primary-bg;
+}
+
+%btn-default {
+    color: vars.$color-btn;
+    background-color: vars.$color-btn-default-bg;
+    border-color: vars.$color-btn-default-bg;
+}
+
+%btn-action-icon {
+    margin-right: fn.to-rem(5px);
+};
+
+
+
+
+
