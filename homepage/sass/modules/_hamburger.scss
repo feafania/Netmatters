@@ -1,0 +1,67 @@
+@use "../abstracts" as *;
+
+.hamburger {
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    float: left;
+
+    .hamburger-box {
+        width: 33px;
+        height: 24px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        width: 33px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 0;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: .15s;
+        transition-timing-function: ease;
+    }
+
+    .hamburger-inner {
+        top: 50%;
+        margin-top: -2px;
+    }
+
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        content: "";
+        display: block;
+    }
+
+    .hamburger-inner::before {
+        top: -10px;
+    }
+
+    .hamburger-inner::after {
+        bottom: -10px;
+    }
+
+    &.hamburger--spin .hamburger-inner {
+        transform: rotate(225deg);
+        transition-delay: .12s;
+    }
+
+    &.hamburger--spin .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top .1s ease-in .25s, opacity .1s ease-in;
+    }
+
+    &.hamburger--spin .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom .1s ease-in .25s,
+        transform .22s cubic-bezier(.55,.055,.675,.19);
+    }
+}
