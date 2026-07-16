@@ -1,4 +1,50 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+@use "../abstracts" as *;
+
+/*POPPINS*/
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../assets/fonts/poppins-v15-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../assets/fonts/poppins-v15-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*Material Design icons*/
+@font-face {
+    font-family: 'Material Design Icons';
+    src: url('../../assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
+    url('../../assets/fonts/Material-Design-Iconic-Font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Glyphicons */
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../../assets/fonts/glyphicons-halflings-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    @extend %icon-base;
+}
+
+.icon-paperplane::before,
+.icon-email::before,
+.icon-flight::before,
+.icon-send::before {
+    content: "\E90C";
+}
+
+
+
+
