@@ -1,0 +1,31 @@
+@use "variables" as vars;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+        @media (max-width: #{vars.$bp-sm - 1}) {
+            @content;
+        }
+    }
+    @else if $breakpoint == sm {
+        @media (min-width: vars.$bp-sm) {
+            @content;
+        }
+    }
+    @else if $breakpoint == md {
+        @media (min-width: vars.$bp-md) {
+            @content;
+        }
+    }
+    @else if $breakpoint == lg {
+        @media (min-width: vars.$bp-lg) {
+            @content;
+        }
+    }
+}
+
+@mixin hidden-at($breakpoint) {
+    @include respond-to($breakpoint) {
+        display: none !important;
+    }
+}
+
