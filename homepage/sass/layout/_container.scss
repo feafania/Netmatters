@@ -1,6 +1,45 @@
+@use "../abstracts" as *;
+
+#container {
+    overflow: hidden;
+    background-color: $color-body-bg;
+    position: relative;
+    z-index: 10;
+    transition: all .5s;
+    left: 0;
+}
+
+#container::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    background: $overlay-dark;
+    z-index: 10;
+    content: "";
+    opacity: 0;
+    transition: opacity .5s, width .1s .5s, height .1s .5s;
+}
+
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    @extend %clearfix;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: to-rem(15px);
+    padding-right: to-rem(15px);
+
+    @include respond-to(sm) {
+        max-width: $container-sm;
+    }
+
+    @include respond-to(md) {
+        max-width: $container-md;
+    }
+
+    @include respond-to(lg) {
+        max-width: $container-lg;
+    }
+
 }
