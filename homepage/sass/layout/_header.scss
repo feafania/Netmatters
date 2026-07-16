@@ -1,0 +1,98 @@
+@use "../abstracts" as *;
+
+header {
+    @extend %d-block;
+    background-color: $color-body-bg;
+}
+
+.header__inner {
+    padding: to-rem(20px) 0;
+}
+
+.header__row {
+    @extend %clearfix;
+    @extend %flex-wrap;
+
+    margin-left: to-rem(-15px);
+    margin-right: to-rem(-15px);
+}
+
+.header__row > * {
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.header__hero {
+    @extend %grid-base;
+
+    @include respond-to(xs) { width: 100%; }
+    @include respond-to(sm) { width: 50%; }
+    @include respond-to(md) { width: calc(100% * 5 / 12); }
+    @include respond-to(lg) { width: calc(100% * 4 / 12); }
+}
+
+.header__logo {
+    display: block;
+}
+
+.header__logo img {
+    max-width: 100%;
+    display: block;
+}
+
+.header__mobile {
+    @include hidden-at(sm);
+    @include hidden-at(md);
+    @include hidden-at(lg);
+    @include respond-to(xs) { width: 25%; }
+}
+
+.header__right {
+    @extend %grid-base;
+
+    @include respond-to(xs) { width: 25%; }
+    @include respond-to(sm) { width: 50%; }
+    @include respond-to(md) { width: calc(100% * 7 / 12); }
+    @include respond-to(lg) { width: calc(100% * 8 / 12); }
+}
+
+.header__actions {
+    float: right;
+    padding: to-rem(7px) 0;
+    &>* + * {
+        margin-left: 20px;
+    }
+}
+
+.header__btn {
+    @extend %btn-base-inline;
+    @extend %btn-base;
+    @include hidden-at(xs);
+    @include hidden-at(sm);
+    @include respond-to(lg) { display: inline-block!important };
+
+    height: to-rem(56px);
+    line-height: to-rem(46px);
+    font-size: to-rem(18px);
+    float: left;
+
+    span {
+        @extend %btn-action-icon;
+        font-size: to-rem(23px);
+        line-height: to-rem(45px);
+    }
+}
+.header__btn--support {
+    @extend %btn-primary;
+}
+
+.header__btn--contact {
+    @extend %btn-default;
+}
+
+
+
+
+
+
+
