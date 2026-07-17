@@ -1,0 +1,40 @@
+@use "../abstracts/index" as *;
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    user-select: none;
+
+    height: auto;
+    line-height: to-rem(35px);
+    padding: to-rem(5px) to-rem(15px);
+    text-transform: uppercase;
+    font-size: to-rem(17px);
+    border-radius: to-rem(3px);
+    white-space: normal;
+
+    &--primary {
+        color: $color-btn;
+        background-color: $color-btn-primary-bg;
+        border-color: $color-btn-primary-bg;
+    }
+
+    &--default {
+        color: $color-btn;
+        background-color: $color-btn-default-bg;
+        border-color: $color-btn-default-bg;
+    }
+
+    &--special {
+        color: $color-btn;
+        background-color: $color-btn-special-bg;
+        border-color: $color-btn-special-bg;
+    }
+
+}
