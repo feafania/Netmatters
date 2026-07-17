@@ -1,98 +1,131 @@
-@use "../abstracts" as *;
+@use "../abstracts/index" as *;
 
-header {
+.header {
     @extend %d-block;
     background-color: $color-body-bg;
-}
 
-.header__inner {
-    padding: to-rem(20px) 0;
-}
+    &__inner {
+        padding: to-rem(20px) 0;
+    }
 
-.header__row {
-    @extend %clearfix;
-    @extend %flex-wrap;
+    &__row {
+        @extend %clearfix;
+        @extend %flex-wrap;
 
-    margin-left: to-rem(-15px);
-    margin-right: to-rem(-15px);
-}
+        margin-left: to-rem(-15px);
+        margin-right: to-rem(-15px);
 
-.header__row > * {
-    flex: 0 0 auto;
-    max-width: 100%;
-}
+        @include respond-to(xs) {
+            display: table;
+            width: 100%;
+            margin: 0;
+        }
+        & > * {
+            flex: 0 0 auto;
+            max-width: 100%;
 
-.header__hero {
-    @extend %grid-base;
+            @include respond-to(xs) {
+                padding: 0;
+                display: table-cell;
+                float: none;
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
 
-    @include respond-to(xs) { width: 100%; }
-    @include respond-to(sm) { width: 50%; }
-    @include respond-to(md) { width: calc(100% * 5 / 12); }
-    @include respond-to(lg) { width: calc(100% * 4 / 12); }
-}
+        & > :last-child {
+            @include respond-to(xs) { width: 1%; }
+        }
 
-.header__logo {
-    display: block;
-}
+        &-hero {
 
-.header__logo img {
-    max-width: 100%;
-    display: block;
-}
+            @include respond-to(sm) {
+                width: 50%;
+            }
+            @include respond-to(md) { width: calc(100% * 5 / 12); }
+            @include respond-to(lg) { width: calc(100% * 4 / 12); }
 
-.header__mobile {
-    @include hidden-at(sm);
-    @include hidden-at(md);
-    @include hidden-at(lg);
-    @include respond-to(xs) { width: 25%; }
-}
+            &-logo {
+                display: table;
+                table-layout: fixed;
+                @include respond-to(md) { display: block; }
+                & a {
+                    display: table-cell;
+                    vertical-align: middle;
 
-.header__right {
-    @extend %grid-base;
+                    @include respond-to(md) { display: block; }
 
-    @include respond-to(xs) { width: 25%; }
-    @include respond-to(sm) { width: 50%; }
-    @include respond-to(md) { width: calc(100% * 7 / 12); }
-    @include respond-to(lg) { width: calc(100% * 8 / 12); }
-}
+                    & img {
+                        max-width: 100%;
+                        @extend %d-block;
+                    }
+                }
+            }
+        }
 
-.header__actions {
-    float: right;
-    padding: to-rem(7px) 0;
-    &>* + * {
-        margin-left: 20px;
+        &-mobile {
+            @extend %grid-base;
+
+            @include hidden-at(sm);
+            @include respond-to(sm) { width: 25%; }
+        }
+
+        &-group {
+            @extend %grid-base;
+
+            @include respond-to(xs) { width: 25%; }
+            @include respond-to(sm) { width: 50%; }
+            @include respond-to(md) { width: calc(100% * 7 / 12); }
+            @include respond-to(lg) { width: calc(100% * 8 / 12); }
+
+            &-actions {
+                @include float(right);
+                padding: to-rem(7px) 0;
+                &>* + * {
+                    margin-left: to-rem(20px);
+                }
+                &.btn span {
+                    font-size: to-rem(23px);
+                    line-height: to-rem(45px);
+                }
+                &.btn [class^="icon-"]  {
+                    @extend %icon-action;
+                    @include float(left);
+                }
+
+                &-el.btn {
+                    @include float(left);
+                    @include hidden-at(xs);
+                    @include hidden-at(sm);
+                    @include respond-to(md) { display: block }
+
+                    height: to-rem(56px);
+                    line-height: to-rem(46px);
+                    font-size: to-rem(18px);
+                }
+
+                &-search {
+                    @include float(left);
+                    @extend %d-block;
+                }
+                &-hamburger {
+                    @include float(left);
+
+                    & .hamburger-box {
+                        @extend %d-block;
+
+                        &, &::before, &::after {
+                            background-color: $color-btn-hamb-inner;
+                            border-radius: 0;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 }
-
-.header__btn {
-    @extend %btn-base-inline;
-    @extend %btn-base;
-    @include hidden-at(xs);
-    @include hidden-at(sm);
-    @include respond-to(lg) { display: inline-block!important };
-
-    height: to-rem(56px);
-    line-height: to-rem(46px);
-    font-size: to-rem(18px);
-    float: left;
-
-    span {
-        @extend %btn-action-icon;
-        font-size: to-rem(23px);
-        line-height: to-rem(45px);
-    }
-}
-.header__btn--support {
-    @extend %btn-primary;
-}
-
-.header__btn--contact {
-    @extend %btn-default;
-}
-
-
-
-
-
-
 

@@ -1,26 +1,33 @@
-@use "../abstracts" as *;
+@use "../abstracts/index" as *;
 
 .hamburger {
+    padding: to-rem(15px);
     display: inline-block;
-    padding: 0;
     cursor: pointer;
+    transition-property: opacity,filter;
+    transition-duration: .15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
     border: 0;
-    background: transparent;
-    float: left;
+    margin: 0;
+    overflow: visible;
 
-    .hamburger-box {
-        width: 33px;
-        height: 24px;
-        position: relative;
+    &-box {
+        width: to-rem(33px);
+        height: to-rem(19px);
         display: inline-block;
+        position: relative;
     }
 
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-        width: 33px;
-        height: 4px;
-        background-color: #fff;
+    &-inner,
+    &-inner::before,
+    &-inner::after {
+        width: to-rem(33px);
+        height: to-rem(4px);
+        background-color: $color-btn-hamb-inner;
         border-radius: 0;
         position: absolute;
         transition-property: transform;
@@ -28,40 +35,36 @@
         transition-timing-function: ease;
     }
 
-    .hamburger-inner {
+    &-inner {
+        @extend %d-block;
         top: 50%;
-        margin-top: -2px;
+        margin-top: -1.5px;
     }
 
-    .hamburger-inner::before,
-    .hamburger-inner::after {
+    &-inner::before,
+    &-inner::after {
         content: "";
         display: block;
     }
 
-    .hamburger-inner::before {
+    &-inner::before {
         top: -10px;
     }
 
-    .hamburger-inner::after {
+    &-inner::after {
         bottom: -10px;
     }
 
-    &.hamburger--spin .hamburger-inner {
-        transform: rotate(225deg);
-        transition-delay: .12s;
+    &.hamburger--spin &-inner {
+        transition-duration: .22s;
+        transition-timing-function: cubic-bezier(.55,.055,.675,.19);
     }
 
-    &.hamburger--spin .hamburger-inner::before {
-        top: 0;
-        opacity: 0;
+    &.hamburger--spin &-inner::before {
         transition: top .1s ease-in .25s, opacity .1s ease-in;
     }
 
-    &.hamburger--spin .hamburger-inner::after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom .1s ease-in .25s,
-        transform .22s cubic-bezier(.55,.055,.675,.19);
+    &.hamburger--spin &-inner::after {
+        transition: bottom .1s ease-in .25s,transform .22s cubic-bezier(.55,.055,.675,.19);
     }
 }
