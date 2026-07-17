@@ -23,9 +23,23 @@
     }
 }
 
+@mixin hide {
+    display: none;
+    visibility: hidden;
+}
+
 @mixin hidden-at($breakpoint) {
     @include respond-to($breakpoint) {
-        display: none !important;
+        @include hide;
     }
 }
+
+@mixin float($side, $margin: null) {
+    float: $side;
+
+    @if $margin != null {
+        margin: $margin;
+    }
+}
+
 

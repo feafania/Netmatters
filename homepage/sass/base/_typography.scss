@@ -1,9 +1,9 @@
-@use "../abstracts" as *;
+@use "../abstracts/index" as *;
 
 /*POPPINS*/
 @font-face {
     font-family: 'Poppins';
-    src: url('../../assets/fonts/poppins-v15-latin-regular.woff2') format('woff2');
+    src: url('#{$assets-path}fonts/poppins-v15-latin-regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../assets/fonts/poppins-v15-latin-600.woff2') format('woff2');
+    src: url('#{$assets-path}fonts/poppins-v15-latin-600.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -20,17 +20,28 @@
 /*Material Design icons*/
 @font-face {
     font-family: 'Material Design Icons';
-    src: url('../../assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
-    url('../../assets/fonts/Material-Design-Iconic-Font.woff') format('woff');
+    src: url('#{$assets-path}fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
+    url('#{$assets-path}assets/fonts/Material-Design-Iconic-Font.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 /*Glyphicons */
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url('../../assets/fonts/glyphicons-halflings-regular.woff') format('woff');
+    src: url('#{$assets-path}fonts/glyphicons-halflings-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+/*Icomoon*/
+
+@font-face {
+    font-family: icomoon;
+    src: url('#{$assets-path}fonts/icomoon.eot?ici5fl');
+    src: url('#{$assets-path}fonts/icomoon.eot?ici5fl#iefix') format("embedded-opentype"),url('#{$assets-path}fonts/icomoon.ttf?ici5fl') format("truetype"),url('#{$assets-path}fonts/icomoon.woff?ici5fl') format("woff"),url('#{$assets-path}/fonts/icomoon.svg?ici5fl#icomoon') format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 [class^="icon-"],
@@ -43,6 +54,10 @@
 .icon-flight::before,
 .icon-send::before {
     content: "\E90C";
+}
+
+.icon-mouse:before {
+    content: "\E903";
 }
 
 

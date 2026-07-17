@@ -1,9 +1,10 @@
+@use "sass:math";
 @use "variables" as vars;
 
 @function to-rem($px) {
-    @return ($px/vars.$rem-base) * 1rem;
+    @return math.div($px, vars.$rem-base) * 1rem;
 }
 
 @function percent-of-base-font($px) {
-    @return ($px/vars.$rem-base) * 100%;
+    @return math.div($px, vars.$rem-base) * 100%;
 }
