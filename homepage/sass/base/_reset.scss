@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts/index" as *;
 
 *,
 *::before,
@@ -7,7 +7,8 @@
 }
 
 html {
-    font-size: percent-of-base-font(10px);
+    font-size: $rem-base;
+    font-family: sans-serif;
     -webkit-tap-highlight-color: transparent; /*turn off grey highlight on mobile*/
 }
 
@@ -16,7 +17,7 @@ body {
 
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    line-height: calc(1em / 7);
+    line-height: calc(10em / 7);
     letter-spacing: to-rem(0.4px);
 
     color: $color-body-text;
@@ -31,4 +32,10 @@ a {
 img {
     vertical-align: middle;
     border: 0;
+}
+
+label {
+    font-weight: 600;
+    color: #333645;
+    margin-bottom: to-rem(5px);
 }

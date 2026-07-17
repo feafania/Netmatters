@@ -1,7 +1,5 @@
-@use "abstracts/index";
-@use "base/index";
-@use "layout/index";
-@use "modules/index";
-@use "states/index";
-
-
+@use "abstracts/index" as abstracts;
+@use "base/index" as base;
+@use "layout/index" as layout;
+@use "modules/index" as modules;
+@use "states/index" as states;

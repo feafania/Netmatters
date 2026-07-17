@@ -20,10 +20,18 @@ $color-light-grey: #999aa2;
 $color-body-text: $color-grey;
 $color-body-bg: $color-white;
 $color-link: $color-dark-grey;
+
 $color-btn: $color-white;
-$color-btn-primary-bg: $color-blue;
+$color-btn-primary-bg: $color-dark-grey;
 $color-btn-default-bg: $color-light-grey;
+$color-btn-special-bg: $color-blue;
+$color-btn-hamb-inner: $color-white;
+$color-label: $color-dark-grey;
+
 $overlay-dark: rgba($color-black, .4);
 
-/*FONTS*/
+/* FONTS */
 $rem-base: 16px;
+
+/* PATHS */
+$assets-path: "../assets/";
