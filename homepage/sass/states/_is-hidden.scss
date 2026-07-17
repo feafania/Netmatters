@@ -1,0 +1,5 @@
+@use "../abstracts/index" as *;
+
+.is-hidden {
+    @include hide;
+}
