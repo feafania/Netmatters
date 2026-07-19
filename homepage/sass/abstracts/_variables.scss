@@ -16,6 +16,7 @@ $container-lg: 1200px;
 $color-grey: #666;
 $color-darker-grey: #555;
 $color-dark-grey: #333645;
+$color-darkest-grey: #1d1f28;
 $color-light-grey: #999aa2;
 $color-white: white;
 $color-light-white: #ccc;
@@ -43,6 +44,31 @@ $form-search-btn-bg: $color-light-grey;
 $form-search-btn-color--mobile: $color-dark-grey;
 $form-search-btn-color-bg--mobile: rgba($color-black,.1);
 $form-search-btn-color-out--mobile: hsla(0,0%,100%,.2);
+
+$color-nav-bg: $color-dark-grey;
+$color-nav-text: $color-white;
+$color-nav-sub-bg: $color-darkest-grey;
+$color-nav-sub-title: $color-white;
+
+$nav-item-accents: (
+        software:          #67809f,
+        it:                 $color-nav-text,
+        digital:            $color-nav-text,
+        telecoms:           $color-nav-text,
+        web:                $color-nav-text,
+        security:           $color-nav-text,
+        developer-course:   $color-nav-text
+);
+
+$nav-sub-menu-accents: (
+        software: #526781,
+        it:                 $color-nav-sub-bg,
+        digital:             $color-nav-sub-bg,
+        telecoms:            $color-nav-sub-bg,
+        web:                 $color-nav-sub-bg,
+        security:            $color-nav-sub-bg,
+        developer-course:    $color-nav-sub-bg
+);
 
 $overlay-dark: rgba($color-black, .4);
 

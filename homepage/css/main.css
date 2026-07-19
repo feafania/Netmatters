@@ -85,6 +85,23 @@ button, input, optgroup, select, textarea {
   border-color: #333645;
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3, h4, .h4, h5, .h5,
+h6, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 *,
 *::before,
 *::after {
@@ -121,6 +138,21 @@ label {
   font-weight: 600;
   color: #333645;
   margin-bottom: 5px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h2, .h2 {
+  font-size: 1.75rem;
+}
+
+h4, .h4 {
+  margin: 0 0 15px;
 }
 
 /*POPPINS*/

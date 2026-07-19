@@ -1,0 +1,124 @@
+@use "../abstracts/index" as *;
+
+.main-navigation {
+    display: none;
+    background-color: $color-nav-bg;
+    position: relative;
+
+    @include respond-to(md) {
+        display: block;
+    }
+
+    & > .container {
+        @extend %clearfix;
+    }
+
+    &__list {
+        @extend %flex-wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    &__item {
+        flex: 1;
+        text-align: center;
+        position: relative;
+
+        @each $key, $color in $nav-item-accents {
+            &[data-key="#{$key}"] &__link-icon {
+                color: $color;
+            }
+
+            &[data-key="#{$key}"] &__sub-menu {
+                background-color: map-get($nav-sub-menu-accents, $key);
+            }
+        }
+
+        &:hover,
+        &.is-active {
+            & > .main-navigation__sub-menu {
+                display: block;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        color: $color-nav-text;
+        padding: 19px 0 18px;
+        text-transform: uppercase;
+        font-size: to-rem(18px);
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    &__link-icon {
+        @extend %icon-action;
+        color: $color-nav-text;
+    }
+
+    &__link-label {
+        @extend %font-family-inherit;
+        display: block;
+    }
+
+    &__sub-menu {
+        margin: 0;
+        display: none;
+        background-color: $color-nav-sub-bg;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 100%;
+        z-index: 10;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__sub-list {
+        @extend %flex-wrap;
+        align-items: center;
+        margin-top: -15px;
+        list-style: none;
+        text-align: left;
+        padding: 0;
+    }
+
+    &__sub-menu-title {
+        width: 100%;
+        color: $color-nav-sub-title !important;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    &__sub-item {
+        width: 33%;
+        margin-top: 15px;
+    }
+
+    &__sub-link {
+        @extend %link-base;
+        display: flex;
+        align-items: center;
+        color: $color-nav-text;
+    }
+
+    &__sub-link-icon-wrap {
+        @extend %icon-action;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__sub-link-icon {
+        font-size: to-rem(18px);
+    }
+
+    &__sub-link-text {
+        font-size: to-rem(15px);
+    }
+}

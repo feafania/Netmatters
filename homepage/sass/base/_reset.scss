@@ -68,3 +68,26 @@ textarea {
     @extend %font-family-inherit;
     @extend %form-element;
 }
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    @extend %heading-base;
+    @extend %heading-spacing;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h2, .h2 {
+    font-size: to-rem(28px);
+}
+
+h4, .h4 {
+    @extend %heading-base;
+    margin: 0 0 15px;
+}
+
+h5, .h5,
+h6, .h6 {
+    @extend %heading-base;
+}
