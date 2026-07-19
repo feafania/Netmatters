@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* BREAKPOINTS */
 /* CONTAINER WIDTH */
 /* COLORS */
@@ -33,18 +34,6 @@ a {
   background: transparent;
 }
 
-[class^=icon-],
-[class*=" icon-"] {
-  font-family: "icomoon", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .header__row-group-actions .btn [class^=icon-] {
   margin-right: 5px;
 }
@@ -76,7 +65,7 @@ button, input, optgroup, select, textarea {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -149,21 +138,40 @@ label {
   font-style: normal;
   font-display: swap;
 }
-/*Material Design icons*/
+/* MATERIAL DESIGN ICONS */
 @font-face {
   font-family: "Material Design Icons";
   src: url("../assets/fonts/Material-Design-Iconic-Font.woff2") format("woff2"), url("../assets/assets/fonts/Material-Design-Iconic-Font.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-/*Glyphicons */
-@font-face {
-  font-family: "Glyphicons Halflings";
-  src: url("../assets/fonts/glyphicons-halflings-regular.woff") format("woff");
-  font-weight: normal;
+[class*=" mdi-"], [class^=mdi-] {
+  font-family: Material-Design-Icons;
   font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-/*Icomoon*/
+
+.mdi-social-school:before {
+  content: "\e8de";
+}
+
+.mdi-action-trending-up:before {
+  content: "\e68b";
+}
+
+.mdi-notification-phone-in-talk:before {
+  content: "\e8b6";
+}
+
+.mdi-hardware-security:before {
+  content: "\e7c9";
+}
+
+/* ICOMOON */
 @font-face {
   font-family: icomoon;
   src: url("../assets/fonts/icomoon.eot?ici5fl");
@@ -172,23 +180,131 @@ label {
   font-style: normal;
   font-display: swap;
 }
-.icon-paperplane::before,
-.icon-email::before,
-.icon-flight::before,
-.icon-send::before {
-  content: "\e90c";
-}
-
-.icon-mouse:before {
-  content: "\e903";
+[class^=icon-],
+[class*=" icon-"] {
+  font-family: "icomoon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-phone_in_talk:before {
   content: "\e902";
 }
 
+.icon-handshake-o:before {
+  content: "\e910";
+}
+
+.icon-display:before {
+  content: "\e905";
+}
+
+.icon-security:before {
+  content: "\e900";
+}
+
+.icon-apps:before {
+  content: "\e918";
+}
+
+.icon-mouse:before {
+  content: "\e903";
+}
+
+.icon-bar-graph:before {
+  content: "\e904";
+}
+
+.icon-facebook:before {
+  content: "\e907";
+}
+
+.icon-code:before {
+  content: "\e908";
+}
+
+.icon-instagram:before {
+  content: "\e909";
+}
+
+.icon-twitter:before {
+  content: "\e90b";
+}
+
+.icon-paperplane:before {
+  content: "\e90c";
+}
+
+/* GLYPHOCON */
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../assets/fonts/glyphicons-halflings-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: Glyphicons Halflings, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-cloud:before {
+  content: "☁";
+}
+
 .glyphicon-search:before {
   content: "\e003";
+}
+
+.glyphicon-download-alt:before {
+  content: "\e025";
+}
+
+.glyphicon-headphones:before {
+  content: "\e035";
+}
+
+.glyphicon-arrow-right:before {
+  content: "\e092";
+}
+
+.glyphicon-random:before {
+  content: "\e110";
+}
+
+.glyphicon-shopping-cart:before {
+  content: "\e116";
+}
+
+.glyphicon-folder-open:before {
+  content: "\e118";
+}
+
+.glyphicon-hdd:before {
+  content: "\e121";
+}
+
+.glyphicon-briefcase:before {
+  content: "\e139";
+}
+
+.glyphicon-phone:before {
+  content: "\e145";
+}
+
+.glyphicon-transfer:before {
+  content: "\e178";
 }
 
 .header {
@@ -517,16 +633,32 @@ label {
 .search-form--tablet > .search-submit > .glyphicon {
   font-size: 23px;
 }
-.search-form .glyphicon {
+@media (min-width: 768px) {
+  .search-form--mobile {
+    display: none;
+  }
+}
+.search-form--mobile {
+  margin-top: 11px;
   position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: Glyphicons Halflings, serif;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+.search-form--mobile > .search-input {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: 1px solid hsla(0, 0%, 100%, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: none;
+  width: 100%;
+  padding-right: 40px;
+}
+.search-form--mobile > .search-submit {
+  background: none;
+  border: none;
+  color: #333645;
+  position: absolute;
+  right: 5px;
+  line-height: 47px;
+  font-size: 20px;
+  outline: none;
 }
 
 .is-hidden {

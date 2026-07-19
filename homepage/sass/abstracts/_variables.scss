@@ -40,6 +40,9 @@ $form-shadow: rgba($color-black, .075);
 $form-border: $color-light-white;
 $form-search-btn-color: $color-btn;
 $form-search-btn-bg: $color-light-grey;
+$form-search-btn-color--mobile: $color-dark-grey;
+$form-search-btn-color-bg--mobile: rgba($color-black,.1);
+$form-search-btn-color-out--mobile: hsla(0,0%,100%,.2);
 
 $overlay-dark: rgba($color-black, .4);
 

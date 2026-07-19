@@ -52,15 +52,30 @@
         };
     }
 
-    .glyphicon {
+    &--mobile {
+        @include hidden-at(sm);
+        margin-top: 11px;
         position: relative;
-        top: 1px;
-        display: inline-block;
-        font-family: Glyphicons Halflings, serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+
+        > .search-input {
+            background-color: $form-search-btn-color-bg--mobile;
+            outline: 1px solid $form-search-btn-color-out--mobile;
+            border: 2px solid $form-search-btn-color-bg--mobile;
+            transition: none;
+            width: 100%;
+            padding-right: 40px;
+        }
+
+        > .search-submit {
+            background: none;
+            border: none;
+            color: $form-search-btn-color--mobile;
+            position: absolute;
+            right: 5px;
+            line-height: 47px;
+            font-size: 20px;
+            outline: none;
+
+        };
     }
 }

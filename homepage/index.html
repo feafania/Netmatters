@@ -55,7 +55,7 @@
                   <label for="search-input--tablet" class="is-hidden">Search:</label>
                   <input id="search-input--tablet" placeholder="Search..." class="search-input" name="keyword" type="text" value="" ><!--
                   --><button id="search-submit--tablet" type="submit" class="search-submit">
-                    <span class="glyphicon glyphicon-search"></span>
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                   </button>
                 </form>
 
@@ -69,6 +69,13 @@
 
             </div>
           </div>
+          <form class="header__search search-form search-form--mobile" method="GET" action="#" accept-charset="UTF-8">
+            <label for="search-input--mobile" class="is-hidden">Search:</label>
+            <input id="search-input--mobile" placeholder="Search..." class="search-input" name="keyword" type="text" value="" ><!--
+                --><button id="search-submit--mobile" type="submit" class="search-submit">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          </form>
         </div>
       </div>
     </header>

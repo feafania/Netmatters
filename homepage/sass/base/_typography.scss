@@ -17,7 +17,7 @@
     font-display: swap;
 }
 
-/*Material Design icons*/
+/* MATERIAL DESIGN ICONS */
 @font-face {
     font-family: 'Material Design Icons';
     src: url('#{$assets-path}fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
@@ -25,15 +25,35 @@
     font-weight: normal;
     font-style: normal;
 }
-/*Glyphicons */
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('#{$assets-path}fonts/glyphicons-halflings-regular.woff') format('woff');
-    font-weight: normal;
+
+
+[class*=" mdi-"],[class^=mdi-] {
+    font-family: Material-Design-Icons;
     font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
 }
 
-/*Icomoon*/
+.mdi-social-school:before {
+    content: "\E8DE"
+}
+
+.mdi-action-trending-up:before {
+    content: "\E68B"
+}
+
+.mdi-notification-phone-in-talk:before {
+    content: "\E8B6"
+}
+
+.mdi-hardware-security:before {
+    content: "\E7C9"
+}
+
+/* ICOMOON */
 
 @font-face {
     font-family: icomoon;
@@ -46,26 +66,132 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-    @extend %icon-base;
-}
-
-.icon-paperplane::before,
-.icon-email::before,
-.icon-flight::before,
-.icon-send::before {
-    content: "\E90C";
-}
-
-.icon-mouse:before {
-    content: "\E903";
+    font-family: 'icomoon', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-phone_in_talk:before {
-    content: "\E902";
+    content: "\E902"
+}
+
+.icon-handshake-o:before {
+    content: "\E910"
+}
+
+.icon-display:before {
+    content: "\E905"
+}
+
+.icon-security:before {
+    content: "\E900"
+}
+
+.icon-apps:before {
+    content: "\E918"
+}
+
+.icon-mouse:before {
+    content: "\E903"
+}
+
+.icon-bar-graph:before {
+    content: "\E904"
+}
+
+.icon-facebook:before {
+    content: "\E907"
+}
+
+.icon-code:before {
+    content: "\E908"
+}
+
+.icon-instagram:before {
+    content: "\E909"
+}
+
+.icon-twitter:before {
+    content: "\E90B"
+}
+
+.icon-paperplane:before {
+    content: "\E90C"
+}
+
+
+/* GLYPHOCON */
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('#{$assets-path}fonts/glyphicons-halflings-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: Glyphicons Halflings, serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-cloud:before {
+    content: "\2601"
 }
 
 .glyphicon-search:before {
-    content: "\E003";
+    content: "\E003"
+}
+
+.glyphicon-download-alt:before {
+    content: "\E025"
+}
+
+.glyphicon-headphones:before {
+    content: "\E035"
+}
+
+.glyphicon-arrow-right:before {
+    content: "\E092"
+}
+
+.glyphicon-random:before {
+    content: "\E110"
+}
+
+.glyphicon-shopping-cart:before {
+    content: "\E116"
+}
+
+.glyphicon-folder-open:before {
+    content: "\E118"
+}
+
+.glyphicon-hdd:before {
+    content: "\E121"
+}
+
+.glyphicon-briefcase:before {
+    content: "\E139"
+}
+
+.glyphicon-phone:before {
+    content: "\E145"
+}
+
+.glyphicon-transfer:before {
+    content: "\E178"
 }
 
 
