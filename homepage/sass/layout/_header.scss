@@ -1,21 +1,21 @@
 @use "../abstracts/index" as *;
 
 .header {
-    @extend %d-block;
     background-color: $color-body-bg;
 
     &__inner {
-        padding: to-rem(20px) 0;
+        padding: 20px 0;
     }
 
     &__row {
         @extend %clearfix;
         @extend %flex-wrap;
+        @extend %clear-float;
 
-        margin-left: to-rem(-15px);
-        margin-right: to-rem(-15px);
+        margin-left: -15px;
+        margin-right: -15px;
 
-        @include respond-to(xs) {
+        @include respond-to(xs,null,max) {
             display: table;
             width: 100%;
             margin: 0;
@@ -24,7 +24,7 @@
             flex: 0 0 auto;
             max-width: 100%;
 
-            @include respond-to(xs) {
+            @include respond-to(xs,null,max) {
                 padding: 0;
                 display: table-cell;
                 float: none;
@@ -34,13 +34,14 @@
         }
 
         & > :last-child {
-            @include respond-to(xs) { width: 1%; }
+            @include respond-to(xs,null,max) { width: 1%; }
         }
 
         &-hero {
 
             @include respond-to(sm) {
                 width: 50%;
+                @include float(left)
             }
             @include respond-to(md) { width: calc(100% * 5 / 12); }
             @include respond-to(lg) { width: calc(100% * 4 / 12); }
@@ -50,14 +51,14 @@
                 table-layout: fixed;
                 @include respond-to(md) { display: block; }
                 & a {
-                    display: table-cell;
-                    vertical-align: middle;
-
-                    @include respond-to(md) { display: block; }
+                    @include respond-to(sm,null,max) {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
 
                     & img {
                         max-width: 100%;
-                        @extend %d-block;
+                        display: block;
                     }
                 }
             }
@@ -67,65 +68,81 @@
             @extend %grid-base;
 
             @include hidden-at(sm);
-            @include respond-to(sm) { width: 25%; }
+            @include respond-to(sm) {
+                width: 25%;
+                @include float(left)
+            }
+
+            & span {
+                @include respond-to(sm,null,max) {
+                    font-size: 32px;
+                    margin-left: 15px;
+                }
+            }
         }
 
         &-group {
             @extend %grid-base;
 
-            @include respond-to(xs) { width: 25%; }
-            @include respond-to(sm) { width: 50%; }
+            @include respond-to(xs,null,max) { width: 25%; }
+            @include respond-to(sm) {
+                width: 50%;
+                @include float(left)
+            }
             @include respond-to(md) { width: calc(100% * 7 / 12); }
             @include respond-to(lg) { width: calc(100% * 8 / 12); }
 
-            &-actions {
+           &-actions {
                 @include float(right);
-                padding: to-rem(7px) 0;
-                &>* + * {
-                    margin-left: to-rem(20px);
-                }
-                &.btn span {
+                display: flex;
+                padding: 7px 0;
+
+                & .btn span {
                     font-size: to-rem(23px);
-                    line-height: to-rem(45px);
+                    line-height: 45px;
                 }
-                &.btn [class^="icon-"]  {
+                & .btn [class^="icon-"]  {
                     @extend %icon-action;
                     @include float(left);
                 }
 
-                &-el.btn {
-                    @include float(left);
-                    @include hidden-at(xs);
-                    @include hidden-at(sm);
-                    @include respond-to(md) { display: block }
+                & > .btn {
+                    @extend %btn;
+                    &:not(.hamburger) {
+                        @include hidden-at(sm, max);
+                    }
 
-                    height: to-rem(56px);
-                    line-height: to-rem(46px);
+                    height: 56px;
+                    line-height: 46px;
                     font-size: to-rem(18px);
                 }
 
-                &-search {
-                    @include float(left);
-                    @extend %d-block;
-                }
-                &-hamburger {
-                    @include float(left);
+                &-hamburger.btn--primary {
+                    @extend %btn-primary;
 
-                    & .hamburger-box {
-                        @extend %d-block;
+                    .hamburger-box {
+                        display: block;
 
-                        &, &::before, &::after {
+                        > *, *::before, *::after {
                             background-color: $color-btn-hamb-inner;
                             border-radius: 0;
                         }
                     }
+                }
 
+               &-hamburger.hamburger {
+                   margin-left: 20px;
+               }
+
+                > * {
+                    @include float(left);
+                    + * {
+                        margin-left: 20px;
+                    }
                 }
 
             }
-
         }
-
     }
 }
 

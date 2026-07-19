@@ -1,0 +1,66 @@
+@use "../abstracts/index" as *;
+
+.search-form {
+    display: block;
+    .search-input {
+        @extend %form-output;
+        @extend %form-control;
+
+        width: calc(100% - 54px);
+        display: inline-block;
+    }
+
+    &--tablet {
+        @include hidden-at(xs,max);
+
+        > .search-input {
+            width: 300px;
+            height: 56px;
+            display: none;
+
+            @include respond-to(sm, null, max) {
+                display: inline-block;
+                border-radius: 0;
+                width: 174px;
+            }
+
+            @include respond-to(lg) {
+                display: inline-block;
+                border-radius: 0;
+                width: 240px;
+            }
+        }
+
+        > .search-submit {
+            outline: none;
+            padding: 7px 20px 3px;
+            height: 56px;
+            font-size: to-rem(17px);
+            border-radius: 0 3px 3px 0;
+            border: none;
+            vertical-align: bottom;
+            background-color: $form-search-btn-bg;
+            color: $form-search-btn-color;
+
+            @include respond-to(md, lg, between) {
+                border-radius: 3px;
+            }
+
+            > .glyphicon {
+                font-size: 23px;
+            }
+        };
+    }
+
+    .glyphicon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: Glyphicons Halflings, serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

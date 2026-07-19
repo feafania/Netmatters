@@ -1,21 +1,27 @@
 /* BREAKPOINTS */
-$bp-xs: 0;
-$bp-sm: 768px;
-$bp-md: 992px;
-$bp-lg: 1260px;
+
+$bps: (
+        xs: 0,
+        sm: 768px,
+        md: 992px,
+        lg: 1260px
+);
 
 /* CONTAINER WIDTH */
 $container-sm: 750px;
 $container-md: 970px;
-$container-lg: 1170px;
+$container-lg: 1200px;
 
 /* COLORS */
 $color-grey: #666;
-$color-white: white;
-$color-black: black;
+$color-darker-grey: #555;
 $color-dark-grey: #333645;
-$color-blue: #4183d7;
 $color-light-grey: #999aa2;
+$color-white: white;
+$color-light-white: #ccc;
+$color-black: black;
+$color-blue: #4183d7;
+
 
 $color-body-text: $color-grey;
 $color-body-bg: $color-white;
@@ -26,7 +32,14 @@ $color-btn-primary-bg: $color-dark-grey;
 $color-btn-default-bg: $color-light-grey;
 $color-btn-special-bg: $color-blue;
 $color-btn-hamb-inner: $color-white;
+$color-hamb-inner: $color-black;
+
 $color-label: $color-dark-grey;
+$color-form-control: $color-darker-grey;
+$form-shadow: rgba($color-black, .075);
+$form-border: $color-light-white;
+$form-search-btn-color: $color-btn;
+$form-search-btn-bg: $color-light-grey;
 
 $overlay-dark: rgba($color-black, .4);
 

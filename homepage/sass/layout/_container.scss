@@ -7,28 +7,29 @@
     z-index: 10;
     transition: all .5s;
     left: 0;
-}
 
-#container::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    background: $overlay-dark;
-    z-index: 10;
-    content: "";
-    opacity: 0;
-    transition: opacity .5s, width .1s .5s, height .1s .5s;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        background: $overlay-dark;
+        z-index: 10;
+        content: "";
+        opacity: 0;
+        transition: opacity .5s, width .1s .5s, height .1s .5s;
+    }
 }
 
 .container {
     @extend %clearfix;
+    @extend %clear-float;
 
     margin-right: auto;
     margin-left: auto;
-    padding-left: to-rem(15px);
-    padding-right: to-rem(15px);
+    padding-left: 15px;
+    padding-right: 15px;
 
     @include respond-to(sm) {
         max-width: $container-sm;

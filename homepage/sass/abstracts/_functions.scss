@@ -8,3 +8,29 @@
 @function percent-of-base-font($px) {
     @return math.div($px, vars.$rem-base) * 100%;
 }
+
+@function bp-next($key) {
+    $keys: map-keys(vars.$bps);
+    $index: index($keys, $key);
+
+    @if $index < length($keys) {
+        @return nth($keys, $index + 1);
+    }
+
+    @return null;
+}
+
+@function bp-max($key) {
+    @return map-get(vars.$bps, $key) - 1px;
+}
+
+@function bp-range($from, $to) {
+    $from-value: map-get(vars.$bps, $from);
+    $to-value: bp-max($to);
+
+    @return ($from-value, $to-value);
+}
+
+
+
+

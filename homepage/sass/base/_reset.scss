@@ -17,11 +17,15 @@ body {
 
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    line-height: calc(10em / 7);
-    letter-spacing: to-rem(0.4px);
+    line-height: calc(10 / 7);
+    letter-spacing: 0.4px;
 
     color: $color-body-text;
     background-color: $color-body-bg;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
 }
 
 a {
@@ -35,7 +39,32 @@ img {
 }
 
 label {
+    display: inline-block;
     font-weight: 600;
-    color: #333645;
-    margin-bottom: to-rem(5px);
+    color: $color-label;
+    margin-bottom: 5px;
+}
+
+button {
+    @extend %font-family-inherit;
+    @extend %form-element;
+}
+
+input {
+    @extend %font-family-inherit;
+    @extend %form-element;
+}
+
+optgroup {
+    @extend %form-element;
+}
+
+select {
+    @extend %font-family-inherit;
+    @extend %form-element;
+}
+
+textarea {
+    @extend %font-family-inherit;
+    @extend %form-element;
 }

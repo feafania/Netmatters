@@ -9,20 +9,17 @@
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
 
-    height: auto;
-    line-height: to-rem(35px);
-    padding: to-rem(5px) to-rem(15px);
-    text-transform: uppercase;
-    font-size: to-rem(17px);
-    border-radius: to-rem(3px);
-    white-space: normal;
-
     &--primary {
-        color: $color-btn;
-        background-color: $color-btn-primary-bg;
-        border-color: $color-btn-primary-bg;
+        @extend %btn-primary;
     }
 
     &--default {

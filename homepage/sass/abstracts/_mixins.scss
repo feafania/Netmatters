@@ -1,23 +1,32 @@
 @use "variables" as vars;
+@use "functions" as fn;
 
-@mixin respond-to($breakpoint) {
-    @if $breakpoint == xs {
-        @media (max-width: #{vars.$bp-sm - 1}) {
-            @content;
+@mixin respond-to($from, $to: null, $type: min) {
+    $from-value: map-get(vars.$bps, $from);
+
+    @if $to == null and $type == min {
+            @media (min-width: #{$from-value}) {
+                @content;
+            }
+    }
+
+    @else if $to == null and $type == max {
+        $next: fn.bp-next($from);
+
+        @if $next != null {
+            @media (max-width: #{fn.bp-max($next)}) {
+                @content;
+            }
         }
     }
-    @else if $breakpoint == sm {
-        @media (min-width: vars.$bp-sm) {
-            @content;
-        }
-    }
-    @else if $breakpoint == md {
-        @media (min-width: vars.$bp-md) {
-            @content;
-        }
-    }
-    @else if $breakpoint == lg {
-        @media (min-width: vars.$bp-lg) {
+
+    @else if $type == between {
+        $upto: if ($to == null, $from, $to);
+        $range: fn.bp-range($from, $upto);
+        $min: nth($range, 1);
+        $max: nth($range, 2);
+
+        @media (min-width: #{$min}) and (max-width: #{$max}) {
             @content;
         }
     }
@@ -25,14 +34,22 @@
 
 @mixin hide {
     display: none;
-    visibility: hidden;
 }
 
-@mixin hidden-at($breakpoint) {
-    @include respond-to($breakpoint) {
-        @include hide;
+@mixin hidden-at($breakpoint, $type: min) {
+    @if $type == between {
+        $next: fn.bp-next($breakpoint);
+
+        @include respond-to($breakpoint, $next, between) {
+            @include hide;
+        }
+    } @else {
+        @include respond-to($breakpoint, null, $type) {
+            @include hide;
+        }
     }
 }
+
 
 @mixin float($side, $margin: null) {
     float: $side;
