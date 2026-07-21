@@ -33,6 +33,21 @@ a {
     @extend %bg-transparent;
 }
 
+a:active, a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+a:focus, a:hover {
+    color: $color-link--focus;
+    text-decoration: underline;
+}
+
 img {
     vertical-align: middle;
     border: 0;
@@ -69,6 +84,11 @@ textarea {
     @extend %form-element;
 }
 
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3 {
@@ -80,14 +100,26 @@ h3, .h3 {
 
 h2, .h2 {
     font-size: to-rem(28px);
+    @extend %heading-base-small;
 }
 
 h4, .h4 {
     @extend %heading-base;
-    margin: 0 0 15px;
+    @extend %heading-spacing-small;
+    @extend %heading-base-small;
+    font-size: 1rem;
 }
 
 h5, .h5,
 h6, .h6 {
     @extend %heading-base;
+    @extend %heading-spacing-small;
+}
+
+.small, small {
+    font-size: 85%;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
 }

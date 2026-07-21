@@ -8,6 +8,7 @@
 
         width: calc(100% - 54px);
         display: inline-block;
+
     }
 
     &--tablet {
@@ -49,6 +50,10 @@
             > .glyphicon {
                 font-size: 23px;
             }
+
+            &:hover {
+                background-color: #7e808a;
+            }
         };
     }
 
@@ -64,6 +69,15 @@
             transition: none;
             width: 100%;
             padding-right: 40px;
+
+            &:active, &:focus {
+                box-shadow: 0 0 3px #fff;
+            }
+            &:-webkit-autofill, &:active, &:-webkit-autofill:focus, &:-webkit-autofill:hover {
+                -webkit-box-shadow: 0 0 0 30px #333645 inset!important;
+                -webkit-text-fill-color: #fff;
+                border: 1px solid hsla(0,0%,100%,.1);
+            }
         }
 
         > .search-submit {
@@ -78,4 +92,5 @@
 
         };
     }
+
 }

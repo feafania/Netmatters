@@ -1,6 +1,6 @@
 @use "../abstracts/index" as *;
 
-/*POPPINS*/
+/* POPPINS */
 @font-face {
     font-family: 'Poppins';
     src: url('#{$assets-path}fonts/poppins-v15-latin-regular.woff2') format('woff2');
@@ -19,11 +19,11 @@
 
 /* MATERIAL DESIGN ICONS */
 @font-face {
-    font-family: 'Material Design Icons';
-    src: url('#{$assets-path}fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
-    url('#{$assets-path}assets/fonts/Material-Design-Iconic-Font.woff') format('woff');
-    font-weight: normal;
+    font-family: Material-Design-Icons;
+    src: url('#{$assets-path}fonts/Material-Design-Icons.woff') format("woff");
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -58,7 +58,7 @@
 @font-face {
     font-family: icomoon;
     src: url('#{$assets-path}fonts/icomoon.eot?ici5fl');
-    src: url('#{$assets-path}fonts/icomoon.eot?ici5fl#iefix') format("embedded-opentype"),url('#{$assets-path}fonts/icomoon.ttf?ici5fl') format("truetype"),url('#{$assets-path}fonts/icomoon.woff?ici5fl') format("woff"),url('#{$assets-path}/fonts/icomoon.svg?ici5fl#icomoon') format("svg");
+    src: url('#{$assets-path}fonts/icomoon.eot?ici5fl#iefix') format("embedded-opentype"),url('#{$assets-path}fonts/icomoon.ttf?ici5fl') format("truetype"),url('#{$assets-path}fonts/icomoon.woff?ici5fl') format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -193,6 +193,12 @@
 .glyphicon-transfer:before {
     content: "\E178"
 }
+
+.fa {
+    font-family: var(--fa-style-family,"Font Awesome 6 Free");
+    font-weight: var(--fa-style,900);
+}
+
 
 
 

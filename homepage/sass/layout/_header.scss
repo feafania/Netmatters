@@ -128,6 +128,15 @@
                             border-radius: 0;
                         }
                     }
+
+                    &.active, &:active, &:focus, &:hover {
+                        color: #fff;
+                        background-color: #22242e;
+                        border-color: #191a22;
+                    }
+                    &.active, &:active {
+                        background-image: none;
+                    }
                 }
 
                &-hamburger.hamburger {

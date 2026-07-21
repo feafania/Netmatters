@@ -1,4 +1,5 @@
 @use "variables" as vars;
+@use "functions" as fn;
 
 %clearfix {
     &::before,
@@ -68,6 +69,12 @@
     border-radius: 2px;
     box-shadow: inset 0 1px 1px vars.$form-shadow;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &:focus {
+        border-color: #5bc0de;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(91,192,222,.6);
+    }
 }
 
 %btn {
@@ -75,7 +82,7 @@
     line-height: 35px;
     padding: 5px 15px;
     text-transform: uppercase;
-    font-size: to-rem(17px);
+    font-size: fn.to-rem(17px);
     border-radius: 3px;
     white-space: normal;
 }
@@ -93,10 +100,21 @@
     color: inherit;
 }
 
+%heading-base-small {
+    font-weight: 400;
+    margin: 0 0 15px;
+    color: #333645;
+}
+
 %heading-spacing {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+%heading-spacing-small {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 
 
