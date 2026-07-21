@@ -103,17 +103,35 @@
             top: 4px;
         }
 
-        &:hover {
-            &--facebook  { background-color: #3b5998; }
-            &--twitter   { background-color: #00aced; }
-            &--instagram { background-color: #d93175; }
-            &--linkedin  { background-color: #0077b5; }
+        @each $key, $color in $nav-item-accents {
+            &[data-key="#{$key}"] {
+                .main-navigation__link-icon {
+                    color: $color;
+                }
+
+                .main-navigation__sub-menu {
+                    background-color: map-get($nav-sub-menu-accents, $key);
+                }
+
+                &:hover {
+                    background-color: $color;
+
+                    .main-navigation__link-icon {
+                        color: $color-nav-text;
+                    }
+
+                    .main-navigation__link::before {
+                        border-top-color: $color;
+                    }
+                }
+            }
         }
 
-        &--facebook:hover  { background-color: #3b5998; }
-        &--twitter:hover   { background-color: #00aced; }
-        &--instagram:hover { background-color: #d93175; }
-        &--linkedin:hover  { background-color: #0077b5; }
+        @each $key, $color in $social-accents {
+            &[data-key="#{$key}"]:hover {
+                background-color: $color;
+            }
+        }
     }
 
     &__columns {
