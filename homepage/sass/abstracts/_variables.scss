@@ -6,6 +6,7 @@ $bps: (
         md: 992px,
         lg: 1260px
 );
+$bps-xxs: 480px;
 
 /* CONTAINER WIDTH */
 $container-sm: 750px;
@@ -52,16 +53,6 @@ $nav-item-accents: (
         web:                #926fb1,
         security:           #f62459,
         developer-course:   #ce4125
-);
-
-$nav-item-accents1: (
-        software:           #67809f,
-        it:                 $color-nav-text,
-        digital:            $color-nav-text,
-        telecoms:           $color-nav-text,
-        web:                $color-nav-text,
-        security:           $color-nav-text,
-        developer-course:   $color-nav-text
 );
 
 $nav-sub-menu-accents: (

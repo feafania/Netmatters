@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+@use "sass:map";
 
 .footer {
     background-color: #323544;
@@ -14,6 +15,7 @@
         @extend %flex-wrap;
         display: flex;
         justify-content: space-between;
+
     }
 
     &__title {
@@ -32,7 +34,7 @@
             width: 400px;
         }
 
-        @include respond-to(sm, null, max) {
+        @include respond-to(xs, null, max) {
             width: 100%;
             flex-wrap: wrap;
         }
@@ -49,7 +51,7 @@
     &__logo {
         width: 250px;
 
-        @include respond-to(xs) {
+        @include respond-to($bps-xxs) {
             width: 320px;
         }
 
@@ -86,11 +88,11 @@
         margin-right: 7px;
         color: white;
 
-        @include respond-to(xs, null, max) {
+        @include respond-to($bps-xxs, null, max) {
             width: 35%;
         }
 
-        @include respond-to(lg, null, max) {
+        @include respond-to(md, null, max) {
             padding: 12px 22px 16px;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -115,11 +117,16 @@
     }
 
     &__columns {
+        @extend %clearfix;
         @extend %flex-wrap;
-        flex-grow: 1;
-        display: flex;
+
         margin-left: -15px;
         margin-right: -15px;
+
+        @include respond-to(md) {
+            flex-grow: 1;
+        }
+
     }
 
     &__column {
@@ -129,6 +136,9 @@
         padding-right: 15px;
         width: 100%;
         margin-bottom: 30px;
+
+        flex: 0 0 auto;
+        max-width: 100%;
 
         @include respond-to(sm) {
             width: 50%;
@@ -162,23 +172,25 @@
         }
     }
 
-    // === Ніжняя палоска футара ===
-
     &__bottom {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         font-size: to-rem(13px);
         padding-top: 10px;
         width: 100%;
         left: 0;
         background: #212330;
         border: 0;
-    }
 
-    &__bottom-container {
-        @include respond-to(sm, null, max) {
+        &-container.container {
             margin-left: 0;
             margin-right: 0;
+            @include respond-to(lg) {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
         }
     }
 
@@ -208,14 +220,17 @@
     &__license-list {
         list-style: none;
         padding: 0;
-        margin-top: -2px;
+        margin: -2px 0 0;
+        font-size: .8125rem;
+        line-height: 1.375rem;
 
-        @include respond-to(xs) {
+        @include respond-to($bps-xxs) {
             display: flex;
         }
     }
 
     &__license-item {
+
         &::before {
             content: "-";
             margin-right: 5px;
@@ -228,18 +243,15 @@
         }
 
         &:first-of-type::before {
-            display: none;
-
+            @include respond-to(xs) {
+                display: none;
+            }
             @include respond-to(sm) {
                 display: inline-block;
             }
         }
 
-        @include respond-to(xs, sm) {
-            margin-left: 0;
-        }
-
-        @include respond-to(xs) {
+        @include respond-to(sm) {
             margin-left: 10px;
         }
     }
@@ -253,8 +265,9 @@
     }
 
     &__break-xs {
-        @include respond-to(xs, null, max) {
-            display: block;
+        display: block;
+        @include respond-to(sm) {
+            display: none;
         }
     }
 }

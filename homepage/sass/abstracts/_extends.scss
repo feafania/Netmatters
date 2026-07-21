@@ -100,6 +100,11 @@
     color: inherit;
 }
 
+%heading-spacing-small {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 %heading-base-small {
     font-weight: 400;
     margin: 0 0 15px;
@@ -110,10 +115,7 @@
     margin-top: 20px;
     margin-bottom: 10px;
 }
-%heading-spacing-small {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 
 
 
