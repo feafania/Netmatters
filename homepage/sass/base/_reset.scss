@@ -97,6 +97,13 @@ h3, .h3 {
     margin-right: 0;
 }
 
+.h1, h1 {
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0 0 28px;
+    color: #333645;
+}
+
 h2, .h2 {
     font-size: to-rem(28px);
     @extend %heading-base-small;

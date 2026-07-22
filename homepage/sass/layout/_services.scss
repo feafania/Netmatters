@@ -1,0 +1,186 @@
+@use "../abstracts/index" as *;
+
+.services {
+
+    &__container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__row {
+        @extend %flex-wrap;
+        margin-top: 20px;
+    }
+
+    &__header {
+        @extend %clearfix;
+        @extend %clear-float;
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 2.7rem;
+
+        margin-top: -13px;
+        margin-bottom: 15px;
+
+        @include respond-to(sm) {
+            @include float(left);
+        }
+
+        @include respond-to(lg) {
+            margin-bottom: -10px;
+        }
+    }
+
+    &__cta {
+        display: none;
+        font-weight: 600;
+
+        @include respond-to(sm) {
+            display: block;
+            @include float(right);
+            margin-left: 20px;
+        }
+    }
+
+    &__grid {
+        @extend %flex-wrap;
+        width: auto;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__item {
+        @extend %grid-base;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        &--third {
+            @include respond-to(md) {
+                flex: 0 0 33.3333%;
+                max-width: 33.3333%;
+            }
+        }
+
+        &--quarter {
+            @include respond-to(sm) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            @include respond-to(lg) {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        &-wrap {
+            width: 100%;
+            display: block;
+            position: relative;
+            top: 0;
+            margin-top: 30px;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 3px 35px rgba(black, .1);
+            transition: .5s ease;
+            font-weight: 600;
+
+            &:hover {
+                color: #fff;
+                border-color: transparent;
+                top: -10px;
+                text-decoration: none;
+
+                .services__item-title {
+                    color: #fff;
+                }
+            }
+        }
+
+        &-icon {
+            display: block;
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 17px;
+            border-radius: 50%;
+            color: #fff;
+            transition: background-color .5s ease, color .5s ease;
+
+            font-size: 2rem;
+            line-height: 62px;
+        }
+
+        &-title {
+            position: relative;
+            display: block;
+            font-size: 1.3rem;
+            margin: 0 0 11px;
+            padding-bottom: 10px;
+        }
+
+        &-text {
+            display: block;
+            margin-bottom: 13px;
+            font-size: to-rem(13px);
+            line-height: to-rem(22px);
+            font-weight: 400;
+        }
+
+        &-btn-wrap {
+            display: block;
+        }
+
+        &-btn.btn {
+            @extend %btn;
+            @extend %btn-primary;
+            transition: background-color .5s ease, border-color .5s ease, color .5s ease;
+        }
+    }
+
+    @each $key, $color in $nav-item-accents {
+        &__item-wrap[data-key="#{$key}"] {
+
+            .services__item-icon {
+                background-color: $color;
+            }
+
+            .services__item-btn.btn {
+                background-color: $color;
+                border-color: $color;
+            }
+
+            &:hover {
+                background-color: $color;
+
+                .services__item-icon {
+                    background-color: #fff;
+                    color: $color;
+                }
+
+                .services__item-btn.btn {
+                    background-color: #fff;
+                    border-color: #fff;
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    &__cta-mobile {
+        text-align: center;
+        margin: 30px auto -70px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include respond-to(sm) {
+            display: none;
+        }
+    }
+}
