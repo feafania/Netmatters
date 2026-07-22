@@ -1,0 +1,30 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+@each $name, $color in $banner-btn-colors {
+    .btn--#{$name} {
+        color: $color-btn;
+        background-color: $color;
+        border-color: $color;
+
+        &:hover,
+        &:focus,
+        &.active,
+        &:active {
+            color: white;
+            background-color: darken($color, 8%);
+            border-color: darken($color, 12%);
+        }
+    }
+}
+
+.btn--lg.btn {
+    @extend %btn;
+    margin-top: 1.938rem;
+    margin-bottom: 1.125rem;
+    i {
+        @include float(right);
+        margin-right: -4px;
+        margin-left: 12px
+    }
+}

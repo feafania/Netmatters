@@ -115,6 +115,11 @@ h6, .h6 {
     @extend %heading-spacing-small;
 }
 
+p {
+    line-height: 1.875rem;
+    margin: 0 0 25px;
+}
+
 .small, small {
     font-size: 85%;
 }

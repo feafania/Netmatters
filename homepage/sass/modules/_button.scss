@@ -70,6 +70,21 @@
 
     }
 
+    & > em, & > i {
+        line-height: 35px;
+        font-style: normal;
+    }
+
+    &.btn--lg {
+        height: auto;
+        padding: 5px 20px;
+        font-size: 1.25rem;
+
+        &, & > em, & > i {
+            line-height: 50px;
+        }
+    }
+
     &.active:focus,
     &:active:focus,
     &:focus {
