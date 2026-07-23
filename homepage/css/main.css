@@ -90,9 +90,7 @@ button, input, optgroup, select, textarea {
   border-color: #333645;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3, h4, .h4, h5, .h5,
+.h1, h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
 h6, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -106,17 +104,10 @@ h6, .h6 {
   margin-bottom: 10px;
 }
 
-h2, .h2, h4, .h4 {
+h2, .h2, h3, .h3, h4, .h4 {
   font-weight: 400;
   margin: 0 0 15px;
   color: #333645;
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 *,
@@ -176,13 +167,6 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .h1, h1 {
   font-size: 2.25rem;
   font-weight: 400;
@@ -191,7 +175,11 @@ h3, .h3 {
 }
 
 h2, .h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
+}
+
+h3, .h3 {
+  font-size: 1.625rem;
 }
 
 h4, .h4 {
@@ -1616,10 +1604,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   padding-left: 15px;
   padding-right: 15px;
 }
+.services__cta-mobile a {
+  font-weight: 600;
+  color: #333645;
+}
+.services__cta-mobile [class^=icon-] {
+  font-style: normal;
+}
 @media (min-width: 768px) {
   .services__cta-mobile {
     display: none;
   }
+}
+
+.logo-strip {
+  padding: 50px 0;
+  text-align: center;
+}
+.logo-strip--clients {
+  overflow: visible;
+}
+.logo-strip--partners {
+  overflow: hidden;
+}
+.logo-strip__list {
+  width: 100%;
+  transition: 0.25s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo-strip__item {
+  flex: 0 0 auto;
+  margin-right: 50px;
 }
 
 .btn {
@@ -1923,6 +1941,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   float: right;
   margin-right: -4px;
   margin-left: 12px;
+}
+
+.logo-card {
+  padding: 0 20px;
+  max-height: 70px;
+  height: 70px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.logo-card__picture--colour {
+  display: none;
+}
+.logo-card__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+.logo-card:hover .logo-card__picture--grey {
+  display: none;
+}
+.logo-card:hover .logo-card__picture--colour {
+  display: inline;
 }
 
 .is-hidden {

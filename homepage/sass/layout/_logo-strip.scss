@@ -1,0 +1,29 @@
+@use "../abstracts/index" as *;
+
+.logo-strip {
+    padding: 50px 0;
+    text-align: center;
+
+    &--clients {
+        overflow: visible;
+    }
+
+    &--partners {
+        overflow: hidden;
+    }
+
+    &__list {
+        width: 100%;
+        transition: 0.25s;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        flex: 0 0 auto;
+        margin-right: 50px;
+    }
+}

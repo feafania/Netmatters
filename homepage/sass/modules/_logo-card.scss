@@ -1,0 +1,33 @@
+@use "../abstracts/index" as *;
+
+.logo-card {
+    padding: 0 20px;
+    max-height: 70px;
+    height: 70px;
+    width: auto;
+    display: flex;
+    align-items: center;
+
+    &__picture--colour {
+        display: none;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+
+        display: block;
+        width: 100%;
+        transform-style: preserve-3d;
+    }
+
+    &:hover {
+        .logo-card__picture--grey {
+            display: none;
+        }
+
+        .logo-card__picture--colour {
+            display: inline;
+        }
+    }
+}
