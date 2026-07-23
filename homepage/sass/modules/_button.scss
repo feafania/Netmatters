@@ -70,6 +70,50 @@
 
     }
 
+    &--inverse {
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 1.25rem;
+        color: $color-btn;
+        background-color: #272936;
+        border-color: #272936;
+
+        &:hover, &:focus, &.active, &:active {
+            color: $color-btn;
+            background-color: #121318;
+            border-color: #121318;
+        }
+    }
+
+    &--google {
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 1.25rem;
+        border: none;
+        color: $color-btn;
+        background-color: #4387f6;
+
+        &:hover {
+            background-color: darken(#4387f6, 10%);
+        }
+    }
+
+    &--trustpilot {
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 1.25rem;
+        border: none;
+        display: inline-flex;
+        white-space: nowrap;
+        max-width: fit-content;
+        color: $color-btn;
+        background-color: #00b67b;
+
+        &:hover {
+            background-color: darken(#00b67b, 8%);
+        }
+    }
+
     & > em, & > i {
         line-height: 35px;
         font-style: normal;

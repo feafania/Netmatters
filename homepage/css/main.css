@@ -1698,6 +1698,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .btn--special.active {
   background-image: none;
 }
+.btn--inverse {
+  border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  color: white;
+  background-color: #272936;
+  border-color: #272936;
+}
+.btn--inverse:hover, .btn--inverse:focus, .btn--inverse.active, .btn--inverse:active {
+  color: white;
+  background-color: #121318;
+  border-color: #121318;
+}
+.btn--google {
+  border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  border: none;
+  color: white;
+  background-color: #4387f6;
+}
+.btn--google:hover {
+  background-color: rgb(18.3299492386, 103.9340101523, 243.6700507614);
+}
+.btn--trustpilot {
+  border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  border: none;
+  display: inline-flex;
+  white-space: nowrap;
+  max-width: fit-content;
+  color: white;
+  background-color: #00b67b;
+}
+.btn--trustpilot:hover {
+  background-color: rgb(0, 141.2, 95.4263736264);
+}
 .btn > em, .btn > i {
   line-height: 35px;
   font-style: normal;
