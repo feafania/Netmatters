@@ -179,6 +179,15 @@
         padding-left: 15px;
         padding-right: 15px;
 
+        a {
+            font-weight: 600;
+            color: #333645;
+        }
+
+        [class^="icon-"] {
+            font-style: normal;
+        }
+
         @include respond-to(sm) {
             display: none;
         }
