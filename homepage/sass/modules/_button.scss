@@ -19,7 +19,7 @@
     user-select: none;
 
     &:focus, &:hover {
-        color: #fff;
+        color: $color-btn;
         text-decoration: none;
     }
 
@@ -32,7 +32,7 @@
     &--primary {
         @extend %btn-primary;
         &.active, &:active, &:focus, &:hover {
-            color: #fff;
+            color: $color-btn;
             background-color: #22242e;
             border-color: #191a22;
         }
@@ -48,19 +48,19 @@
         border-color: $color-btn-default-bg;
 
         &.active, &:active, &:focus, &:hover {
-            color: #fff;
+            color: $color-btn;
             background-color: #84858f;
             border-color: #797a85;
         }
     }
 
-    &--special {
+    &--it {
         color: $color-btn;
-        background-color: $color-btn-special-bg;
-        border-color: $color-btn-special-bg;
+        background-color: $color-btn-it-bg;
+        border-color: $color-btn-it-bg;
 
         &.active, &:focus, &:hover {
-            color: #fff;
+            color: $color-btn;
             background-color: #2a6ec6;
             border-color: #2665b5;
         }
@@ -71,46 +71,34 @@
     }
 
     &--inverse {
-        border-radius: 6px;
-        padding: 10px 30px;
-        font-size: 1.25rem;
         color: $color-btn;
         background-color: #272936;
-        border-color: #272936;
 
         &:hover, &:focus, &.active, &:active {
             color: $color-btn;
             background-color: #121318;
-            border-color: #121318;
         }
     }
 
     &--google {
-        border-radius: 6px;
-        padding: 10px 30px;
-        font-size: 1.25rem;
         border: none;
         color: $color-btn;
         background-color: #4387f6;
 
         &:hover {
-            background-color: darken(#4387f6, 10%);
+            background-color: #166af4;
         }
     }
 
     &--trustpilot {
-        border-radius: 6px;
-        padding: 10px 30px;
-        font-size: 1.25rem;
         border: none;
-        display: inline-flex;
         white-space: nowrap;
         max-width: fit-content;
         color: $color-btn;
         background-color: #00b67b;
 
         &:hover {
-            background-color: darken(#00b67b, 8%);
+            background-color: #009b69;
         }
     }
 

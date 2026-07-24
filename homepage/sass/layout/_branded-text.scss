@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+@use "sass:map";
 
 .branded-text {
     background-color: #333645;
@@ -6,16 +7,16 @@
     padding: 50px 0;
 
     a:not(.btn) {
+        @extend %font-strong;
         color: #fff;
-        font-weight: 600;
-
-        &:hover {
-            color: #fff;
-        }
     }
 
     strong {
-        color: #fff;
+        @extend %font-strong;
+    }
+
+    em {
+        font-style: italic;
     }
 
     &__row {
@@ -27,7 +28,11 @@
     &__col {
         @extend %grid-base;
         width: 100%;
-        margin-bottom: 40px;
+        max-width: 100%;
+
+        flex: 0 0 auto;
+
+        margin-bottom: 50px;
 
         @include respond-to(md) {
             width: 50%;
@@ -41,31 +46,47 @@
         color: #fff;
     }
 
-    &__intro {
-        margin-bottom: 25px;
+    .btn {
+        @extend %btn;
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 20px;
+        em {
+            @extend %icon-right;
+            @include float(right)
+        }
     }
 
-    &__actions {
-        @extend %flex-wrap;
-        gap: 15px;
+    &__actions .btn--inverse {
 
-        @include respond-to(md, null, max) {
-            flex-direction: column;
+        &:not(:last-child) {
+            margin-bottom: 17px;
+
+            @include respond-to(536px,map.get($bps,md)-1px,between) {
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+
+            @include respond-to(lg) {
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
         }
     }
 
     &__stars {
+        display: inline-block;
         color: orange;
         font-size: 50px;
         margin-bottom: 25px;
 
-        .fa {
-            margin-right: 4px;
+        span {
+            margin-right: 4.67px;
         }
     }
 
     &__quote {
-        margin: 0 0 20px;
+        margin: 0 0 25px;
         padding: 0;
         border: none;
 
@@ -73,10 +94,10 @@
             font-weight: 600;
             font-size: 1.3rem;
             font-style: italic;
-            margin-bottom: 10px;
         }
 
         &-author {
+            line-height: 1.875rem;
             font-weight: 600;
             font-style: normal;
             color: #a3a8ac;
@@ -84,14 +105,21 @@
 
             a {
                 color: #a3a8ac;
-                text-decoration: underline;
             }
         }
     }
 
     &__reviews {
-        @extend %flex-wrap;
-        gap: 15px;
-        margin-top: 25px;
+        > * {
+            margin-top: 20px;
+
+            @include respond-to(lg) {
+                margin-top: 20px;
+            }
+        }
+
+        .btn--google {
+            margin-right: 8px;
+        }
     }
 }
