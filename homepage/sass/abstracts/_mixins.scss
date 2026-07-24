@@ -85,4 +85,14 @@
     }
 }
 
+@mixin view-all {
+    text-align: center;
 
+    a {
+        @extend %font-strong;
+    }
+
+    @include respond-to(sm) {
+        display: none;
+    }
+}
