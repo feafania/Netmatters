@@ -624,7 +624,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     margin-bottom: 0;
   }
 }
-.footer__social-link {
+.footer__social-link.btn--primary {
   text-align: center;
   text-decoration: none;
   font-size: 26px;
@@ -632,139 +632,138 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   padding: 12px 22px 16px;
   background-color: #212330;
   margin-right: 7px;
-  color: white;
 }
 @media (max-width: 480px) {
-  .footer__social-link {
+  .footer__social-link.btn--primary {
     width: 35%;
   }
 }
 @media (max-width: 1259px) {
-  .footer__social-link {
+  .footer__social-link.btn--primary {
     padding: 12px 22px 16px;
     margin-right: 10px;
     margin-bottom: 10px;
   }
 }
-.footer__social-link span {
+.footer__social-link.btn--primary span {
   position: relative;
   top: 4px;
 }
-.footer__social-link[data-key=software] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=software] .main-navigation__link-icon {
   color: #67809f;
 }
-.footer__social-link[data-key=software] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=software] .main-navigation__sub-menu {
   background-color: #526781;
 }
-.footer__social-link[data-key=software]:hover {
+.footer__social-link.btn--primary[data-key=software]:hover {
   background-color: #67809f;
 }
-.footer__social-link[data-key=software]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=software]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=software]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=software]:hover .main-navigation__link::before {
   border-top-color: #67809f;
 }
-.footer__social-link[data-key=it] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=it] .main-navigation__link-icon {
   color: #4183d7;
 }
-.footer__social-link[data-key=it] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=it] .main-navigation__sub-menu {
   background-color: #286abd;
 }
-.footer__social-link[data-key=it]:hover {
+.footer__social-link.btn--primary[data-key=it]:hover {
   background-color: #4183d7;
 }
-.footer__social-link[data-key=it]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=it]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=it]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=it]:hover .main-navigation__link::before {
   border-top-color: #4183d7;
 }
-.footer__social-link[data-key=digital] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=digital] .main-navigation__link-icon {
   color: #2ecc71;
 }
-.footer__social-link[data-key=digital] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=digital] .main-navigation__sub-menu {
   background-color: #25a25a;
 }
-.footer__social-link[data-key=digital]:hover {
+.footer__social-link.btn--primary[data-key=digital]:hover {
   background-color: #2ecc71;
 }
-.footer__social-link[data-key=digital]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=digital]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=digital]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=digital]:hover .main-navigation__link::before {
   border-top-color: #2ecc71;
 }
-.footer__social-link[data-key=telecoms] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=telecoms] .main-navigation__link-icon {
   color: #d64541;
 }
-.footer__social-link[data-key=telecoms] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=telecoms] .main-navigation__sub-menu {
   background-color: #bc2c28;
 }
-.footer__social-link[data-key=telecoms]:hover {
+.footer__social-link.btn--primary[data-key=telecoms]:hover {
   background-color: #d64541;
 }
-.footer__social-link[data-key=telecoms]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=telecoms]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=telecoms]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=telecoms]:hover .main-navigation__link::before {
   border-top-color: #d64541;
 }
-.footer__social-link[data-key=web] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=web] .main-navigation__link-icon {
   color: #926fb1;
 }
-.footer__social-link[data-key=web] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=web] .main-navigation__sub-menu {
   background-color: #79539a;
 }
-.footer__social-link[data-key=web]:hover {
+.footer__social-link.btn--primary[data-key=web]:hover {
   background-color: #926fb1;
 }
-.footer__social-link[data-key=web]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=web]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=web]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=web]:hover .main-navigation__link::before {
   border-top-color: #926fb1;
 }
-.footer__social-link[data-key=security] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=security] .main-navigation__link-icon {
   color: #f62459;
 }
-.footer__social-link[data-key=security] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=security] .main-navigation__sub-menu {
   background-color: #de093f;
 }
-.footer__social-link[data-key=security]:hover {
+.footer__social-link.btn--primary[data-key=security]:hover {
   background-color: #f62459;
 }
-.footer__social-link[data-key=security]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=security]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=security]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=security]:hover .main-navigation__link::before {
   border-top-color: #f62459;
 }
-.footer__social-link[data-key=developer-course] .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=developer-course] .main-navigation__link-icon {
   color: #ce4125;
 }
-.footer__social-link[data-key=developer-course] .main-navigation__sub-menu {
+.footer__social-link.btn--primary[data-key=developer-course] .main-navigation__sub-menu {
   background-color: #a3331d;
 }
-.footer__social-link[data-key=developer-course]:hover {
+.footer__social-link.btn--primary[data-key=developer-course]:hover {
   background-color: #ce4125;
 }
-.footer__social-link[data-key=developer-course]:hover .main-navigation__link-icon {
+.footer__social-link.btn--primary[data-key=developer-course]:hover .main-navigation__link-icon {
   color: white;
 }
-.footer__social-link[data-key=developer-course]:hover .main-navigation__link::before {
+.footer__social-link.btn--primary[data-key=developer-course]:hover .main-navigation__link::before {
   border-top-color: #ce4125;
 }
-.footer__social-link[data-key=facebook]:hover {
+.footer__social-link.btn--primary[data-key=facebook]:hover {
   background-color: #3b5998;
 }
-.footer__social-link[data-key=twitter]:hover {
+.footer__social-link.btn--primary[data-key=twitter]:hover {
   background-color: #00aced;
 }
-.footer__social-link[data-key=instagram]:hover {
+.footer__social-link.btn--primary[data-key=instagram]:hover {
   background-color: #d93175;
 }
-.footer__social-link[data-key=linkedin]:hover {
+.footer__social-link.btn--primary[data-key=linkedin]:hover {
   background-color: #0077b5;
 }
 .footer__columns {
