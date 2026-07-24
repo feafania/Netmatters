@@ -1,0 +1,239 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+.latest-news {
+    &__bar {
+        padding-top: 50px;
+    }
+
+    &__heading-row {
+        @extend %clearfix;
+        @extend %clear-float;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+
+        @include respond-to(sm) {
+            @include float(left);
+        }
+    }
+
+    &__view-all {
+        margin: 0;
+
+        @include hidden-at(xs, max);
+
+        @include respond-to(sm) {
+            @include float(right);
+            margin-left: 20px;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+
+            em {
+                @extend %icon-right;
+                font-style: normal;
+            }
+        }
+    }
+
+    &__body {
+        padding-top: 15px;
+        padding-bottom: 50px;
+    }
+
+    &__grid {
+        @extend %flex-wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__col {
+        @extend %grid-base;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @include respond-to(sm) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @include respond-to(lg) {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        @include respond-to(sm, md, between) {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    &__card {
+        position: relative;
+        top: 0;
+        margin-top: 30px;
+        font-size: to-rem(13px);
+        transition: .5s ease;
+
+        &:hover {
+            top: -10px;
+        }
+    }
+
+    &__card-link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+    &__media {
+        position: relative;
+    }
+
+    &__category {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        z-index: 1;
+
+        color: #fff;
+        font-size: to-rem(12px);
+        text-transform: uppercase;
+        padding: 0 10px;
+        line-height: to-rem(23px);
+        background-color: $color-nav-bg;
+    }
+
+    &__image {
+        display: block;
+        border-radius: 3px 3px 0 0;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform .25s cubic-bezier(.215, .61, .355, 1);
+        }
+    }
+
+    &__content {
+        display: block;
+        border: 1px solid #ccc;
+        border-top: 0;
+        border-radius: 0 0 3px 3px;
+        padding: 30px;
+        box-shadow: 0 3px 35px rgba(black, .1);
+    }
+
+    &__heading {
+        font-size: 1rem;
+        line-height: to-rem(24px);
+        margin: 0 0 11px;
+
+        @include respond-to(sm) {
+            min-height: 3rem;
+        }
+
+        a {
+            font-weight: 600;
+            color: $color-link;
+        }
+    }
+
+    &__excerpt {
+        font-size: to-rem(13px);
+        line-height: to-rem(22px);
+        margin: 0 0 13px;
+
+        @include respond-to(sm, md, between) {
+            min-height: 66px;
+        }
+    }
+
+    &__btn.btn {
+        @extend %btn;
+        @extend %btn-primary;
+        font-weight: 400;
+    }
+
+    @each $key, $color in $nav-item-accents {
+        &__card--#{$key} {
+
+            .latest-news__category {
+                background-color: $color;
+            }
+
+            .latest-news__btn.btn {
+                background-color: $color;
+                border-color: $color;
+
+                &.active, &:active, &:focus, &:hover {
+                    color: #fff;
+                    background-color: darken($color, 8%);
+                    border-color: darken($color, 12%);
+                }
+            }
+
+            .latest-news__heading a:hover {
+                color: $color;
+            }
+        }
+    }
+
+    &__meta {
+        display: table;
+        width: 100%;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #ccc;
+        font-size: to-rem(14px);
+    }
+
+    &__avatar {
+        display: table-cell;
+        vertical-align: middle;
+        width: 1%;
+
+        img {
+            display: block;
+            max-width: 47px;
+            border-radius: 50%;
+        }
+    }
+
+    &__meta-details {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 20px;
+        line-height: to-rem(22px);
+    }
+
+    &__author {
+        display: block;
+        color: $color-link;
+        font-weight: 700;
+    }
+
+    &__date {
+        display: block;
+    }
+
+    &__view-all-mobile {
+        text-align: center;
+
+        a {
+            font-weight: 600;
+            color: $color-link;
+        }
+
+        @include respond-to(sm) {
+            display: none;
+        }
+    }
+}
