@@ -151,11 +151,6 @@
                 background-color: $color;
             }
 
-            .services__item-btn.btn {
-                background-color: $color;
-                border-color: $color;
-            }
-
             &:hover {
                 background-color: $color;
 
@@ -173,23 +168,21 @@
         }
     }
 
+    @each $key, $color in $btn-accents {
+        &__item-wrap[data-key="#{$key}"] {
+
+            .services__item-btn.btn {
+                background-color: $color;
+                border-color: $color;
+            }
+        }
+    }
+
     &__cta-mobile {
-        text-align: center;
         margin: 30px auto -70px;
         padding-left: 15px;
         padding-right: 15px;
 
-        a {
-            font-weight: 600;
-            color: #333645;
-        }
-
-        [class^="icon-"] {
-            font-style: normal;
-        }
-
-        @include respond-to(sm) {
-            display: none;
-        }
+        @include view-all;
     }
 }
