@@ -12,22 +12,24 @@
     }
 
     &--tablet {
-        @include hidden-at(xs,max);
+        display: none;
+        @include respond-to(sm) {
+            display: block;
+        };
 
         > .search-input {
-            width: 300px;
+            width: 174px;
+            display: inline-block;
             height: 56px;
-            display: none;
+            border-radius: 0;
 
-            @include respond-to(sm, null, max) {
-                display: inline-block;
-                border-radius: 0;
-                width: 174px;
+            @include respond-to(md, lg, between) {
+                display: none;
+                width: 300px;
             }
 
             @include respond-to(lg) {
                 display: inline-block;
-                border-radius: 0;
                 width: 240px;
             }
         }

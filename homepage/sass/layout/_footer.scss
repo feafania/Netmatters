@@ -28,16 +28,17 @@
     &__company-info {
         display: flex;
         justify-content: space-between;
-        width: 300px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @include respond-to(md) {
+            width: 300px;
+        }
 
         @include respond-to(lg) {
             width: 400px;
         }
 
-        @include respond-to(xs, null, max) {
-            width: 100%;
-            flex-wrap: wrap;
-        }
     }
 
     &__social-menu {
@@ -79,26 +80,23 @@
     }
 
     &__social-link.btn--primary {
+        width: 35%;
         text-align: center;
         text-decoration: none;
         font-size: 26px;
         line-height: 26px;
         padding: 12px 22px 16px;
         background-color: #212330;
-        margin-right: 7px;
+        margin-right: 10px;
+        margin-bottom: 10px;
 
-        :hover {
-
+        @include respond-to(#{$bps-xxs + 1px}) {
+            width: auto;
         }
 
-        @include respond-to($bps-xxs, null, max) {
-            width: 35%;
-        }
-
-        @include respond-to(md, null, max) {
-            padding: 12px 22px 16px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+        @include respond-to(lg) {
+            margin-right: 7px;
+            margin-bottom: 0;
         }
 
         span {
@@ -226,15 +224,6 @@
 
         @include respond-to(sm) {
             flex-direction: row;
-        }
-
-        span {
-            margin-left: 10px;
-            margin-right: 10px;
-
-            @include respond-to(sm, null, max) {
-                display: none;
-            }
         }
     }
 

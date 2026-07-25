@@ -72,10 +72,10 @@
             height: 0;
             border-color: #007bff transparent transparent;
             border-style: solid;
-            border-width: 35px 83.5px 0;
+            border-width: 17px 68px 0;
 
-            @include respond-to(md, null, "max") {
-                border-width: 17px 68px 0;
+            @include respond-to(md) {
+                border-width: 35px 83.5px 0;
             }
         }
     }
