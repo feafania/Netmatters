@@ -34,7 +34,7 @@ a {
   background: transparent;
 }
 
-.main-navigation__sub-link-icon-wrap, .header__row-group-actions .btn [class^=icon-] {
+.header__row-group-actions .btn [class^=icon-] {
   margin-right: 5px;
 }
 
@@ -173,6 +173,10 @@ label {
 ol, ul {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+ol ol, ol ul, ul ol, ul ul {
+  margin-bottom: 0;
 }
 
 .h1, h1 {
@@ -980,7 +984,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=software]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=software]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=software]:hover a::before {
   border-top-color: #67809f;
 }
 .main-navigation__item[data-key=it] .main-navigation__link-icon {
@@ -995,7 +999,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=it]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=it]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=it]:hover a::before {
   border-top-color: #4183d7;
 }
 .main-navigation__item[data-key=digital] .main-navigation__link-icon {
@@ -1010,7 +1014,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=digital]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=digital]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=digital]:hover a::before {
   border-top-color: #2ecc71;
 }
 .main-navigation__item[data-key=telecoms] .main-navigation__link-icon {
@@ -1025,7 +1029,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=telecoms]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=telecoms]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=telecoms]:hover a::before {
   border-top-color: #d64541;
 }
 .main-navigation__item[data-key=web] .main-navigation__link-icon {
@@ -1040,7 +1044,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=web]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=web]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=web]:hover a::before {
   border-top-color: #926fb1;
 }
 .main-navigation__item[data-key=security] .main-navigation__link-icon {
@@ -1055,7 +1059,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=security]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=security]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=security]:hover a::before {
   border-top-color: #f62459;
 }
 .main-navigation__item[data-key=developer-course] .main-navigation__link-icon {
@@ -1070,7 +1074,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item[data-key=developer-course]:hover .main-navigation__link-icon {
   color: white;
 }
-.main-navigation__item[data-key=developer-course]:hover .main-navigation__link::before {
+.main-navigation__item[data-key=developer-course]:hover a::before {
   border-top-color: #ce4125;
 }
 .main-navigation__item:hover > .main-navigation__sub-menu, .main-navigation__item.is-active > .main-navigation__sub-menu {
@@ -1092,7 +1096,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   border-style: solid;
   border-width: 17px 68px 0;
 }
-@media (min-width: 992px) {
+@media (min-width: 1260px) {
   .main-navigation__item:hover > .main-navigation__link::before {
     border-width: 35px 83.5px 0;
   }
@@ -1120,17 +1124,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
   font-size: 0.625rem;
   padding-bottom: 1px;
-}
-.main-navigation__sub-link {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-.main-navigation__sub-link:hover {
-  text-decoration: none;
-}
-.main-navigation__sub-link:hover .main-navigation__sub-link-text {
-  text-decoration: underline;
 }
 .main-navigation__sub-menu {
   margin: 0;
@@ -1166,17 +1159,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: flex;
   align-items: center;
   color: white;
+  font-size: 1.2rem;
+  line-height: 1.313rem;
+  padding: 0.625rem 0.938rem 0.625rem 0;
+}
+.main-navigation__sub-link:hover {
+  text-decoration: none;
+  color: white;
+}
+.main-navigation__sub-link:hover .main-navigation__sub-link-text {
+  text-decoration: underline;
 }
 .main-navigation__sub-link-icon-wrap {
-  display: inline-flex;
+  display: flex;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
+  min-width: 25px;
+}
+.main-navigation__sub-link-icon-wrap :hover {
+  text-decoration: none;
 }
 .main-navigation__sub-link-icon {
   font-size: 1.125rem;
-}
-.main-navigation__sub-link-text {
-  font-size: 0.9375rem;
 }
 
 .banner-slider {
