@@ -63,6 +63,11 @@
                 display: none;
             }
         }
+
+        a:not(.btn), strong:not(.btn) {
+            @extend %font-strong;
+            color: #333645;
+        }
     }
 
 

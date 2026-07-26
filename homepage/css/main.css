@@ -110,7 +110,7 @@ h2, .h2, h3, .h3, h4, .h4 {
   color: #333645;
 }
 
-.latest-news strong, .latest-news__view-all a, .latest-news__view-all-mobile a, .branded-text a:not(.btn), .branded-text strong, .services__cta-mobile a, label {
+.latest-news strong, .latest-news__view-all a, .latest-news__col a:not(.btn), .latest-news__col strong:not(.btn), .latest-news__view-all-mobile a, .branded-text a:not(.btn), .branded-text strong, .services__cta-mobile a, label {
   font-weight: 600;
 }
 
@@ -1776,6 +1776,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: none;
   }
 }
+.latest-news__col a:not(.btn), .latest-news__col strong:not(.btn) {
+  color: #333645;
+}
 .latest-news__view-all-mobile {
   margin-bottom: 20px;
   text-align: center;
@@ -2157,117 +2160,123 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   inset: 0;
   z-index: 1;
 }
-.news__card__card--software .news__category {
+.news__card--software .news__category {
   background-color: #67809f;
 }
-.news__card__card--software .news__btn.btn.active, .news__card__card--software .news__btn.btn:active, .news__card__card--software .news__btn.btn:focus, .news__card__card--software .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(85.6258064516, 107.9241935484, 135.5741935484);
-  border-color: rgb(77.7290322581, 97.9709677419, 123.0709677419);
-}
-.news__card__card--software .news__heading a:hover {
+.news__card--software .news__heading a {
   color: #67809f;
 }
-.news__card__card--it .news__category {
+.news__card--it .news__category {
   background-color: #4183d7;
 }
-.news__card__card--it .news__btn.btn.active, .news__card__card--it .news__btn.btn:active, .news__card__card--it .news__btn.btn:focus, .news__card__card--it .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(41.6, 110.24, 197.6);
-  border-color: rgb(38.052173913, 100.8382608696, 180.747826087);
-}
-.news__card__card--it .news__heading a:hover {
+.news__card--it .news__heading a {
   color: #4183d7;
 }
-.news__card__card--digital .news__category {
+.news__card--digital .news__category {
   background-color: #2ecc71;
 }
-.news__card__card--digital .news__btn.btn.active, .news__card__card--digital .news__btn.btn:active, .news__card__card--digital .news__btn.btn:focus, .news__card__card--digital .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(38.4928, 170.7072, 94.5584);
-  border-color: rgb(34.7392, 154.0608, 85.3376);
-}
-.news__card__card--digital .news__heading a:hover {
+.news__card--digital .news__heading a {
   color: #2ecc71;
 }
-.news__card__card--telecoms .news__category {
+.news__card--telecoms .news__category {
   background-color: #d64541;
 }
-.news__card__card--telecoms .news__btn.btn.active, .news__card__card--telecoms .news__btn.btn:active, .news__card__card--telecoms .news__btn.btn:focus, .news__card__card--telecoms .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(195.9220779221, 46.4025974026, 42.2779220779);
-  border-color: rgb(179.1428571429, 42.4285714286, 38.6571428571);
-}
-.news__card__card--telecoms .news__heading a:hover {
+.news__card--telecoms .news__heading a {
   color: #d64541;
 }
-.news__card__card--web .news__category {
+.news__card--web .news__category {
   background-color: #926fb1;
 }
-.news__card__card--web .news__btn.btn.active, .news__card__card--web .news__btn.btn:active, .news__card__card--web .news__btn.btn:focus, .news__card__card--web .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(125.827027027, 86.8540540541, 160.3459459459);
-  border-color: rgb(115.4432432432, 79.6864864865, 147.1135135135);
-}
-.news__card__card--web .news__heading a:hover {
+.news__card--web .news__heading a {
   color: #926fb1;
 }
-.news__card__card--security .news__category {
+.news__card--security .news__category {
   background-color: #f62459;
 }
-.news__card__card--security .news__btn.btn.active, .news__card__card--security .news__btn.btn:active, .news__card__card--security .news__btn.btn:focus, .news__card__card--security .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(231.6789473684, 9.5210526316, 65.5894736842);
-  border-color: rgb(212.0842105263, 8.7157894737, 60.0421052632);
-}
-.news__card__card--security .news__heading a:hover {
+.news__card--security .news__heading a {
   color: #f62459;
 }
-.news__card__card--developer-course .news__category {
+.news__card--developer-course .news__category {
   background-color: #ce4125;
 }
-.news__card__card--developer-course .news__btn.btn.active, .news__card__card--developer-course .news__btn.btn:active, .news__card__card--developer-course .news__btn.btn:focus, .news__card__card--developer-course .news__btn.btn:hover {
-  color: #fff;
-  background-color: rgb(171.412345679, 54.0864197531, 30.787654321);
-  border-color: rgb(154.1185185185, 48.6296296296, 27.6814814815);
-}
-.news__card__card--developer-course .news__heading a:hover {
+.news__card--developer-course .news__heading a {
   color: #ce4125;
 }
-.news__card__card--software .news__btn.btn {
+.news__card--software .news__btn.btn {
   background-color: #f7b322;
   border-color: #f7b322;
 }
-.news__card__card--it .news__btn.btn {
+.news__card--it .news__btn.btn {
   background-color: #4183d7;
   border-color: #4183d7;
 }
-.news__card__card--digital .news__btn.btn {
+.news__card--digital .news__btn.btn {
   background-color: #2ecc71;
   border-color: #2ecc71;
 }
-.news__card__card--telecoms .news__btn.btn {
+.news__card--telecoms .news__btn.btn {
   background-color: #d64541;
   border-color: #d64541;
 }
-.news__card__card--web .news__btn.btn {
+.news__card--web .news__btn.btn {
   background-color: #926fb1;
   border-color: #926fb1;
 }
-.news__card__card--security .news__btn.btn {
+.news__card--security .news__btn.btn {
   background-color: #f62459;
   border-color: #f62459;
 }
-.news__card__card--developer-course .news__btn.btn {
+.news__card--developer-course .news__btn.btn {
   background-color: #ce4125;
   border-color: #ce4125;
+}
+.news__card--software .news__btn.btn.active, .news__card--software .news__btn.btn:active, .news__card--software .news__btn.btn:focus, .news__card--software .news__btn.btn:hover {
+  background-color: #e8a008;
+}
+.news__card--it .news__btn.btn.active, .news__card--it .news__btn.btn:active, .news__card--it .news__btn.btn:focus, .news__card--it .news__btn.btn:hover {
+  background-color: #2a6ec6;
+}
+.news__card--digital .news__btn.btn.active, .news__card--digital .news__btn.btn:active, .news__card--digital .news__btn.btn:focus, .news__card--digital .news__btn.btn:hover {
+  background-color: #26ab5f;
+}
+.news__card--telecoms .news__btn.btn.active, .news__card--telecoms .news__btn.btn:active, .news__card--telecoms .news__btn.btn:focus, .news__card--telecoms .news__btn.btn:hover {
+  background-color: #c42e2a;
+}
+.news__card--web .news__btn.btn.active, .news__card--web .news__btn.btn:active, .news__card--web .news__btn.btn:focus, .news__card--web .news__btn.btn:hover {
+  background-color: #7e57a0;
+}
+.news__card--security .news__btn.btn.active, .news__card--security .news__btn.btn:active, .news__card--security .news__btn.btn:focus, .news__card--security .news__btn.btn:hover {
+  background-color: #e80a42;
+}
+.news__card--developer-course .news__btn.btn.active, .news__card--developer-course .news__btn.btn:active, .news__card--developer-course .news__btn.btn:focus, .news__card--developer-course .news__btn.btn:hover {
+  background-color: #ab361f;
+}
+.news__card--software .news__btn.btn.active, .news__card--software .news__btn.btn:active, .news__card--software .news__btn.btn:focus, .news__card--software .news__btn.btn:hover {
+  border-color: #d49308;
+}
+.news__card--it .news__btn.btn.active, .news__card--it .news__btn.btn:active, .news__card--it .news__btn.btn:focus, .news__card--it .news__btn.btn:hover {
+  border-color: #2665b5;
+}
+.news__card--digital .news__btn.btn.active, .news__card--digital .news__btn.btn:active, .news__card--digital .news__btn.btn:focus, .news__card--digital .news__btn.btn:hover {
+  border-color: #239a55;
+}
+.news__card--telecoms .news__btn.btn.active, .news__card--telecoms .news__btn.btn:active, .news__card--telecoms .news__btn.btn:focus, .news__card--telecoms .news__btn.btn:hover {
+  border-color: #b32a27;
+}
+.news__card--web .news__btn.btn.active, .news__card--web .news__btn.btn:active, .news__card--web .news__btn.btn:focus, .news__card--web .news__btn.btn:hover {
+  border-color: #735093;
+}
+.news__card--security .news__btn.btn.active, .news__card--security .news__btn.btn:active, .news__card--security .news__btn.btn:focus, .news__card--security .news__btn.btn:hover {
+  border-color: #d4093c;
+}
+.news__card--developer-course .news__btn.btn.active, .news__card--developer-course .news__btn.btn:active, .news__card--developer-course .news__btn.btn:focus, .news__card--developer-course .news__btn.btn:hover {
+  border-color: #9a311c;
 }
 
 .news__media {
   position: relative;
 }
-
-.news__category {
+.news__media a.news__category {
   position: absolute;
   top: 10px;
   right: 0;
@@ -2277,16 +2286,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   text-transform: uppercase;
   padding: 0 10px;
   line-height: 1.4375rem;
-  background-color: #333645;
 }
 
 .news__image {
   display: block;
   border-radius: 3px 3px 0 0;
-  overflow: hidden;
 }
 .news__image img {
   display: block;
+  max-width: 100%;
   width: 100%;
   height: auto;
   transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -2304,7 +2312,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__heading {
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 0 0 11px;
 }
 @media (min-width: 768px) {
   .news__heading {
@@ -2319,9 +2326,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__excerpt {
   font-size: 0.8125rem;
   line-height: 1.375rem;
-  margin: 0 0 13px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1259px) {
   .news__excerpt {
     min-height: 66px;
   }
@@ -2344,6 +2350,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: table-cell;
   vertical-align: middle;
   width: 1%;
+  overflow: hidden;
 }
 .news__avatar img {
   display: block;
@@ -2358,13 +2365,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   line-height: 1.375rem;
 }
 
-.news__author {
-  display: block;
-  color: #333645;
-  font-weight: 700;
-}
-
-.news__date {
+.news__author, .news__date {
   display: block;
 }
 

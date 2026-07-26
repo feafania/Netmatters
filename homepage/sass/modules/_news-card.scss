@@ -19,22 +19,13 @@
     }
 
     @each $key, $color in $nav-item-accents {
-        &__card--#{$key} {
+        &--#{$key} {
 
             .news__category {
                 background-color: $color;
             }
 
-            .news__btn.btn {
-
-                &.active, &:active, &:focus, &:hover {
-                    color: #fff;
-                    background-color: darken($color, 8%);
-                    border-color: darken($color, 12%);
-                }
-            }
-
-            .news__heading a:hover {
+            .news__heading a {
                 color: $color;
             }
         }
@@ -42,7 +33,7 @@
 
 
     @each $key, $color in $btn-accents {
-        &__card--#{$key} {
+        &--#{$key} {
 
             .news__btn.btn {
                 background-color: $color;
@@ -50,33 +41,59 @@
             }
         }
     }
+
+
+    @each $key, $color in $btn-bg-hover {
+        &--#{$key} {
+
+            .news__btn.btn {
+
+                &.active, &:active, &:focus, &:hover {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+
+    @each $key, $color in $btn-border-hover {
+        &--#{$key} {
+
+            .news__btn.btn {
+
+                &.active, &:active, &:focus, &:hover {
+                    border-color: $color;
+                }
+            }
+        }
+    }
 }
 
 .news__media {
     position: relative;
+
+    a.news__category {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        z-index: 1;
+
+        color: #fff;
+        font-size: to-rem(12px);
+        text-transform: uppercase;
+        padding: 0 10px;
+        line-height: to-rem(23px);
+    }
 }
 
-.news__category {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    z-index: 1;
 
-    color: #fff;
-    font-size: to-rem(12px);
-    text-transform: uppercase;
-    padding: 0 10px;
-    line-height: to-rem(23px);
-    background-color: $color-nav-bg;
-}
 
 .news__image {
     display: block;
     border-radius: 3px 3px 0 0;
-    overflow: hidden;
 
     img {
         display: block;
+        max-width: 100%;
         width: 100%;
         height: auto;
         transition: transform .25s cubic-bezier(.215, .61, .355, 1);
@@ -95,7 +112,6 @@
 .news__heading {
     font-size: 1rem;
     line-height: to-rem(24px);
-    margin: 0 0 11px;
 
     @include respond-to(sm) {
         min-height: 3rem;
@@ -110,9 +126,8 @@
 .news__excerpt {
     font-size: to-rem(13px);
     line-height: to-rem(22px);
-    margin: 0 0 13px;
 
-    @include respond-to(sm, md, between) {
+    @include respond-to(sm, lg, between) {
         min-height: 66px;
     }
 }
@@ -136,6 +151,7 @@
     display: table-cell;
     vertical-align: middle;
     width: 1%;
+    overflow: hidden;
 
     img {
         display: block;
@@ -151,12 +167,6 @@
     line-height: to-rem(22px);
 }
 
-.news__author {
-    display: block;
-    color: $color-link;
-    font-weight: 700;
-}
-
-.news__date {
+.news__author, .news__date {
     display: block;
 }
