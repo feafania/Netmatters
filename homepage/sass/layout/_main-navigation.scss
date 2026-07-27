@@ -25,6 +25,7 @@
     &__item {
         flex: 1;
         text-align: center;
+        display: flex;
 
         @each $key, $color in $nav-item-accents {
             &[data-key="#{$key}"] {
@@ -65,7 +66,7 @@
             content: "";
             position: absolute;
             left: 50%;
-            bottom: -35px;
+            bottom: -17px;
             transform: translateX(-50%);
             z-index: 90;
             width: 0;
@@ -75,6 +76,7 @@
             border-width: 17px 68px 0;
 
             @include respond-to(lg) {
+                bottom: -35px;
                 border-width: 35px 83.5px 0;
             }
         }
@@ -82,7 +84,11 @@
 
     &__link {
         position: relative;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex: 1;
         color: $color-nav-text;
         padding: 19px 0 18px;
         text-transform: uppercase;

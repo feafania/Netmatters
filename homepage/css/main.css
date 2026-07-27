@@ -74,7 +74,7 @@ button, input, optgroup, select, textarea {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 192, 222, 0.6);
 }
 
-.news__btn.btn, .btn--lg.btn, .branded-text .btn, .services__item-btn.btn, .header__row-group-actions > .btn {
+.news__btn.btn, .logo-tooltip__button.btn, .btn--lg.btn, .branded-text .btn, .services__item-btn.btn, .header__row-group-actions > .btn {
   height: auto;
   line-height: 35px;
   padding: 5px 15px;
@@ -114,7 +114,7 @@ h2, .h2, h3, .h3, h4, .h4 {
   font-weight: 600;
 }
 
-.branded-text .btn em {
+.logo-tooltip__button.btn em, .branded-text .btn em {
   margin-right: -4px;
   margin-left: 12px;
 }
@@ -971,6 +971,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .main-navigation__item {
   flex: 1;
   text-align: center;
+  display: flex;
 }
 .main-navigation__item[data-key=software] .main-navigation__link-icon {
   color: #67809f;
@@ -1087,7 +1088,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -35px;
+  bottom: -17px;
   transform: translateX(-50%);
   z-index: 90;
   width: 0;
@@ -1098,12 +1099,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 @media (min-width: 1260px) {
   .main-navigation__item:hover > .main-navigation__link::before {
+    bottom: -35px;
     border-width: 35px 83.5px 0;
   }
 }
 .main-navigation__link {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
   color: white;
   padding: 19px 0 18px;
   text-transform: uppercase;
@@ -1620,13 +1625,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .logo-strip--clients {
   overflow: visible;
 }
+.logo-strip--clients img {
+  max-height: 70px;
+  width: auto;
+  max-width: 200px;
+  filter: grayscale(1);
+}
+.logo-strip--clients img:hover {
+  filter: grayscale(0);
+}
 .logo-strip--partners {
   overflow: hidden;
 }
 .logo-strip__list {
   width: 100%;
   transition: 0.25s;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2125,6 +2138,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .logo-card {
+  position: relative;
   padding: 0 20px;
   max-height: 70px;
   height: 70px;
@@ -2147,6 +2161,120 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .logo-card:hover .logo-card__picture--colour {
   display: inline;
+}
+.logo-card:hover .logo-tooltip {
+  display: block;
+}
+
+.logo-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo-tooltip__box {
+  background-color: #333645;
+  color: #fff;
+  padding: 20px;
+  font-size: 0.875rem;
+  max-width: 280px;
+  width: 280px;
+  margin: 0 auto 50px;
+}
+.logo-tooltip__title {
+  position: relative;
+  font-size: 1.125rem;
+  color: #fff;
+  padding-bottom: 17px;
+  margin: 0;
+}
+.logo-tooltip__text {
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+  margin-bottom: 0;
+}
+.logo-tooltip__button.btn {
+  display: flex;
+  margin-top: 11px;
+  font-size: 16px;
+  color: #fff;
+}
+.logo-tooltip__button--software {
+  background-color: #f7b322;
+  border-color: #f7b322;
+}
+.logo-tooltip__button--software.active, .logo-tooltip__button--software:active, .logo-tooltip__button--software:focus, .logo-tooltip__button--software:hover {
+  color: #fff;
+  background-color: #e8a008;
+  border-color: #d49308;
+}
+.logo-tooltip__button--it {
+  background-color: #4183d7;
+  border-color: #4183d7;
+}
+.logo-tooltip__button--it.active, .logo-tooltip__button--it:active, .logo-tooltip__button--it:focus, .logo-tooltip__button--it:hover {
+  color: #fff;
+  background-color: #2a6ec6;
+  border-color: #2665b5;
+}
+.logo-tooltip__button--digital {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+.logo-tooltip__button--digital.active, .logo-tooltip__button--digital:active, .logo-tooltip__button--digital:focus, .logo-tooltip__button--digital:hover {
+  color: #fff;
+  background-color: #26ab5f;
+  border-color: #239a55;
+}
+.logo-tooltip__button--telecoms {
+  background-color: #d64541;
+  border-color: #d64541;
+}
+.logo-tooltip__button--telecoms.active, .logo-tooltip__button--telecoms:active, .logo-tooltip__button--telecoms:focus, .logo-tooltip__button--telecoms:hover {
+  color: #fff;
+  background-color: #c42e2a;
+  border-color: #b32a27;
+}
+.logo-tooltip__button--web {
+  background-color: #926fb1;
+  border-color: #926fb1;
+}
+.logo-tooltip__button--web.active, .logo-tooltip__button--web:active, .logo-tooltip__button--web:focus, .logo-tooltip__button--web:hover {
+  color: #fff;
+  background-color: #7e57a0;
+  border-color: #735093;
+}
+.logo-tooltip__button--security {
+  background-color: #f62459;
+  border-color: #f62459;
+}
+.logo-tooltip__button--security.active, .logo-tooltip__button--security:active, .logo-tooltip__button--security:focus, .logo-tooltip__button--security:hover {
+  color: #fff;
+  background-color: #e80a42;
+  border-color: #d4093c;
+}
+.logo-tooltip__button--developer-course {
+  background-color: #ce4125;
+  border-color: #ce4125;
+}
+.logo-tooltip__button--developer-course.active, .logo-tooltip__button--developer-course:active, .logo-tooltip__button--developer-course:focus, .logo-tooltip__button--developer-course:hover {
+  color: #fff;
+  background-color: #ab361f;
+  border-color: #9a311c;
+}
+.logo-tooltip__arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo-tooltip__arrow::after {
+  content: "";
+  display: inline-block;
+  border-style: solid;
+  border-width: 35px 36px 0;
+  border-color: #333645 transparent transparent;
 }
 
 .news__card {
