@@ -6,6 +6,16 @@
 
     &--clients {
         overflow: visible;
+        img {
+            max-height: 70px;
+            width: auto;
+            max-width: 200px;
+            filter: grayscale(1);
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
     }
 
     &--partners {
@@ -15,7 +25,6 @@
     &__list {
         width: 100%;
         transition: 0.25s;
-        overflow: hidden;
 
         display: flex;
         align-items: center;

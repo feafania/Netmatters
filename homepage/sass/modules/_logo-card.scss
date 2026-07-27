@@ -1,6 +1,7 @@
 @use "../abstracts/index" as *;
 
 .logo-card {
+    position: relative;
     padding: 0 20px;
     max-height: 70px;
     height: 70px;
@@ -28,6 +29,10 @@
 
         .logo-card__picture--colour {
             display: inline;
+        }
+
+        .logo-tooltip {
+            display: block;
         }
     }
 }
