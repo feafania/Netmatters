@@ -2083,6 +2083,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   width: 280px;
   margin: 0 auto 50px;
 }
+.logo-tooltip__box--no-description .logo-tooltip__title {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 .logo-tooltip__title {
   position: relative;
   font-size: 1.125rem;

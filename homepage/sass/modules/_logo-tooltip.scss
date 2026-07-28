@@ -17,6 +17,13 @@
         max-width: 280px;
         width: 280px;
         margin: 0 auto 50px;
+
+        &--no-description {
+            .logo-tooltip__title {
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__title {
