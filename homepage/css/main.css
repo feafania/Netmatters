@@ -61,7 +61,7 @@ button, input, optgroup, select, textarea {
   width: 100%;
   height: 47px;
   padding: 5px 15px;
-  background-color: white;
+  background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 2px;
@@ -85,7 +85,7 @@ button, input, optgroup, select, textarea {
 }
 
 .news__btn.btn, .btn--primary, .services__item-btn.btn, .header__row-group-actions-hamburger.btn--primary {
-  color: white;
+  color: #fff;
   background-color: #333645;
   border-color: #333645;
 }
@@ -138,7 +138,7 @@ body {
   line-height: 1.42857143;
   letter-spacing: 0.4px;
   color: #666;
-  background-color: white;
+  background-color: #fff;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -401,7 +401,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .header {
-  background-color: white;
+  background-color: #fff;
 }
 .header__inner {
   padding: 20px 0;
@@ -534,7 +534,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
 }
 .header__row-group-actions-hamburger.btn--primary .hamburger-box > *, .header__row-group-actions-hamburger.btn--primary .hamburger-box *::before, .header__row-group-actions-hamburger.btn--primary .hamburger-box *::after {
-  background-color: white;
+  background-color: #fff;
   border-radius: 0;
 }
 .header__row-group-actions-hamburger.btn--primary.active, .header__row-group-actions-hamburger.btn--primary:active, .header__row-group-actions-hamburger.btn--primary:focus, .header__row-group-actions-hamburger.btn--primary:hover {
@@ -653,111 +653,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .footer__social-link.btn--primary span {
   position: relative;
   top: 4px;
-}
-.footer__social-link.btn--primary[data-key=software] .main-navigation__link-icon {
-  color: #67809f;
-}
-.footer__social-link.btn--primary[data-key=software] .main-navigation__sub-menu {
-  background-color: #526781;
-}
-.footer__social-link.btn--primary[data-key=software]:hover {
-  background-color: #67809f;
-}
-.footer__social-link.btn--primary[data-key=software]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=software]:hover .main-navigation__link::before {
-  border-top-color: #67809f;
-}
-.footer__social-link.btn--primary[data-key=it] .main-navigation__link-icon {
-  color: #4183d7;
-}
-.footer__social-link.btn--primary[data-key=it] .main-navigation__sub-menu {
-  background-color: #286abd;
-}
-.footer__social-link.btn--primary[data-key=it]:hover {
-  background-color: #4183d7;
-}
-.footer__social-link.btn--primary[data-key=it]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=it]:hover .main-navigation__link::before {
-  border-top-color: #4183d7;
-}
-.footer__social-link.btn--primary[data-key=digital] .main-navigation__link-icon {
-  color: #2ecc71;
-}
-.footer__social-link.btn--primary[data-key=digital] .main-navigation__sub-menu {
-  background-color: #25a25a;
-}
-.footer__social-link.btn--primary[data-key=digital]:hover {
-  background-color: #2ecc71;
-}
-.footer__social-link.btn--primary[data-key=digital]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=digital]:hover .main-navigation__link::before {
-  border-top-color: #2ecc71;
-}
-.footer__social-link.btn--primary[data-key=telecoms] .main-navigation__link-icon {
-  color: #d64541;
-}
-.footer__social-link.btn--primary[data-key=telecoms] .main-navigation__sub-menu {
-  background-color: #bc2c28;
-}
-.footer__social-link.btn--primary[data-key=telecoms]:hover {
-  background-color: #d64541;
-}
-.footer__social-link.btn--primary[data-key=telecoms]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=telecoms]:hover .main-navigation__link::before {
-  border-top-color: #d64541;
-}
-.footer__social-link.btn--primary[data-key=web] .main-navigation__link-icon {
-  color: #926fb1;
-}
-.footer__social-link.btn--primary[data-key=web] .main-navigation__sub-menu {
-  background-color: #79539a;
-}
-.footer__social-link.btn--primary[data-key=web]:hover {
-  background-color: #926fb1;
-}
-.footer__social-link.btn--primary[data-key=web]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=web]:hover .main-navigation__link::before {
-  border-top-color: #926fb1;
-}
-.footer__social-link.btn--primary[data-key=security] .main-navigation__link-icon {
-  color: #f62459;
-}
-.footer__social-link.btn--primary[data-key=security] .main-navigation__sub-menu {
-  background-color: #de093f;
-}
-.footer__social-link.btn--primary[data-key=security]:hover {
-  background-color: #f62459;
-}
-.footer__social-link.btn--primary[data-key=security]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=security]:hover .main-navigation__link::before {
-  border-top-color: #f62459;
-}
-.footer__social-link.btn--primary[data-key=developer-course] .main-navigation__link-icon {
-  color: #ce4125;
-}
-.footer__social-link.btn--primary[data-key=developer-course] .main-navigation__sub-menu {
-  background-color: #a3331d;
-}
-.footer__social-link.btn--primary[data-key=developer-course]:hover {
-  background-color: #ce4125;
-}
-.footer__social-link.btn--primary[data-key=developer-course]:hover .main-navigation__link-icon {
-  color: white;
-}
-.footer__social-link.btn--primary[data-key=developer-course]:hover .main-navigation__link::before {
-  border-top-color: #ce4125;
 }
 .footer__social-link.btn--primary[data-key=facebook]:hover {
   background-color: #3b5998;
@@ -911,7 +806,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 #container {
   overflow: hidden;
-  background-color: white;
+  background-color: #fff;
   position: relative;
   z-index: 10;
   transition: all 0.5s;
@@ -1185,7 +1080,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   text-decoration: none;
 }
 .main-navigation__sub-link-icon {
-  font-size: 1.125rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-width: 25px;
+}
+.main-navigation__sub-link-text {
+  margin-left: 10px;
 }
 
 .banner-slider {
@@ -1651,11 +1552,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .branded-text {
   background-color: #333645;
-  color: #fff;
+  color: white;
   padding: 50px 0;
 }
 .branded-text a:not(.btn) {
-  color: #fff;
+  color: white;
 }
 .branded-text em {
   font-style: italic;
@@ -1679,7 +1580,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .branded-text__title {
   margin-top: -6px;
   margin-bottom: 40px;
-  color: #fff;
+  color: white;
 }
 .branded-text .btn {
   border-radius: 6px;
@@ -1825,7 +1726,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   user-select: none;
 }
 .btn:focus, .btn:hover {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 .btn.active, .btn:active {
@@ -1834,7 +1735,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn--primary.active, .btn--primary:active, .btn--primary:focus, .btn--primary:hover {
-  color: white;
+  color: #fff;
   background-color: #22242e;
   border-color: #191a22;
 }
@@ -1842,22 +1743,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   background-image: none;
 }
 .btn--default {
-  color: white;
+  color: #fff;
   background-color: #999aa2;
   border-color: #999aa2;
 }
 .btn--default.active, .btn--default:active, .btn--default:focus, .btn--default:hover {
-  color: white;
+  color: #fff;
   background-color: #84858f;
   border-color: #797a85;
 }
 .btn--it {
-  color: white;
+  color: #fff;
   background-color: #4183d7;
   border-color: #4183d7;
 }
 .btn--it.active, .btn--it:focus, .btn--it:hover {
-  color: white;
+  color: #fff;
   background-color: #2a6ec6;
   border-color: #2665b5;
 }
@@ -1865,16 +1766,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   background-image: none;
 }
 .btn--inverse {
-  color: white;
+  color: #fff;
   background-color: #272936;
 }
 .btn--inverse:hover, .btn--inverse:focus, .btn--inverse.active, .btn--inverse:active {
-  color: white;
+  color: #fff;
   background-color: #121318;
 }
 .btn--google {
   border: none;
-  color: white;
+  color: #fff;
   background-color: #4387f6;
 }
 .btn--google:hover {
@@ -1884,7 +1785,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   border: none;
   white-space: nowrap;
   max-width: fit-content;
-  color: white;
+  color: #fff;
   background-color: #00b67b;
 }
 .btn--trustpilot:hover {
@@ -1939,7 +1840,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 33px;
   height: 4px;
-  background-color: black;
+  background-color: #000;
   border-radius: 0;
   position: absolute;
   transition-property: transform;
@@ -2046,7 +1947,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   box-shadow: 0 0 3px #fff;
 }
 .search-form--mobile > .search-input:-webkit-autofill, .search-form--mobile > .search-input:active, .search-form--mobile > .search-input:-webkit-autofill:focus, .search-form--mobile > .search-input:-webkit-autofill:hover {
-  -webkit-box-shadow: 0 0 0 30px #333645 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #333645 inset;
   -webkit-text-fill-color: #fff;
   border: 1px solid hsla(0, 0%, 100%, 0.1);
 }
@@ -2062,7 +1963,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--web {
-  color: white;
+  color: #fff;
   background-color: #926fb1;
   border-color: #926fb1;
 }
@@ -2073,7 +1974,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--security {
-  color: white;
+  color: #fff;
   background-color: #f62459;
   border-color: #f62459;
 }
@@ -2084,7 +1985,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--software {
-  color: white;
+  color: #fff;
   background-color: #67809f;
   border-color: #67809f;
 }
@@ -2095,7 +1996,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--it {
-  color: white;
+  color: #fff;
   background-color: #4183d7;
   border-color: #4183d7;
 }
@@ -2106,7 +2007,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--digital {
-  color: white;
+  color: #fff;
   background-color: #2ecc71;
   border-color: #2ecc71;
 }
@@ -2117,7 +2018,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .btn--telecoms {
-  color: white;
+  color: #fff;
   background-color: #d64541;
   border-color: #d64541;
 }
@@ -2298,11 +2199,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__card--software .news__heading a {
   color: #67809f;
 }
+.news__card--software .news__btn.btn {
+  background-color: #f7b322;
+  border-color: #f7b322;
+}
+.news__card--software .news__btn.btn.active, .news__card--software .news__btn.btn:active, .news__card--software .news__btn.btn:focus, .news__card--software .news__btn.btn:hover {
+  background-color: #e8a008;
+  border-color: #d49308;
+}
 .news__card--it .news__category {
   background-color: #4183d7;
 }
 .news__card--it .news__heading a {
   color: #4183d7;
+}
+.news__card--it .news__btn.btn {
+  background-color: #4183d7;
+  border-color: #4183d7;
+}
+.news__card--it .news__btn.btn.active, .news__card--it .news__btn.btn:active, .news__card--it .news__btn.btn:focus, .news__card--it .news__btn.btn:hover {
+  background-color: #2a6ec6;
+  border-color: #2665b5;
 }
 .news__card--digital .news__category {
   background-color: #2ecc71;
@@ -2310,11 +2227,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__card--digital .news__heading a {
   color: #2ecc71;
 }
+.news__card--digital .news__btn.btn {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+.news__card--digital .news__btn.btn.active, .news__card--digital .news__btn.btn:active, .news__card--digital .news__btn.btn:focus, .news__card--digital .news__btn.btn:hover {
+  background-color: #26ab5f;
+  border-color: #239a55;
+}
 .news__card--telecoms .news__category {
   background-color: #d64541;
 }
 .news__card--telecoms .news__heading a {
   color: #d64541;
+}
+.news__card--telecoms .news__btn.btn {
+  background-color: #d64541;
+  border-color: #d64541;
+}
+.news__card--telecoms .news__btn.btn.active, .news__card--telecoms .news__btn.btn:active, .news__card--telecoms .news__btn.btn:focus, .news__card--telecoms .news__btn.btn:hover {
+  background-color: #c42e2a;
+  border-color: #b32a27;
 }
 .news__card--web .news__category {
   background-color: #926fb1;
@@ -2322,11 +2255,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__card--web .news__heading a {
   color: #926fb1;
 }
+.news__card--web .news__btn.btn {
+  background-color: #926fb1;
+  border-color: #926fb1;
+}
+.news__card--web .news__btn.btn.active, .news__card--web .news__btn.btn:active, .news__card--web .news__btn.btn:focus, .news__card--web .news__btn.btn:hover {
+  background-color: #7e57a0;
+  border-color: #735093;
+}
 .news__card--security .news__category {
   background-color: #f62459;
 }
 .news__card--security .news__heading a {
   color: #f62459;
+}
+.news__card--security .news__btn.btn {
+  background-color: #f62459;
+  border-color: #f62459;
+}
+.news__card--security .news__btn.btn.active, .news__card--security .news__btn.btn:active, .news__card--security .news__btn.btn:focus, .news__card--security .news__btn.btn:hover {
+  background-color: #e80a42;
+  border-color: #d4093c;
 }
 .news__card--developer-course .news__category {
   background-color: #ce4125;
@@ -2334,74 +2283,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__card--developer-course .news__heading a {
   color: #ce4125;
 }
-.news__card--software .news__btn.btn {
-  background-color: #f7b322;
-  border-color: #f7b322;
-}
-.news__card--it .news__btn.btn {
-  background-color: #4183d7;
-  border-color: #4183d7;
-}
-.news__card--digital .news__btn.btn {
-  background-color: #2ecc71;
-  border-color: #2ecc71;
-}
-.news__card--telecoms .news__btn.btn {
-  background-color: #d64541;
-  border-color: #d64541;
-}
-.news__card--web .news__btn.btn {
-  background-color: #926fb1;
-  border-color: #926fb1;
-}
-.news__card--security .news__btn.btn {
-  background-color: #f62459;
-  border-color: #f62459;
-}
 .news__card--developer-course .news__btn.btn {
   background-color: #ce4125;
   border-color: #ce4125;
 }
-.news__card--software .news__btn.btn.active, .news__card--software .news__btn.btn:active, .news__card--software .news__btn.btn:focus, .news__card--software .news__btn.btn:hover {
-  background-color: #e8a008;
-}
-.news__card--it .news__btn.btn.active, .news__card--it .news__btn.btn:active, .news__card--it .news__btn.btn:focus, .news__card--it .news__btn.btn:hover {
-  background-color: #2a6ec6;
-}
-.news__card--digital .news__btn.btn.active, .news__card--digital .news__btn.btn:active, .news__card--digital .news__btn.btn:focus, .news__card--digital .news__btn.btn:hover {
-  background-color: #26ab5f;
-}
-.news__card--telecoms .news__btn.btn.active, .news__card--telecoms .news__btn.btn:active, .news__card--telecoms .news__btn.btn:focus, .news__card--telecoms .news__btn.btn:hover {
-  background-color: #c42e2a;
-}
-.news__card--web .news__btn.btn.active, .news__card--web .news__btn.btn:active, .news__card--web .news__btn.btn:focus, .news__card--web .news__btn.btn:hover {
-  background-color: #7e57a0;
-}
-.news__card--security .news__btn.btn.active, .news__card--security .news__btn.btn:active, .news__card--security .news__btn.btn:focus, .news__card--security .news__btn.btn:hover {
-  background-color: #e80a42;
-}
 .news__card--developer-course .news__btn.btn.active, .news__card--developer-course .news__btn.btn:active, .news__card--developer-course .news__btn.btn:focus, .news__card--developer-course .news__btn.btn:hover {
   background-color: #ab361f;
-}
-.news__card--software .news__btn.btn.active, .news__card--software .news__btn.btn:active, .news__card--software .news__btn.btn:focus, .news__card--software .news__btn.btn:hover {
-  border-color: #d49308;
-}
-.news__card--it .news__btn.btn.active, .news__card--it .news__btn.btn:active, .news__card--it .news__btn.btn:focus, .news__card--it .news__btn.btn:hover {
-  border-color: #2665b5;
-}
-.news__card--digital .news__btn.btn.active, .news__card--digital .news__btn.btn:active, .news__card--digital .news__btn.btn:focus, .news__card--digital .news__btn.btn:hover {
-  border-color: #239a55;
-}
-.news__card--telecoms .news__btn.btn.active, .news__card--telecoms .news__btn.btn:active, .news__card--telecoms .news__btn.btn:focus, .news__card--telecoms .news__btn.btn:hover {
-  border-color: #b32a27;
-}
-.news__card--web .news__btn.btn.active, .news__card--web .news__btn.btn:active, .news__card--web .news__btn.btn:focus, .news__card--web .news__btn.btn:hover {
-  border-color: #735093;
-}
-.news__card--security .news__btn.btn.active, .news__card--security .news__btn.btn:active, .news__card--security .news__btn.btn:focus, .news__card--security .news__btn.btn:hover {
-  border-color: #d4093c;
-}
-.news__card--developer-course .news__btn.btn.active, .news__card--developer-course .news__btn.btn:active, .news__card--developer-course .news__btn.btn:focus, .news__card--developer-course .news__btn.btn:hover {
   border-color: #9a311c;
 }
 

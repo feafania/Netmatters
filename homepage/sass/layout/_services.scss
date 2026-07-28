@@ -86,20 +86,20 @@
             padding: 30px;
             text-align: center;
             text-decoration: none;
-            border: 1px solid #ccc;
+            border: 1px solid $form-border;
             border-radius: 15px;
             box-shadow: 0 3px 35px rgba(black, .1);
             transition: .5s ease;
             font-weight: 600;
 
             &:hover {
-                color: #fff;
+                color: $color-link--active;
                 border-color: transparent;
                 top: -10px;
                 text-decoration: none;
 
                 .services__item-title {
-                    color: #fff;
+                    color: $color-link--active;
                 }
             }
         }
@@ -110,7 +110,7 @@
             height: 65px;
             margin: 0 auto 17px;
             border-radius: 50%;
-            color: #fff;
+            color: $color-btn;
             transition: background-color .5s ease, color .5s ease;
 
             font-size: 2rem;
@@ -155,13 +155,13 @@
                 background-color: $color;
 
                 .services__item-icon {
-                    background-color: #fff;
+                    background-color: $color-btn;
                     color: $color;
                 }
 
                 .services__item-btn.btn {
-                    background-color: #fff;
-                    border-color: #fff;
+                    background-color: $color-btn;
+                    border-color: $color-btn;
                     color: $color;
                 }
             }

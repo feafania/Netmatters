@@ -28,40 +28,20 @@
             .news__heading a {
                 color: $color;
             }
-        }
-    }
-
-
-    @each $key, $color in $btn-accents {
-        &--#{$key} {
 
             .news__btn.btn {
-                background-color: $color;
-                border-color: $color;
-            }
-        }
-    }
-
-
-    @each $key, $color in $btn-bg-hover {
-        &--#{$key} {
-
-            .news__btn.btn {
-
-                &.active, &:active, &:focus, &:hover {
-                    background-color: $color;
+                @if map.has-key($btn-accents, $key) {
+                    background-color: map.get($btn-accents, $key);
+                    border-color: map.get($btn-accents, $key);
                 }
-            }
-        }
-    }
-
-    @each $key, $color in $btn-border-hover {
-        &--#{$key} {
-
-            .news__btn.btn {
 
                 &.active, &:active, &:focus, &:hover {
-                    border-color: $color;
+                    @if map.has-key($btn-bg-hover, $key) {
+                        background-color: map.get($btn-bg-hover, $key);
+                    }
+                    @if map.has-key($btn-border-hover, $key) {
+                        border-color: map.get($btn-border-hover, $key);
+                    }
                 }
             }
         }
@@ -77,7 +57,7 @@
         right: 0;
         z-index: 1;
 
-        color: #fff;
+        color: $color-btn;
         font-size: to-rem(12px);
         text-transform: uppercase;
         padding: 0 10px;
@@ -102,7 +82,7 @@
 
 .news__content {
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid $form-border;
     border-top: 0;
     border-radius: 0 0 3px 3px;
     padding: 30px;
@@ -143,7 +123,7 @@
     width: 100%;
     margin-top: 30px;
     padding-top: 30px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $form-border;
     font-size: to-rem(14px);
 }
 

@@ -2,8 +2,8 @@
 @use "sass:map";
 
 .footer {
-    background-color: #323544;
-    color: white;
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
     padding: 27px 0 0;
     position: relative;
 
@@ -19,7 +19,7 @@
     }
 
     &__title {
-        color: white;
+        color: $color-footer-text;
         text-transform: uppercase;
         font-size: 1rem;
         margin-bottom: 26px;
@@ -86,7 +86,7 @@
         font-size: 26px;
         line-height: 26px;
         padding: 12px 22px 16px;
-        background-color: #212330;
+        background-color: $color-footer-social;
         margin-right: 10px;
         margin-bottom: 10px;
 
@@ -102,30 +102,6 @@
         span {
             position: relative;
             top: 4px;
-        }
-
-        @each $key, $color in $nav-item-accents {
-            &[data-key="#{$key}"] {
-                .main-navigation__link-icon {
-                    color: $color;
-                }
-
-                .main-navigation__sub-menu {
-                    background-color: map-get($nav-sub-menu-accents, $key);
-                }
-
-                &:hover {
-                    background-color: $color;
-
-                    .main-navigation__link-icon {
-                        color: $color-nav-text;
-                    }
-
-                    .main-navigation__link::before {
-                        border-top-color: $color;
-                    }
-                }
-            }
         }
 
         @each $key, $color in $social-accents {
@@ -199,7 +175,7 @@
         padding-top: 10px;
         width: 100%;
         left: 0;
-        background: #212330;
+        background: $color-footer-bottom;
         border: 0;
 
         &-container.container {
@@ -216,7 +192,7 @@
     &__license {
         text-decoration: none;
         list-style: none;
-        color: white;
+        color: $color-footer-license;
         display: flex;
         padding: 5px 0 10px;
         width: 100%;
@@ -267,10 +243,10 @@
     }
 
     &__license-link {
-        color: white;
+        color: $color-footer-license;
 
         &:hover {
-            color: white;
+            color: $color-footer-license;
         }
     }
 

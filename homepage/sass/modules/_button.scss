@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+@use "sass:map";
 
 .btn {
     display: inline-block;
@@ -19,7 +20,7 @@
     user-select: none;
 
     &:focus, &:hover {
-        color: $color-btn;
+        color: $color-link--active;
         text-decoration: none;
     }
 
@@ -32,9 +33,9 @@
     &--primary {
         @extend %btn-primary;
         &.active, &:active, &:focus, &:hover {
-            color: $color-btn;
-            background-color: #22242e;
-            border-color: #191a22;
+            color: $color-link--active;
+            background-color: $color-link-bg--active;
+            border-color: $color-link-border--active;
         }
         &.active, &:active {
             background-image: none;
@@ -48,21 +49,21 @@
         border-color: $color-btn-default-bg;
 
         &.active, &:active, &:focus, &:hover {
-            color: $color-btn;
-            background-color: #84858f;
-            border-color: #797a85;
+            color: $color-link--active;
+            background-color: $color-btn-primary-bg--active;
+            border-color: $color-btn-primary-border--active;
         }
     }
 
     &--it {
         color: $color-btn;
-        background-color: $color-btn-it-bg;
-        border-color: $color-btn-it-bg;
+        background-color: map.get($nav-item-accents,it);
+        border-color: map.get($nav-item-accents,it);
 
         &.active, &:focus, &:hover {
-            color: $color-btn;
-            background-color: #2a6ec6;
-            border-color: #2665b5;
+            color: $color-link--active;
+            background-color: map.get($btn-bg-hover,it);
+            border-color: map.get($btn-border-hover,it);
         }
         &.active {
             background-image: none;
@@ -72,21 +73,21 @@
 
     &--inverse {
         color: $color-btn;
-        background-color: #272936;
+        background-color: $color-btn-inverse-bg;
 
         &:hover, &:focus, &.active, &:active {
-            color: $color-btn;
-            background-color: #121318;
+            color: $color-link--active;
+            background-color: $color-btn-inverse-bg--active;
         }
     }
 
     &--google {
         border: none;
         color: $color-btn;
-        background-color: #4387f6;
+        background-color: $color-btn-google-bg;
 
         &:hover {
-            background-color: #166af4;
+            background-color: $color-btn-google-bg--hover;
         }
     }
 
@@ -95,10 +96,10 @@
         white-space: nowrap;
         max-width: fit-content;
         color: $color-btn;
-        background-color: #00b67b;
+        background-color: $color-btn-trustpilot-bg;
 
         &:hover {
-            background-color: #009b69;
+            background-color: $color-btn-trustpilot-bg--hover;
         }
     }
 

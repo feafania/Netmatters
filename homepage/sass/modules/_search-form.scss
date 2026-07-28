@@ -54,7 +54,7 @@
             }
 
             &:hover {
-                background-color: #7e808a;
+                background-color: $form-search-btn-bg--hover;
             }
         };
     }
@@ -73,11 +73,11 @@
             padding-right: 40px;
 
             &:active, &:focus {
-                box-shadow: 0 0 3px #fff;
+                box-shadow: 0 0 3px $form-search-btn-color-shad--mobile;
             }
             &:-webkit-autofill, &:active, &:-webkit-autofill:focus, &:-webkit-autofill:hover {
-                -webkit-box-shadow: 0 0 0 30px #333645 inset!important;
-                -webkit-text-fill-color: #fff;
+                -webkit-box-shadow: 0 0 0 30px $form-search-btn-color--mobile inset;
+                -webkit-text-fill-color: $form-search-btn-color-shad--mobile;
                 border: 1px solid hsla(0,0%,100%,.1);
             }
         }

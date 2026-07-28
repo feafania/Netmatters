@@ -38,7 +38,7 @@
         display: flex;
         margin-top: 11px;
         font-size: 16px;
-        color: #fff;
+        color: $color-btn;
 
         em {
             @extend %icon-right;
@@ -51,7 +51,7 @@
             border-color: $color;
 
             &.active, &:active, &:focus, &:hover {
-                color: #fff;
+                color: $color-link--active;
                 background-color: map.get($btn-bg-hover, $key);
                 border-color: map.get($btn-border-hover, $key);
             }
@@ -69,7 +69,7 @@
             display: inline-block;
             border-style: solid;
             border-width: 35px 36px 0;
-            border-color: #333645 transparent transparent;
+            border-color: $color-link transparent transparent;
         }
     }
 }

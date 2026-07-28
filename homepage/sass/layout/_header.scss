@@ -132,9 +132,9 @@
                     }
 
                     &.active, &:active, &:focus, &:hover {
-                        color: #fff;
-                        background-color: #22242e;
-                        border-color: #191a22;
+                        color: $color-link--active;
+                        background-color: $color-link-bg--active;
+                        border-color: $color-link-border--active;
                     }
                     &.active, &:active {
                         background-image: none;
