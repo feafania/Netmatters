@@ -27,12 +27,13 @@
             float: none;
             vertical-align: middle;
             width: 100%;
+            max-width: 100%;
 
 
-            @include respond-to(xs) {
+            @include respond-to(sm) {
                 flex: 0 0 auto;
-                max-width: 100%;
                 width: auto;
+                padding: 0 15px;
             }
         }
 
