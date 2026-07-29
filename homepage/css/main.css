@@ -57,6 +57,11 @@ button, input, optgroup, select, textarea {
   color: #555;
 }
 
+button, input[type=button], input[type=reset], input[type=submit] {
+  appearance: none;
+  cursor: pointer;
+}
+
 .search-form .search-input {
   width: 100%;
   height: 47px;
@@ -168,6 +173,15 @@ label {
   display: inline-block;
   color: #333645;
   margin-bottom: 5px;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+select {
+  text-transform: none;
 }
 
 ol, ul {
@@ -425,12 +439,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   float: none;
   vertical-align: middle;
   width: 100%;
+  max-width: 100%;
 }
-@media (min-width: 0) {
+@media (min-width: 768px) {
   .header__row > * {
     flex: 0 0 auto;
-    max-width: 100%;
     width: auto;
+    padding: 0 15px;
   }
 }
 @media (min-width: 768px) {
@@ -1121,6 +1136,153 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   justify-content: center;
   background-color: #000;
 }
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
+.banner-slider__slide[data-key=web] .banner-slider__pic {
+  background-image: url("../assets/images/home-K0pn.webp");
+}
+.banner-slider__slide[data-key=security] .banner-slider__pic {
+  background-image: url("../assets/images/home-MSxH.webp");
+}
+.banner-slider__slide[data-key=company] .banner-slider__pic {
+  background-image: url("../assets/images/home-YLei.webp");
+}
+.banner-slider__slide[data-key=software] .banner-slider__pic {
+  background-image: url("../assets/images/home-O67Y.webp");
+}
+.banner-slider__slide[data-key=it] .banner-slider__pic {
+  background-image: url("../assets/images/home-gay8.webp");
+}
+.banner-slider__slide[data-key=digital] .banner-slider__pic {
+  background-image: url("../assets/images/home-6yTp.webp");
+}
+.banner-slider__slide[data-key=telecoms] .banner-slider__pic {
+  background-image: url("../assets/images/home-J8Xx.webp");
+}
 .banner-slider__pic {
   width: 100%;
   position: absolute;
@@ -1133,6 +1295,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   overflow: hidden;
   color: #fff;
   opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (min-width: 992px) {
   .banner-slider__pic {
@@ -1147,12 +1312,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     background: linear-gradient(270deg, transparent 25%, #000);
     z-index: 3;
   }
-}
-.banner-slider__img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .banner-slider__content {
   position: relative;
@@ -1200,25 +1359,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   left: 0;
   right: 0;
   bottom: 44px;
-}
-.banner-slider__arrow {
-  color: #fff;
-  font-size: 14px;
-  margin: 5px;
-  padding: 4px 7px;
-  background: #d6d6d6;
-  display: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-.banner-slider__arrow--prev, .banner-slider__arrow--next {
-  cursor: pointer;
-  user-select: none;
-}
-.banner-slider__arrow:hover {
-  background: #869791;
-  color: #fff;
-  text-decoration: none;
 }
 .banner-slider__dot {
   display: inline-block;
@@ -1300,6 +1440,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .services__item {
   flex: 0 0 100%;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 992px) {
   .services__item--third {
@@ -1321,7 +1463,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .services__item-wrap {
   width: 100%;
-  display: block;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   position: relative;
   top: 0;
   margin-top: 30px;
@@ -1342,6 +1486,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .services__item-wrap:hover .services__item-title {
   color: #fff;
+}
+.services__item-br {
+  display: block;
+  height: 1lh;
 }
 .services__item-icon {
   display: block;
@@ -1671,7 +1819,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   padding-bottom: 50px;
 }
 .latest-news__list {
-  margin: -15px -15px 0;
+  margin: -30px -15px 0;
 }
 .latest-news__col {
   flex: 0 0 100%;
@@ -2070,6 +2218,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .logo-tooltip {
   display: none;
   position: absolute;
+  z-index: 99;
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);

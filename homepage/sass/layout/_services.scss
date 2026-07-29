@@ -58,6 +58,9 @@
         flex: 0 0 100%;
         max-width: 100%;
 
+        display: flex;
+        flex-direction: column;
+
         &--third {
             @include respond-to(md) {
                 flex: 0 0 33.3333%;
@@ -79,7 +82,9 @@
 
         &-wrap {
             width: 100%;
-            display: block;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
             position: relative;
             top: 0;
             margin-top: 30px;
@@ -102,6 +107,12 @@
                     color: $color-link--active;
                 }
             }
+
+        }
+
+        &-br {
+            display: block;
+            height: 1lh;
         }
 
         &-icon {

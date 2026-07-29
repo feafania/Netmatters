@@ -59,6 +59,11 @@
     color: vars.$color-form-control;
 }
 
+%form-button {
+    appearance: none;
+    cursor: pointer;
+}
+
 %form-control {
     width: 100%;
     height: 47px;
