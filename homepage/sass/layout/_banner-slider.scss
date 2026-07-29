@@ -39,6 +39,14 @@
         flex-direction: column;
         justify-content: center;
         background-color: $color-banner-bg;
+
+        @each $key, $file in $banner-slides {
+            @each $key, $file in $banner-slides {
+                &[data-key="#{$key}"] .banner-slider__pic {
+                    background-image: url("#{$assets-path}images/#{$file}");
+                }
+            }
+        }
     }
 
     &__pic {
@@ -56,6 +64,10 @@
         color: $color-banner;
         opacity: .5;
 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
         @include respond-to(md) {
             opacity: 1;
         }
@@ -69,13 +81,6 @@
                 z-index: 3;
             }
         }
-    }
-
-    &__img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     &__content {
@@ -125,28 +130,6 @@
         left: 0;
         right: 0;
         bottom: 44px;
-    }
-
-    &__arrow {
-        color: $color-banner;
-        font-size: 14px;
-        margin: 5px;
-        padding: 4px 7px;
-        background: $color-banner-arrow;
-        display: none;
-        cursor: pointer;
-        border-radius: 3px;
-
-        &--prev, &--next {
-            cursor: pointer;
-            user-select: none;
-        }
-
-        &:hover {
-            background: $color-banner-arrow--hover;
-            color: $color-banner;
-            text-decoration: none;
-        }
     }
 
     &__dot {
