@@ -228,7 +228,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 /* POPPINS */
 @font-face {
-  font-family: "Poppins";
+  font-family: Poppins;
   src: url("../assets/fonts/poppins-v15-latin-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -236,6 +236,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 @font-face {
   font-family: "Poppins";
+  src: url("../assets/fonts/poppins-medium-webfont.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Poppins;
   src: url("../assets/fonts/poppins-v15-latin-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
