@@ -1,0 +1,125 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+.branded-text {
+    background-color: $color-brand-bg;
+    color: $color-brand-text;
+    padding: 50px 0;
+
+    a:not(.btn) {
+        @extend %font-strong;
+        color: $color-brand-text;
+    }
+
+    strong {
+        @extend %font-strong;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    &__row {
+        @extend %flex-wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__col {
+        @extend %grid-base;
+        width: 100%;
+        max-width: 100%;
+
+        flex: 0 0 auto;
+
+        margin-bottom: 50px;
+
+        @include respond-to(md) {
+            width: 50%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-top: -6px;
+        margin-bottom: 40px;
+        color: $color-brand-text;
+    }
+
+    .btn {
+        @extend %btn;
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 20px;
+        em {
+            @extend %icon-right;
+            @include float(right)
+        }
+    }
+
+    &__actions .btn--inverse {
+
+        &:not(:last-child) {
+            margin-bottom: 17px;
+
+            @include respond-to(536px,map.get($bps,md)-1px,between) {
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+
+            @include respond-to(lg) {
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__stars {
+        display: inline-block;
+        color: $color-brand-star;
+        font-size: 50px;
+        margin-bottom: 25px;
+
+        span {
+            margin-right: 4.67px;
+        }
+    }
+
+    &__quote {
+        margin: 0 0 25px;
+        padding: 0;
+        border: none;
+
+        &-text {
+            font-weight: 600;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        &-author {
+            line-height: 1.875rem;
+            font-weight: 600;
+            font-style: normal;
+            color: $color-brand-author;
+            font-size: 1.1rem;
+
+            a {
+                color: $color-brand-author;
+            }
+        }
+    }
+
+    &__reviews {
+        > * {
+            margin-top: 20px;
+
+            @include respond-to(lg) {
+                margin-top: 20px;
+            }
+        }
+
+        .btn--google {
+            margin-right: 8px;
+        }
+    }
+}

@@ -1,0 +1,259 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+.footer {
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
+    padding: 27px 0 0;
+    position: relative;
+
+    @include respond-to(lg) {
+        padding: 47px 0 0;
+    }
+
+    &__row {
+        @extend %flex-wrap;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__title {
+        color: $color-footer-text;
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin-bottom: 26px;
+    }
+
+    &__company-info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @include respond-to(md) {
+            width: 300px;
+        }
+
+        @include respond-to(lg) {
+            width: 400px;
+        }
+
+    }
+
+    &__social-menu {
+        width: auto;
+
+        .footer__title {
+            margin-top: 24px;
+        }
+    }
+
+    &__logo {
+        width: 250px;
+
+        @include respond-to($bps-xxs) {
+            width: 320px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__social-logos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        @include respond-to(sm) {
+            flex-wrap: nowrap;
+            width: 90%;
+        }
+
+        @include respond-to(lg) {
+            width: auto;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+    }
+
+    &__social-link.btn--primary {
+        width: 35%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 26px;
+        line-height: 26px;
+        padding: 12px 22px 16px;
+        background-color: $color-footer-social;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        @include respond-to(#{$bps-xxs + 1px}) {
+            width: auto;
+        }
+
+        @include respond-to(lg) {
+            margin-right: 7px;
+            margin-bottom: 0;
+        }
+
+        span {
+            position: relative;
+            top: 4px;
+        }
+
+        @include each-accent($social-accents) using ($key, $color) {
+            &[data-key="#{$key}"]:hover {
+                background-color: $color;
+            }
+        }
+    }
+
+    &__columns {
+        @extend %clearfix;
+        @extend %flex-wrap;
+
+        margin-left: -15px;
+        margin-right: -15px;
+
+        @include respond-to(md) {
+            flex-grow: 1;
+        }
+
+    }
+
+    &__column {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        margin-bottom: 30px;
+
+        flex: 0 0 auto;
+        max-width: 100%;
+
+        @include respond-to(sm) {
+            width: 50%;
+        }
+
+        @include respond-to(md) {
+            width: 25%;
+        }
+
+        @include respond-to(lg) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        font-size: to-rem(13px);
+        line-height: to-rem(22px);
+    }
+
+    &__link {
+        color: white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        font-size: to-rem(13px);
+        padding-top: 10px;
+        width: 100%;
+        left: 0;
+        background: $color-footer-bottom;
+        border: 0;
+
+        &-container.container {
+            margin-left: 0;
+            margin-right: 0;
+            @include respond-to(lg) {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    &__license {
+        text-decoration: none;
+        list-style: none;
+        color: $color-footer-license;
+        display: flex;
+        padding: 5px 0 10px;
+        width: 100%;
+        flex-direction: column;
+
+        @include respond-to(sm) {
+            flex-direction: row;
+        }
+    }
+
+    &__license-list {
+        list-style: none;
+        padding: 0;
+        margin: -2px 0 0;
+        font-size: .8125rem;
+        line-height: 1.375rem;
+
+        @include respond-to($bps-xxs) {
+            display: flex;
+        }
+    }
+
+    &__license-item {
+
+        &::before {
+            content: "-";
+            margin-right: 5px;
+            display: none;
+
+            @include respond-to(xs) {
+                margin-left: 0;
+                display: inline-block;
+            }
+        }
+
+        &:first-of-type::before {
+            @include respond-to(xs) {
+                display: none;
+            }
+            @include respond-to(sm) {
+                display: inline-block;
+            }
+        }
+
+        @include respond-to(sm) {
+            margin-left: 10px;
+        }
+    }
+
+    &__license-link {
+        color: $color-footer-license;
+
+        &:hover {
+            color: $color-footer-license;
+        }
+    }
+
+    &__break-xs {
+        display: block;
+        @include respond-to(sm) {
+            display: none;
+        }
+    }
+}

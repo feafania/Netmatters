@@ -1,0 +1,174 @@
+@use "../abstracts/index" as *;
+
+.banner-slider {
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+
+    position: relative;
+    overflow: hidden;
+    min-height: 550px;
+
+    &__track {
+        display: flex;
+        width: 100%;
+        height: 550px;
+        transition: transform .5s ease-in-out;
+
+        @extend %clear-float;
+
+        &::after {
+            content: " ";
+            display: block;
+
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        margin-right: 0;
+        flex: 0 0 100%;
+
+        position: relative;
+        min-height: 1px;
+        user-select: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $color-banner-bg;
+
+        @each $key, $file in $banner-slides {
+            &[data-key="#{$key}"] .banner-slider__pic {
+                background-image: url("#{$assets-path}images/#{$file}");
+            }
+        }
+    }
+
+    &__pic {
+        width: 100%;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        color: $color-banner;
+        opacity: .5;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include respond-to(md) {
+            opacity: 1;
+        }
+
+        &::before {
+            @include respond-to(md) {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(270deg, transparent 25%, $color-banner-bg);
+                z-index: 3;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        color: $color-banner;
+        padding: 3.75rem 0;
+        text-align: center;
+
+        @include respond-to(md) {
+            text-align: start;
+        }
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        margin: 0 0 1.25rem;
+        color: $color-banner;
+        font-weight: 600;
+
+        @include respond-to(md) {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+    }
+
+    &__lead {
+        margin-bottom: .375rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+
+        @include respond-to(md) {
+            font-size: 1.625rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    &__controls {
+        margin-top: 10px;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+
+        position: absolute;
+        z-index: 4;
+        left: 0;
+        right: 0;
+        bottom: 44px;
+    }
+
+    &__dot {
+        display: inline-block;
+        zoom: 1;
+
+        cursor: pointer;
+        user-select: none;
+
+        & span {
+            width: 11px;
+            height: 11px;
+            margin: 0 10px;
+
+            background-color: $color-banner-span-bg;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity .2s ease;
+            border-radius: 30px;
+
+            &:hover {
+                background:$color-banner-span-bg--hover;
+            }
+
+        }
+
+        &.is-active span {
+            background-color: $color-banner-span-bg--active;
+            position: relative;
+        }
+
+        &.is-active span::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            border: 2px solid $color-banner-span-bg--active;
+        }
+    }
+
+}

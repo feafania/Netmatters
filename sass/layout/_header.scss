@@ -1,0 +1,161 @@
+@use "../abstracts/index" as *;
+
+.header {
+    background-color: $color-body-bg;
+
+    &__inner {
+        padding: 20px 0;
+    }
+
+    &__row {
+        @extend %clearfix;
+        @extend %clear-float;
+        display: table;
+        width: 100%;
+        margin: 0;
+
+        @include respond-to(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            width: auto;
+        }
+
+        > * {
+            padding: 0;
+            display: table-cell;
+            float: none;
+            vertical-align: middle;
+            width: 100%;
+            max-width: 100%;
+
+
+            @include respond-to(sm) {
+                flex: 0 0 auto;
+                width: auto;
+                padding: 0 15px;
+            }
+        }
+
+        &-hero {
+
+            @include respond-to(sm) {
+                width: 50%;
+                @include float(left)
+            }
+            @include respond-to(md) { width: calc(100% * 5 / 12); }
+            @include respond-to(lg) { width: calc(100% * 4 / 12); }
+
+            &-logo {
+                display: table;
+                table-layout: fixed;
+                @include respond-to(md) { display: block; }
+                & a {
+                    display: table-cell;
+                    vertical-align: middle;
+
+                    @include respond-to(sm) {
+                        display: inline;
+                    }
+
+                    & img {
+                        max-width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &-mobile {
+            @extend %grid-base;
+
+            @include hidden-at(sm);
+            @include respond-to(sm) {
+                width: 25%;
+                @include float(left)
+            }
+
+            & span {
+                font-size: 32px;
+                margin-left: 15px;
+            }
+        }
+
+        &-group {
+            @extend %grid-base;
+            width: 25%;
+
+            @include respond-to(sm) {
+                width: 50%;
+                @include float(left)
+            }
+            @include respond-to(md) { width: calc(100% * 7 / 12); }
+            @include respond-to(lg) { width: calc(100% * 8 / 12); }
+
+           &-actions {
+                @include float(right);
+                display: flex;
+                padding: 7px 0;
+
+                & .btn span {
+                    font-size: to-rem(23px);
+                    line-height: 45px;
+                }
+                & .btn [class^="icon-"]  {
+                    @extend %icon-action;
+                    @include float(left);
+                }
+
+                & > .btn {
+                    @extend %btn;
+                    &:not(.hamburger) {
+                        display: none;
+                        @include respond-to(md) {
+                            display: inline-block;
+                        }
+                    }
+
+                    height: 56px;
+                    line-height: 46px;
+                    font-size: to-rem(18px);
+                }
+
+                &-hamburger.btn--primary {
+                    @extend %btn-primary;
+
+                    .hamburger-box {
+                        display: block;
+
+                        > *, *::before, *::after {
+                            background-color: $color-btn-hamb-inner;
+                            border-radius: 0;
+                        }
+                    }
+
+                    &.active, &:active, &:focus, &:hover {
+                        color: $color-link--active;
+                        background-color: $color-link-bg--active;
+                        border-color: $color-link-border--active;
+                    }
+                    &.active, &:active {
+                        background-image: none;
+                    }
+                }
+
+               &-hamburger.hamburger {
+                   margin-left: 20px;
+               }
+
+                > * {
+                    @include float(left);
+                    + * {
+                        margin-left: 20px;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,170 @@
+/* BREAKPOINTS */
+
+$bps: (
+        xs: 0,
+        sm: 768px,
+        md: 992px,
+        lg: 1260px
+);
+$bps-xxs: 480px;
+
+/* CONTAINER WIDTH */
+$container-sm: 750px;
+$container-md: 970px;
+$container-lg: 1200px;
+
+/* COLORS */
+
+$color-body-text: #666;
+$color-body-bg: #fff;
+$color-heading: #333645;
+
+
+$color-link: #333645;
+$color-link--focus: #121419;
+$color-link-border: #007bff;
+
+$color-link--active: #fff;
+$color-link-bg--active: #22242e;
+$color-link-border--active: #191a22;
+
+$color-btn: #fff;
+$color-btn-primary-bg: #333645;
+$color-btn-primary-bg--active: #84858f;
+$color-btn-primary-border--active: #797a85;
+$color-btn-default-bg: #999aa2;
+$color-btn-hamb-inner: #fff;
+$color-hamb-inner: #000;
+
+
+$color-btn-inverse-bg: #272936;
+$color-btn-inverse-bg--active: #121318;
+
+$color-btn-google-bg: #4387f6;
+$color-btn-google-bg--hover: #166af4;
+
+$color-btn-trustpilot-bg: #00b67b;
+$color-btn-trustpilot-bg--hover: #009b69;
+
+$color-label: #333645;
+$color-form-control: #555;
+$form-shadow: rgba(black, .075);
+$form-border: #ccc;
+$form-search-btn-color: white;
+$form-search-btn-bg: #999aa2;
+$form-search-btn-bg--hover: #7e808a;
+$form-search-btn-color--mobile: #333645;
+$form-search-btn-color-bg--mobile: rgba( 0, 0, 0,.1);
+$form-search-btn-color-out--mobile: hsla(0,0%,100%,.2);
+$form-search-btn-color-shad--mobile: #fff;
+
+$color-banner: #fff;
+$color-banner-bg: #000;
+$color-banner-arrow: #d6d6d6;
+$color-banner-arrow--hover: #869791;
+$color-banner-span-bg: hsla(0,0%,100%,.5);
+$color-banner-span-bg--hover: #869791;
+$color-banner-span-bg--active: #fff;
+
+$color-nav-bg: #333645;
+$color-nav-text: white;
+$color-nav-sub-bg: #1d1f28;
+$color-nav-sub-title: white;
+
+
+$color-brand-bg: #333645;
+$color-brand-text: white;
+$color-brand-star: orange;
+$color-brand-author: #a3a8ac;
+
+$color-footer-bg: #323544;
+$color-footer-text: white;
+$color-footer-social: #212330;
+$color-footer-bottom: #212330;
+$color-footer-license: white;
+
+$nav-item-accents: (
+        software:           #67809f,
+        it:                 #4183d7,
+        digital:            #2ecc71,
+        telecoms:           #d64541,
+        web:                #926fb1,
+        security:           #f62459,
+        developer-course:   #ce4125
+);
+
+$nav-sub-menu-accents: (
+        software:           #526781,
+        it:                 #286abd,
+        digital:            #25a25a,
+        telecoms:           #bc2c28,
+        web:                #79539a,
+        security:           #de093f,
+        developer-course:   #a3331d
+);
+
+$btn-accents: (
+        software:           #f7b322 ,
+        it:                 #4183d7,
+        digital:            #2ecc71,
+        telecoms:           #d64541,
+        web:                #926fb1,
+        security:           #f62459,
+        developer-course:   #ce4125
+);
+
+$btn-bg-hover: (
+        software:           #e8a008,
+        it:                 #2a6ec6,
+        digital:            #26ab5f,
+        telecoms:           #c42e2a,
+        web:                #7e57a0,
+        security:           #e80a42,
+        developer-course:   #ab361f
+);
+
+$btn-border-hover: (
+        software:           #d49308,
+        it:                 #2665b5,
+        digital:            #239a55,
+        telecoms:           #b32a27,
+        web:                #735093,
+        security:           #d4093c,
+        developer-course:   #9a311c
+);
+
+
+$banner-btn-colors: (
+        web:      #926fb1,
+        security: #f62459,
+        software: #67809f,
+        it:       #4183d7,
+        digital:  #2ecc71,
+        telecoms: #d64541
+);
+
+$social-accents: (
+        facebook:           #3b5998,
+        twitter:            #00aced,
+        instagram:          #d93175,
+        linkedin:           #0077b5,
+);
+
+
+$overlay-dark: rgba(0, 0, 0, .4);
+
+/* FONTS */
+$rem-base: 16px;
+
+/* PATHS */
+$assets-path: "../assets/";
+
+$banner-slides: (
+        web:      "home-K0pn.webp",
+        security: "home-MSxH.webp",
+        company:  "home-YLei.webp",
+        software: "home-O67Y.webp",
+        it:       "home-gay8.webp",
+        digital:  "home-6yTp.webp",
+        telecoms: "home-J8Xx.webp"
+);

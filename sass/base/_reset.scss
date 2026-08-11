@@ -1,0 +1,148 @@
+@use "../abstracts/index" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $rem-base;
+    font-family: sans-serif;
+    -webkit-tap-highlight-color: transparent; /*turn off grey highlight on mobile*/
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.42857143;
+    letter-spacing: 0.4px;
+
+    color: $color-body-text;
+    background-color: $color-body-bg;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+a {
+    @extend %link-base;
+    @extend %bg-transparent;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+a:focus, a:hover {
+    color: $color-link--focus;
+    text-decoration: underline;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+label {
+    @extend %font-strong;
+    display: inline-block;
+    color: $color-label;
+    margin-bottom: 5px;
+}
+
+button {
+    @extend %font-family-inherit;
+    @extend %form-element;
+    overflow: visible;
+    text-transform: none;
+    @extend %form-button;
+}
+
+input {
+    @extend %font-family-inherit;
+    @extend %form-element;
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+    @extend %form-button;
+}
+
+optgroup {
+    @extend %form-element;
+}
+
+select {
+    @extend %font-family-inherit;
+    @extend %form-element;
+    text-transform: none;
+}
+
+textarea {
+    @extend %font-family-inherit;
+    @extend %form-element;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+}
+
+.h1, h1 {
+    @extend %heading-base;
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0 0 28px;
+    color: $color-heading;
+}
+
+h2, .h2 {
+    @extend %heading-base;
+    @extend %heading-base-small;
+    font-size: to-rem(32px);
+}
+
+h3, .h3 {
+    @extend %heading-base;
+    @extend %heading-base-small;
+    font-size: to-rem(26px);
+}
+
+h4, .h4 {
+    @extend %heading-base;
+    @extend %heading-spacing-small;
+    @extend %heading-base-small;
+    font-size: 1rem;
+}
+
+h5, .h5,
+h6, .h6 {
+    @extend %heading-base;
+    @extend %heading-spacing-small;
+}
+
+p {
+    line-height: to-rem(30px);
+    margin: 0 0 25px;
+}
+
+.small, small {
+    font-size: 85%;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}

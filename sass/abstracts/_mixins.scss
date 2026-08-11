@@ -1,0 +1,104 @@
+@use "variables" as vars;
+@use "functions" as fn;
+@use "sass:map";
+
+@mixin respond-to($from, $to: null, $type: min) {
+    $from-is-key: map.has-key(vars.$bps, $from);
+    $from-value: fn.bp-resolve($from);
+
+    @if $to == null and $type == min {
+        @media (min-width: #{$from-value}) {
+            @content;
+        }
+    }
+
+    @else if $to == null and $type == max {
+        @if $from-is-key {
+            $next: fn.bp-next($from);
+
+            @if $next != null {
+                @media (max-width: #{fn.bp-max($next)}) {
+                    @content;
+                }
+            } @else {
+                @media (max-width: #{$from-value}) {
+                    @content;
+                }
+            }
+        } @else {
+            @media (max-width: #{$from-value}) {
+                @content;
+            }
+        }
+    }
+
+    @else if $type == between {
+        $upto: $to;
+        @if $to == null {
+            $upto: $from;
+        }
+        $upto-is-key: map.has-key(vars.$bps, $upto);
+
+        @if $from-is-key and $upto-is-key {
+            $range: fn.bp-range($from, $upto);
+            $min: nth($range, 1);
+            $max: nth($range, 2);
+
+            @media (min-width: #{$min}) and (max-width: #{$max}) {
+                @content;
+            }
+        } @else {
+            $min: fn.bp-resolve($from);
+            $max: fn.bp-resolve($upto);
+
+            @media (min-width: #{$min}) and (max-width: #{$max}) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin hide {
+    display: none;
+}
+
+@mixin hidden-at($breakpoint, $type: min) {
+    @if $type == between {
+        $next: fn.bp-next($breakpoint);
+
+        @include respond-to($breakpoint, $next, between) {
+            @include hide;
+        }
+    } @else {
+        @include respond-to($breakpoint, null, $type) {
+            @include hide;
+        }
+    }
+}
+
+
+@mixin float($side, $margin: null) {
+    float: $side;
+
+    @if $margin != null {
+        margin: $margin;
+    }
+}
+
+@mixin view-all {
+    text-align: center;
+
+    a {
+        @extend %font-strong;
+    }
+
+    @include respond-to(sm) {
+        display: none;
+    }
+}
+
+@mixin each-accent($map) {
+    @each $key, $color in $map {
+        @content($key, $color);
+    }
+}

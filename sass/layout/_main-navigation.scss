@@ -1,0 +1,197 @@
+@use "../abstracts/index" as *;
+
+.main-navigation {
+    display: none;
+    background-color: $color-nav-bg;
+    position: relative;
+
+    @include respond-to(md) {
+        display: block;
+    }
+
+
+    & > .container {
+        @extend %clearfix;
+    }
+
+    &__list {
+        @extend %flex-wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    &__item {
+        flex: 1;
+        text-align: center;
+        display: flex;
+
+        @include each-accent($nav-item-accents) using ($key, $color) {
+            &[data-key="#{$key}"] {
+                .main-navigation__link-icon {
+                    color: $color;
+                }
+
+                .main-navigation__sub-menu {
+                    background-color: map-get($nav-sub-menu-accents, $key);
+                }
+
+                &:hover {
+                    background-color: $color;
+
+                    .main-navigation__link-icon {
+                        color: $color-nav-text;
+                    }
+
+                    a::before {
+                        border-top-color: $color;
+                    }
+                }
+            }
+        }
+
+        &:hover,
+        &.is-active {
+            & > .main-navigation__sub-menu {
+                display: block;
+            }
+        }
+
+        &:hover {
+            border-color: transparent;
+        }
+
+        &:hover > .main-navigation__link::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -17px;
+            transform: translateX(-50%);
+            z-index: 90;
+            width: 0;
+            height: 0;
+            border-color: $color-link-border transparent transparent;
+            border-style: solid;
+            border-width: 17px 68px 0;
+
+            @include respond-to(lg) {
+                bottom: -35px;
+                border-width: 35px 83.5px 0;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex: 1;
+        color: $color-nav-text;
+        padding: 19px 0 18px;
+        text-transform: uppercase;
+        font-size: to-rem(18px);
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover,
+        &:focus {
+            color: $color-nav-text;
+            text-decoration: none;
+        }
+
+        &-icon {
+            font-size: 1.438rem;
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        &-label {
+            display: block;
+            font-size: .625rem;
+            padding-bottom: 1px;
+        }
+    }
+
+    &__sub-menu {
+        margin: 0;
+        display: none;
+        background-color: $color-nav-sub-bg;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 100%;
+        z-index: 10;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__sub-list {
+        @extend %flex-wrap;
+        align-items: center;
+        margin-top: -15px;
+        list-style: none;
+        text-align: left;
+        padding: 0;
+    }
+
+    &__sub-menu-title {
+        width: 100%;
+        color: $color-nav-sub-title;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    &__sub-item {
+        width: 33%;
+        margin-top: 15px;
+    }
+
+
+    &__sub-link {
+        @extend %link-base;
+        display: flex;
+        align-items: center;
+        color: $color-nav-text;
+
+        font-size: 1.2rem;
+        line-height: 1.313rem;
+        padding: .625rem .938rem .625rem 0;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-nav-text;
+
+            .main-navigation__sub-link-text {
+                text-decoration: underline;
+            }
+        }
+
+
+        &-icon-wrap {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            min-width: 25px;
+
+            :hover {
+                text-decoration: none;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            min-width: 25px;
+        }
+
+        &-text {
+            margin-left: 10px;
+        }
+    }
+
+}
