@@ -2,7 +2,7 @@
 
 /* POPPINS */
 @font-face {
-    font-family: 'Poppins';
+    font-family: Poppins;
     src: url('#{$assets-path}fonts/poppins-v15-latin-regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -10,7 +10,15 @@
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: "Poppins";
+    src: url("#{$assets-path}fonts/poppins-medium-webfont.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
     src: url('#{$assets-path}fonts/poppins-v15-latin-600.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
@@ -25,7 +33,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 
 [class*=" mdi-"],[class^=mdi-] {
     font-family: Material-Design-Icons, serif;
@@ -127,7 +134,6 @@
 .icon-arrow-right:before,.icon-next:before,.icon-right:before {
     content: "\E906"
 }
-
 
 /* GLYPHOCON */
 
