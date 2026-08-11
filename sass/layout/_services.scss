@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+@use "sass:map";
 
 .services {
 
@@ -155,7 +156,7 @@
         }
     }
 
-    @each $key, $color in $nav-item-accents {
+    @include each-accent($nav-item-accents) using ($key, $color) {
         &__item-wrap[data-key="#{$key}"] {
 
             .services__item-icon {
@@ -176,15 +177,10 @@
                     color: $color;
                 }
             }
-        }
-    }
-
-    @each $key, $color in $btn-accents {
-        &__item-wrap[data-key="#{$key}"] {
 
             .services__item-btn.btn {
-                background-color: $color;
-                border-color: $color;
+                background-color: map.get($btn-accents,$key);
+                border-color: map.get($btn-accents,$key);
             }
         }
     }

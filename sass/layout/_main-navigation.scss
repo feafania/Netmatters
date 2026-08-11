@@ -27,7 +27,7 @@
         text-align: center;
         display: flex;
 
-        @each $key, $color in $nav-item-accents {
+        @include each-accent($nav-item-accents) using ($key, $color) {
             &[data-key="#{$key}"] {
                 .main-navigation__link-icon {
                     color: $color;

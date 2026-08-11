@@ -18,9 +18,8 @@
         z-index: 1;
     }
 
-    @each $key, $color in $nav-item-accents {
+    @include each-accent($nav-item-accents) using ($key, $color) {
         &--#{$key} {
-
             .news__category {
                 background-color: $color;
             }
@@ -30,18 +29,12 @@
             }
 
             .news__btn.btn {
-                @if map.has-key($btn-accents, $key) {
-                    background-color: map.get($btn-accents, $key);
-                    border-color: map.get($btn-accents, $key);
-                }
+                background-color: map.get($btn-accents, $key);
+                border-color: map.get($btn-accents, $key);
 
                 &.active, &:active, &:focus, &:hover {
-                    @if map.has-key($btn-bg-hover, $key) {
-                        background-color: map.get($btn-bg-hover, $key);
-                    }
-                    @if map.has-key($btn-border-hover, $key) {
-                        border-color: map.get($btn-border-hover, $key);
-                    }
+                    background-color: map.get($btn-bg-hover, $key);
+                    border-color: map.get($btn-border-hover, $key);
                 }
             }
         }

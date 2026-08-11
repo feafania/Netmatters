@@ -1,8 +1,8 @@
 @use "../abstracts/index" as *;
 @use "sass:map";
 
-@each $name, $color in $banner-btn-colors {
-    .btn--#{$name} {
+@include each-accent($banner-btn-colors) using ($key, $color) {
+    .btn--#{$key} {
         color: $color-btn;
         background-color: $color;
         border-color: $color;
