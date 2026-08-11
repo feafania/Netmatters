@@ -2471,12 +2471,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .news__image {
   display: block;
   border-radius: 3px 3px 0 0;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .news__image {
+    height: 200px;
+    overflow: hidden;
+  }
+}
+@media (min-width: 992px) {
+  .news__image {
+    height: 263px;
+  }
+}
+@media (min-width: 1260px) {
+  .news__image {
+    height: 214px;
+  }
 }
 .news__image img {
   display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .news__image img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.news__image img {
   transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
