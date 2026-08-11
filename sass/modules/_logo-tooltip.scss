@@ -53,7 +53,7 @@
         }
     }
 
-      @each $key, $color in $btn-accents {
+    @include each-accent($btn-accents) using ($key, $color) {
         &__button--#{$key} {
             background-color: $color;
             border-color: $color;
