@@ -96,3 +96,9 @@
         display: none;
     }
 }
+
+@mixin each-accent($map) {
+    @each $key, $color in $map {
+        @content($key, $color);
+    }
+}
