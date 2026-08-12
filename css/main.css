@@ -248,6 +248,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: Poppins;
+  src: url("../assets/fonts/poppins-v15-latin-600italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
 /* MATERIAL DESIGN ICONS */
 @font-face {
   font-family: Material-Design-Icons;
@@ -1599,11 +1606,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   width: 100%;
   max-width: 100%;
   flex: 0 0 auto;
+}
+.branded-text__col:not(:last-child) {
   margin-bottom: 50px;
 }
 @media (min-width: 992px) {
   .branded-text__col {
     width: 50%;
+  }
+  .branded-text__col:not(:last-child) {
     margin-bottom: 0;
   }
 }
@@ -1640,6 +1651,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   color: orange;
   font-size: 50px;
   margin-bottom: 25px;
+  line-height: 1;
 }
 .branded-text__stars span {
   margin-right: 4.67px;
@@ -1669,7 +1681,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 @media (min-width: 1260px) {
   .branded-text__reviews > * {
-    margin-top: 20px;
+    margin-top: 25px;
   }
 }
 .branded-text__reviews .btn--google {
