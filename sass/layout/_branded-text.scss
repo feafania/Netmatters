@@ -32,11 +32,15 @@
 
         flex: 0 0 auto;
 
-        margin-bottom: 50px;
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
 
         @include respond-to(md) {
             width: 50%;
-            margin-bottom: 0;
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -79,6 +83,7 @@
         color: $color-brand-star;
         font-size: 50px;
         margin-bottom: 25px;
+        line-height: 1;
 
         span {
             margin-right: 4.67px;
@@ -114,7 +119,7 @@
             margin-top: 20px;
 
             @include respond-to(lg) {
-                margin-top: 20px;
+                margin-top: 25px;
             }
         }
 
