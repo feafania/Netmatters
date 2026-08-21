@@ -9,7 +9,7 @@
   display: table;
 }
 
-.services__header::after, .banner-slider__track::after, .container::after, .header__row::after {
+.services__header::after, .banner-slider .slick-track::after, .container::after, .header__row::after {
   clear: both;
 }
 
@@ -1126,13 +1126,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   overflow: hidden;
   min-height: 550px;
 }
-.banner-slider__track {
-  display: flex;
+.banner-slider .slick-track {
   width: 100%;
   height: 550px;
-  transition: transform 0.5s ease-in-out;
 }
-.banner-slider__track::after {
+.banner-slider .slick-track::after {
   content: " ";
   display: block;
   visibility: hidden;
@@ -1141,10 +1139,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .banner-slider__slide {
   width: 100%;
+  height: 100%;
   margin-right: 0;
-  flex: 0 0 100%;
   position: relative;
-  min-height: 1px;
   user-select: none;
   display: flex;
   flex-direction: column;
@@ -1239,7 +1236,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     line-height: 2.5rem;
   }
 }
-.banner-slider__controls {
+.banner-slider__dots {
   margin-top: 10px;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
@@ -1249,30 +1246,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   right: 0;
   bottom: 44px;
 }
-.banner-slider__dot {
+.banner-slider li {
   display: inline-block;
   zoom: 1;
   cursor: pointer;
   user-select: none;
-}
-.banner-slider__dot span {
   width: 11px;
   height: 11px;
   margin: 0 10px;
   background-color: hsla(0, 0%, 100%, 0.5);
-  display: block;
   -webkit-backface-visibility: visible;
   transition: opacity 0.2s ease;
   border-radius: 30px;
 }
-.banner-slider__dot span:hover {
+.banner-slider li:hover {
   background: #869791;
 }
-.banner-slider__dot.is-active span {
+.banner-slider li > button {
+  display: none;
+}
+.banner-slider li.slick-active {
   background-color: #fff;
   position: relative;
 }
-.banner-slider__dot.is-active span::after {
+.banner-slider li.slick-active::after {
   content: "";
   position: absolute;
   top: -6px;
