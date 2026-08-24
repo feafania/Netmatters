@@ -10,30 +10,23 @@
 
     .slick-track {
         width: 100%;
-        height: 550px;
 
         @extend %clear-float;
+    }
 
-        &::after {
-            content: " ";
-            display: block;
-
-            visibility: hidden;
-            line-height: 0;
-            height: 0;
-        }
+    .slick-list {
+        transition: height 0.25s ease;
     }
 
     &__slide {
         width: 100%;
-        height: 100%;
+        min-height: 550px;
         margin-right: 0;
-        //flex: 0 0 100%;
 
         position: relative;
         user-select: none;
 
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: center;
         background-color: $color-banner-bg;
@@ -117,7 +110,8 @@
     }
 
     &__dots {
-        margin-top: 10px;
+        margin: 10px auto 0;
+        padding: 0;
         text-align: center;
         -webkit-tap-highlight-color: transparent;
 
