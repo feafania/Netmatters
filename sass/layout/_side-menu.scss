@@ -1,0 +1,117 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    height: 100%;
+    background: $color-nav-bg;
+    width: 275px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include respond-to(md) {
+        width: 350px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__primary {
+        padding: 21px;
+        display: block;
+
+        @include hidden-at(md);
+
+        &-list {
+            @extend %clear-float;
+
+            margin: -20px 0 0;
+
+            &::after, &::before {
+                content: " ";
+                display: table;
+            }
+        }
+
+        &-item {
+            padding: 20px 0 0;
+
+            @include each-accent($nav-item-accents) using ($key, $color) {
+                &[data-key="#{$key}"] {
+                    a span {
+                        color: $color;
+                    }
+                }
+            }
+        }
+
+        &-link {
+            @extend %sidebar-link;
+
+            font-size: 1.125rem;
+            padding: 19px 0 18px;
+            border-radius: 3px;
+            outline: 1px solid rgba(0,0,0,.25);
+            border: 1px solid hsla(0,0%,100%,.1);
+
+            &:hover > a {
+                background-color: hsla(0,0%,100%,.05);
+            }
+
+            > * {
+                display: block;
+            }
+
+            span {
+                padding-bottom: 10px;
+                font-size: 1.438rem;
+                color: $color-nav-text;
+
+            }
+
+            small {
+                font-size: .625rem;
+                padding-bottom: 1px;
+            }
+        }
+
+        .sidebar__sub-link {
+            @extend %sidebar-link;
+
+            background-color: rgba(0,0,0,.25);
+            padding: 10px;
+            border-top: 1px solid hsla(0,0%,100%,.05);
+
+            &-icon-wrap {
+                display: none;
+            }
+
+        }
+    }
+
+    &__sub-menu {
+        margin-top: 20px;
+        border-radius: 3px;
+        overflow: hidden;
+
+        &-title {
+            display: none;
+        }
+    }
+
+    &__sub-list {
+        width: auto;
+    }
+
+    &__sub-item {
+        border-top: 1px solid rgba(0,0,0,.45);
+    }
+
+
+}

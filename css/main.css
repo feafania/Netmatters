@@ -9,7 +9,7 @@
   display: table;
 }
 
-.services__header::after, .banner-slider .slick-track::after, .container::after, .header__row::after {
+.sidebar__primary-list::after, .services__header::after, .banner-slider .slick-track::after, .container::after, .header__row::after {
   clear: both;
 }
 
@@ -122,6 +122,14 @@ h2, .h2, h3, .h3, h4, .h4 {
 .logo-tooltip__button.btn em, .branded-text .btn em {
   margin-right: -4px;
   margin-left: 12px;
+}
+
+.sidebar__primary-link, .sidebar__primary .sidebar__sub-link {
+  display: block;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 *,
@@ -1128,22 +1136,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .banner-slider .slick-track {
   width: 100%;
-  height: 550px;
 }
-.banner-slider .slick-track::after {
-  content: " ";
-  display: block;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+.banner-slider .slick-list {
+  transition: height 0.25s ease;
 }
 .banner-slider__slide {
   width: 100%;
-  height: 100%;
+  min-height: 550px;
   margin-right: 0;
   position: relative;
   user-select: none;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   background-color: #000;
@@ -1237,7 +1240,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
 }
 .banner-slider__dots {
-  margin-top: 10px;
+  margin: 10px auto 0;
+  padding: 0;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   position: absolute;
@@ -1746,6 +1750,112 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  height: 100%;
+  background: #333645;
+  width: 275px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 992px) {
+  .sidebar {
+    width: 350px;
+  }
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar__primary {
+  padding: 21px;
+  display: block;
+}
+@media (min-width: 992px) {
+  .sidebar__primary {
+    display: none;
+  }
+}
+.sidebar__primary-list {
+  margin: -20px 0 0;
+}
+.sidebar__primary-list::after, .sidebar__primary-list::before {
+  content: " ";
+  display: table;
+}
+.sidebar__primary-item {
+  padding: 20px 0 0;
+}
+.sidebar__primary-item[data-key=software] a span {
+  color: #67809f;
+}
+.sidebar__primary-item[data-key=it] a span {
+  color: #4183d7;
+}
+.sidebar__primary-item[data-key=digital] a span {
+  color: #2ecc71;
+}
+.sidebar__primary-item[data-key=telecoms] a span {
+  color: #d64541;
+}
+.sidebar__primary-item[data-key=web] a span {
+  color: #926fb1;
+}
+.sidebar__primary-item[data-key=security] a span {
+  color: #f62459;
+}
+.sidebar__primary-item[data-key=developer-course] a span {
+  color: #ce4125;
+}
+.sidebar__primary-link {
+  font-size: 1.125rem;
+  padding: 19px 0 18px;
+  border-radius: 3px;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+.sidebar__primary-link:hover > a {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+.sidebar__primary-link > * {
+  display: block;
+}
+.sidebar__primary-link span {
+  padding-bottom: 10px;
+  font-size: 1.438rem;
+  color: white;
+}
+.sidebar__primary-link small {
+  font-size: 0.625rem;
+  padding-bottom: 1px;
+}
+.sidebar__primary .sidebar__sub-link {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+.sidebar__primary .sidebar__sub-link-icon-wrap {
+  display: none;
+}
+.sidebar__sub-menu {
+  margin-top: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.sidebar__sub-menu-title {
+  display: none;
+}
+.sidebar__sub-list {
+  width: auto;
+}
+.sidebar__sub-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.45);
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -2025,13 +2135,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .btn--software {
   color: #fff;
-  background-color: #67809f;
-  border-color: #67809f;
+  background-color: #f7b322;
+  border-color: #f7b322;
 }
 .btn--software:hover, .btn--software:focus, .btn--software.active, .btn--software:active {
   color: white;
-  background-color: rgb(85.6258064516, 107.9241935484, 135.5741935484);
-  border-color: rgb(77.7290322581, 97.9709677419, 123.0709677419);
+  background-color: rgb(231.8087336245, 160.4829694323, 8.3912663755);
+  border-color: rgb(212.1213973799, 146.8532751092, 7.6786026201);
 }
 
 .btn--it {
