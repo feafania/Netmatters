@@ -28,7 +28,7 @@
 
         @include hidden-at(md);
 
-        &-list {
+        & > &-list {
             @extend %clear-float;
 
             margin: -20px 0 0;
@@ -44,14 +44,18 @@
 
             @include each-accent($nav-item-accents) using ($key, $color) {
                 &[data-key="#{$key}"] {
-                    a span {
+                    .sidebar__primary-link span {
                         color: $color;
                     }
                 }
             }
+
+            &:hover > .sidebar__primary-link {
+                background-color: hsla(0,0%,100%,.05);
+            }
         }
 
-        &-link {
+        &-item > &-link {
             @extend %sidebar-link;
 
             font-size: 1.125rem;
@@ -60,11 +64,7 @@
             outline: 1px solid rgba(0,0,0,.25);
             border: 1px solid hsla(0,0%,100%,.1);
 
-            &:hover > a {
-                background-color: hsla(0,0%,100%,.05);
-            }
-
-            > * {
+            & > * {
                 display: block;
             }
 
@@ -113,5 +113,18 @@
         border-top: 1px solid rgba(0,0,0,.45);
     }
 
+    &-overlay {
+        position: fixed;
+        inset: 0;
+        background: $overlay-dark;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .5s;
+        z-index: 8;
+    }
 
+    &-open .sidebar-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }

@@ -9,7 +9,7 @@
   display: table;
 }
 
-.sidebar__primary-list::after, .services__header::after, .banner-slider .slick-track::after, .container::after, .header__row::after {
+.sidebar__primary > .sidebar__primary-list::after, .services__header::after, .banner-slider .slick-track::after, .container::after, .header__row::after {
   clear: both;
 }
 
@@ -124,7 +124,7 @@ h2, .h2, h3, .h3, h4, .h4 {
   margin-left: 12px;
 }
 
-.sidebar__primary-link, .sidebar__primary .sidebar__sub-link {
+.sidebar__primary-item > .sidebar__primary-link, .sidebar__primary .sidebar__sub-link {
   display: block;
   color: white;
   text-align: center;
@@ -882,6 +882,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 @media (min-width: 1260px) {
   .container {
     max-width: 1200px;
+  }
+}
+
+.sidebar-open #container::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.sidebar-open #container, .sidebar-open .sticky {
+  left: -275px;
+  cursor: pointer;
+}
+@media (min-width: 992px) {
+  .sidebar-open #container, .sidebar-open .sticky {
+    left: -350px;
   }
 }
 
@@ -1780,56 +1796,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: none;
   }
 }
-.sidebar__primary-list {
+.sidebar__primary > .sidebar__primary-list {
   margin: -20px 0 0;
 }
-.sidebar__primary-list::after, .sidebar__primary-list::before {
+.sidebar__primary > .sidebar__primary-list::after, .sidebar__primary > .sidebar__primary-list::before {
   content: " ";
   display: table;
 }
 .sidebar__primary-item {
   padding: 20px 0 0;
 }
-.sidebar__primary-item[data-key=software] a span {
+.sidebar__primary-item[data-key=software] .sidebar__primary-link span {
   color: #67809f;
 }
-.sidebar__primary-item[data-key=it] a span {
+.sidebar__primary-item[data-key=it] .sidebar__primary-link span {
   color: #4183d7;
 }
-.sidebar__primary-item[data-key=digital] a span {
+.sidebar__primary-item[data-key=digital] .sidebar__primary-link span {
   color: #2ecc71;
 }
-.sidebar__primary-item[data-key=telecoms] a span {
+.sidebar__primary-item[data-key=telecoms] .sidebar__primary-link span {
   color: #d64541;
 }
-.sidebar__primary-item[data-key=web] a span {
+.sidebar__primary-item[data-key=web] .sidebar__primary-link span {
   color: #926fb1;
 }
-.sidebar__primary-item[data-key=security] a span {
+.sidebar__primary-item[data-key=security] .sidebar__primary-link span {
   color: #f62459;
 }
-.sidebar__primary-item[data-key=developer-course] a span {
+.sidebar__primary-item[data-key=developer-course] .sidebar__primary-link span {
   color: #ce4125;
 }
-.sidebar__primary-link {
+.sidebar__primary-item:hover > .sidebar__primary-link {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+.sidebar__primary-item > .sidebar__primary-link {
   font-size: 1.125rem;
   padding: 19px 0 18px;
   border-radius: 3px;
   outline: 1px solid rgba(0, 0, 0, 0.25);
   border: 1px solid hsla(0, 0%, 100%, 0.1);
 }
-.sidebar__primary-link:hover > a {
-  background-color: hsla(0, 0%, 100%, 0.05);
-}
-.sidebar__primary-link > * {
+.sidebar__primary-item > .sidebar__primary-link > * {
   display: block;
 }
-.sidebar__primary-link span {
+.sidebar__primary-item > .sidebar__primary-link span {
   padding-bottom: 10px;
   font-size: 1.438rem;
   color: white;
 }
-.sidebar__primary-link small {
+.sidebar__primary-item > .sidebar__primary-link small {
   font-size: 0.625rem;
   padding-bottom: 1px;
 }
@@ -1854,6 +1870,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .sidebar__sub-item {
   border-top: 1px solid rgba(0, 0, 0, 0.45);
+}
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  z-index: 8;
+}
+.sidebar-open .sidebar-overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .btn {
@@ -2015,6 +2044,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .hamburger--spin .hamburger-inner::after {
   transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
 }
 .hamburger:hover {
   opacity: 1;
