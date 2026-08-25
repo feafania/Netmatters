@@ -124,10 +124,9 @@ h2, .h2, h3, .h3, h4, .h4 {
   margin-left: 12px;
 }
 
-.sidebar__primary-item > .sidebar__primary-link, .sidebar__primary .sidebar__sub-link {
+.sidebar__primary-item > .sidebar__primary-link, .sidebar__primary .sidebar__sub-link, .sidebar__secondary-list .sidebar__sub-link {
   display: block;
   color: white;
-  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -1831,6 +1830,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   background-color: hsla(0, 0%, 100%, 0.05);
 }
 .sidebar__primary-item > .sidebar__primary-link {
+  text-align: center;
   font-size: 1.125rem;
   padding: 19px 0 18px;
   border-radius: 3px;
@@ -1850,6 +1850,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   padding-bottom: 1px;
 }
 .sidebar__primary .sidebar__sub-link {
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.25);
   padding: 10px;
   border-top: 1px solid hsla(0, 0%, 100%, 0.05);
@@ -1857,13 +1858,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .sidebar__primary .sidebar__sub-link-icon-wrap {
   display: none;
 }
-.sidebar__sub-menu {
+.sidebar__primary .sidebar__sub-menu {
   margin-top: 20px;
   border-radius: 3px;
   overflow: hidden;
-}
-.sidebar__sub-menu-title {
-  display: none;
 }
 .sidebar__sub-list {
   width: auto;
@@ -1883,6 +1881,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .sidebar-open .sidebar-overlay {
   opacity: 1;
   pointer-events: auto;
+}
+.sidebar__sub-menu-title {
+  display: none;
+}
+.sidebar__secondary-list {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+.sidebar__secondary-list .sidebar__sub-link {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 15px 20px;
+  font-size: 0.875rem;
+  position: relative;
+}
+.sidebar__secondary-list .sidebar__sub-link::before {
+  content: "»";
+  padding-right: 15px;
+}
+.sidebar__secondary-list .sidebar__sub-link-icon-wrap {
+  display: none;
+}
+.sidebar__secondary-item {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 991px) {
+  .sidebar__secondary-item[data-menu-id="532"] {
+    display: none;
+  }
+}
+.sidebar__secondary-item:hover > a {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+@media (min-width: 992px) {
+  .sidebar__secondary-item[data-menu-id=Support] {
+    display: none;
+  }
+}
+.sidebar__secondary-item > .sidebar__secondary-link {
+  display: block;
+  color: white;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
 }
 
 .btn {
