@@ -51,7 +51,7 @@
             }
 
             &:hover > .sidebar__primary-link {
-                background-color: hsla(0,0%,100%,.05);
+                background-color: $side-menu-link;
             }
         }
 
@@ -62,8 +62,8 @@
             font-size: 1.125rem;
             padding: 19px 0 18px;
             border-radius: 3px;
-            outline: 1px solid rgba(0,0,0,.25);
-            border: 1px solid hsla(0,0%,100%,.1);
+            outline: $side-menu-line $side-menu-link-border-two;
+            border: $side-menu-line $side-menu-link-border-one;
 
             & > * {
                 display: block;
@@ -86,9 +86,9 @@
             @extend %sidebar-link;
             text-align: center;
 
-            background-color: rgba(0,0,0,.25);
+            background-color: $side-menu-link-border-two;
             padding: 10px;
-            border-top: 1px solid hsla(0,0%,100%,.05);
+            border-top: $side-menu-line $side-menu-link;
 
             &-icon-wrap {
                 display: none;
@@ -108,7 +108,7 @@
     }
 
     &__sub-item {
-        border-top: 1px solid rgba(0,0,0,.45);
+        border-top: $side-menu-line $side-menu-link-border-three;
     }
 
     &-overlay {
@@ -132,12 +132,12 @@
 
     &__secondary {
         &-list {
-            border-top: 1px solid rgba(0, 0, 0, .25);
-            border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+            border-top: $side-menu-line $side-menu-link-border-two;
+            border-bottom: $side-menu-line $side-menu-link-border-one;
 
             .sidebar__sub-link {
                 @extend %sidebar-link;
-                border-top: 1px solid hsla(0,0%,100%,.05);
+                border-top: $side-menu-line $side-menu-link;
                 background-color: rgba(0,0,0,.25);
                 padding: 15px 20px;
                 font-size: .875rem;
@@ -155,15 +155,15 @@
         }
 
         &-item {
-            border-top: 1px solid hsla(0,0%,100%,.1);
-            border-bottom: 1px solid rgba(0,0,0,.25);
+            border-top: $side-menu-line $side-menu-link-border-one;
+            border-bottom: $side-menu-line $side-menu-link-border-two;
 
             &[data-menu-id="532"] {
                 @include hidden-at(sm, max)
             }
 
             &:hover > a {
-                background-color: hsla(0,0%,100%,.05);
+                background-color: $side-menu-link;
             }
 
             &[data-menu-id="Support"] {
