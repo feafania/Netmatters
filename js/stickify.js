@@ -44,7 +44,8 @@
         });
 
         setInterval(function() {
-            if (isScroll && opts.reverse === true) {
+            // if (isScroll && opts.reverse === true) {
+            if (opts.reverse === true) {
                 hasScrolled();
                 isScroll = false;
             } else {
