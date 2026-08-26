@@ -1,0 +1,149 @@
+@use "../abstracts/index" as *;
+
+.cookies {
+    &.is-hidden {
+        .cookie-consent {
+            animation: fade-out .15s linear forwards;
+        }
+    }
+    &__settings-btn {
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        left: 0;
+        display: flex;
+
+        border: solid #75788a;
+        border-width: 1px 1px 0 0;
+        border-radius: 0 10px 0 0;
+
+        padding: 0 10px;
+
+        background: #75788a;
+        color: #fff;
+
+        font-weight: 600;
+        font-size: .8rem;
+        text-transform: capitalize;
+        line-height: 22px;
+
+        cursor: pointer;
+    }
+}
+
+.cookie-consent {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    -webkit-overflow-scrolling: touch; // smooth scrolling in safary
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background-color: rgba(0,0,0,.7);
+
+    animation: fade-in .15s linear;
+
+    &__dialog {
+        margin: auto;
+        position: relative;
+        width: auto;
+
+        @include respond-to(sm){
+            width: 600px;
+            margin: 30px auto;
+        }
+
+    }
+
+    &__content {
+        position: relative;
+        background-color: #fff;
+
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 5px;
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        background-clip: padding-box;
+        outline: none;
+
+        @include respond-to(sm){
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        }
+    }
+
+    &__header {
+        padding: 15px 20px;
+        border-bottom: 1px solid #e5e5e5;
+        min-height: 16.42857143px;
+    }
+
+    &__title {
+        margin: 0;
+        line-height: 1.42857143;
+    }
+
+    &__body {
+       @extend %clearfix;
+
+        position: relative;
+        padding: 20px;
+    }
+
+    &__footer {
+        @extend %clearfix;
+        margin: 0;
+        padding: 19px 20px 20px;
+
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    &__actions {
+        @extend %clearfix;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__action {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+
+            @include respond-to(sm){
+                margin-bottom: auto;
+            }
+        }
+
+        @include respond-to(sm){
+            width: 50%;
+        }
+
+    }
+
+    &__btn.btn {
+        display: block;
+        width: 100%;
+        @extend %btn;
+    }
+
+
+}
