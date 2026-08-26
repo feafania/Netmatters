@@ -1588,6 +1588,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .logo-strip--clients img:hover {
   filter: grayscale(0);
 }
+.logo-strip--clients .slick-list {
+  overflow: visible;
+}
 .logo-strip--partners {
   overflow: hidden;
 }
@@ -1601,6 +1604,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .logo-strip__item {
   flex: 0 0 auto;
   margin-right: 50px;
+}
+.logo-strip .slick-slide,
+.logo-strip .slick-slide > div {
+  height: 70px;
 }
 
 .branded-text {
