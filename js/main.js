@@ -1,10 +1,13 @@
 import initSlick from "./slick.js";
 import initSticky from "./sticky.js";
+import initCookies from "./cookies.js";
 import { initSidebar } from "./sidebar.js";
 
 $(document).ready(function(){
   initSlick();
   initSticky();
+
+  // initCookies();
 
   $('#side-menu-placeholder').load( "./side-menu.html" ,
     function( response, status, xhr ) {
