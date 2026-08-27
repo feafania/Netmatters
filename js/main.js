@@ -9,7 +9,7 @@ $(document).ready(function(){
 
   loadCookieConsent();
 
-  $('#side-menu-placeholder').load( "./side-menu.html" ,
+  $('#side-menu-placeholder').load( "./partials/side-menu.html" ,
     function( response, status, xhr ) {
         if ( status === "error" ) {
             console.error("Unable to load side-menu.html: " + xhr.status + " " + xhr.statusText)
