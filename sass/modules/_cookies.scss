@@ -13,14 +13,14 @@
         left: 0;
         display: flex;
 
-        border: solid #75788a;
+        border: solid $color-cookies-bg;
         border-width: 1px 1px 0 0;
         border-radius: 0 10px 0 0;
 
         padding: 0 10px;
 
-        background: #75788a;
-        color: #fff;
+        background: $color-cookies-bg;
+        color: $color-cookies;
 
         font-weight: 600;
         font-size: .8rem;
@@ -47,7 +47,7 @@
 
     padding: 30px;
 
-    background-color: rgba(0,0,0,.7);
+    background-color: $color-cookie-consent-bg;
 
     animation: fade-in .15s linear;
 
@@ -67,26 +67,26 @@
         position: relative;
         background-color: #fff;
 
-        border: 1px solid rgba(0,0,0,.2);
+        border: 1px solid $color-cookie-content-border;
         border-radius: 5px;
-        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        box-shadow: 0 3px 9px $color-cookie-shadow;
         background-clip: padding-box;
         outline: none;
 
         @include respond-to(sm){
-            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+            box-shadow: 0 5px 15px $color-cookie-shadow;
         }
     }
 
     &__header {
         padding: 15px 20px;
-        border-bottom: 1px solid #e5e5e5;
-        min-height: 16.42857143px;
+        border-bottom: 1px solid $color-cookie-border;
+        min-height: $rem-base + ($line-height - 1) * 1px;
     }
 
     &__title {
         margin: 0;
-        line-height: 1.42857143;
+        line-height: $line-height;
     }
 
     &__body {
@@ -102,7 +102,7 @@
         padding: 19px 20px 20px;
 
         text-align: right;
-        border-top: 1px solid #e5e5e5;
+        border-top: 1px solid $color-cookie-border;
     }
 
     &__actions {

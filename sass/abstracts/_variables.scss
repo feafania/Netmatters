@@ -89,6 +89,13 @@ $side-menu-link-border-two: rgba(0,0,0,.25);
 $side-menu-link-border-three: rgba(0,0,0,.45);
 $side-menu-line: 1px solid;
 
+$color-cookies-bg: #75788a;
+$color-cookies: #fff;
+$color-cookie-consent-bg: rgba(0,0,0,.7);
+$color-cookie-shadow: rgba(0,0,0,.5);
+$color-cookie-border: #e5e5e5;
+$color-cookie-content-border: rgba(0,0,0,.2);
+
 $nav-item-accents: (
         software:           #67809f,
         it:                 #4183d7,
@@ -161,6 +168,7 @@ $overlay-dark: rgba(0, 0, 0, .4);
 
 /* FONTS */
 $rem-base: 16px;
+$line-height: 1.42857143;
 
 /* PATHS */
 $assets-path: "../assets/";
