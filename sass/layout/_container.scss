@@ -45,6 +45,12 @@
 
 }
 
+.sticky {
+    left: 0;
+    transition: left .5s;
+}
+
+
 .sidebar-open {
     #container::after {
         width: 100%;

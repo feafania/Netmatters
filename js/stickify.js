@@ -1,5 +1,5 @@
 /**
- * Sticky Header Plugin
+ * Sticky Header Plugin (ADOPTED)
  *
  * Description: Simple plugin for fixing elements on scroll
  *
@@ -18,7 +18,7 @@
 
 (function($) {
 
-    $.fn.stickify = function (options) {
+    $.fn.stickify = function(options) {
 
         var $selector = this;
 
@@ -28,76 +28,153 @@
             animationDuration: '0.4',
             reverse: false,
             width: '100%',
-            zIndex: '9999'
+            zIndex: '9999',
+            offset: 2
         };
 
         var opts = $.extend({}, defaultOptions, options);
 
-        // Hide element on scroll down
-        var isScroll;
-        var lastScrollTop = 0;
-        var index = 5;
-        var elementHeight = $selector.outerHeight();
-
-        $(window).scroll(function(event){
-            isScroll = true;
-        });
-
-        setInterval(function() {
-            // if (isScroll && opts.reverse === true) {
-            if (opts.reverse === true) {
-                hasScrolled();
-                isScroll = false;
-            } else {
-                fixedHeader();
-            }
-        }, 250);
-
-        function fixedHeader() {
-
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 100) $selector
-                .css('position', 'fixed')
-                .css(opts.position, '0')
-                .css('width', opts.width)
-                .css('z-index', opts.zIndex)
+        if (!opts.reverse) {
+            return this;
         }
 
-        function hasScrolled() {
-            var scrollTop = $(this).scrollTop();
+        var lastScrollTop = $(window).scrollTop();
+        var index = 5;
 
-            // Make sure to scroll more than index
-            if(Math.abs(lastScrollTop - scrollTop) <= index)
+        var $clone = null;
+        var cloneCreated = false;
+        var cloneVisible = false;
+
+        function getShowOffset() {
+            return $selector.outerHeight() * opts.offset;
+        }
+
+        function createClone() {
+
+            if (cloneCreated) {
                 return;
+            }
 
-            if (scrollTop > lastScrollTop && scrollTop > elementHeight){
-                // Scroll Down
-                $selector
-                    .css('position', 'fixed')
-                    .css(opts.position, '0')
-                    .css('transition', opts.position + ' ' + opts.animationDuration + 's ease-in-out')
-                    .css(opts.position, '-1000px')
-                    .css('width', opts.width)
-                    .css('z-index', opts.zIndex)
+            var height = $selector.outerHeight();
 
-            } else {
-                // Scroll Up
-                if(scrollTop + $(window).height() < $(document).height()) {
-                    $selector
-                        .css(opts.position, '-1000px')
-                        .css('transition', opts.position + ' ' + opts.animationDuration + 's ease-in-out')
-                        .css(opts.position, '0')
-                        .css('width', opts.width)
-                        .css('z-index', opts.zIndex)
+            $clone = $selector.clone(true, true);
+
+            $clone
+              .attr('id', $selector.attr('id') + '-clone')
+              .addClass('sticky')
+              .css({
+                  position: 'fixed',
+                  top: '-' + height + 'px',
+                  // left: '0',
+                  width: opts.width,
+                  zIndex: opts.zIndex,
+                  transition:
+                    opts.position + ' ' +
+                    opts.animationDuration +
+                    's ease-in-out'
+              });
+
+            $selector.after($clone);
+
+            cloneCreated = true;
+        }
+
+        function showClone() {
+
+            createClone();
+
+            if (cloneVisible) {
+                return;
+            }
+
+            cloneVisible = true;
+
+            // Force initial position to be rendered
+            $clone[0].offsetHeight;
+
+            // Smoothly slide into view
+            $clone.css(opts.position, '0');
+        }
+
+        function hideClone() {
+
+            if (!$clone || !cloneVisible) {
+                return;
+            }
+
+            cloneVisible = false;
+
+            $clone.css(
+              opts.position,
+              '-' + $selector.outerHeight() + 'px'
+            );
+        }
+
+        function removeClone() {
+
+            if (!$clone) {
+                return;
+            }
+
+            $clone.remove();
+
+            $clone = null;
+            cloneCreated = false;
+            cloneVisible = false;
+        }
+
+        $(window).on('scroll', function() {
+
+            var scrollTop = $(window).scrollTop();
+
+            /*
+             * We reached the actual top of the page.
+             * Only here do we remove the clone.
+             */
+            if (scrollTop <= 0) {
+
+                removeClone();
+
+                lastScrollTop = scrollTop;
+                return;
+            }
+
+            /*
+             * Ignore very small movements.
+             */
+            if (Math.abs(lastScrollTop - scrollTop) <= index) {
+                return;
+            }
+
+            /*
+             * SCROLL UP
+             */
+            if (scrollTop < lastScrollTop) {
+
+                /*
+                 * Clone can appear only after we have
+                 * scrolled down far enough.
+                 */
+                if (scrollTop > getShowOffset()) {
+                    showClone();
                 }
+
+                /*
+                 * SCROLL DOWN
+                 */
+            } else {
+
+                /*
+                 * Once the clone exists, scrolling down
+                 * hides it, but does not remove it.
+                 */
+                hideClone();
             }
 
             lastScrollTop = scrollTop;
-        }
+        });
 
         return this;
-
     };
 
 })(jQuery);

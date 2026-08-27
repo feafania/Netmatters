@@ -22,6 +22,10 @@ body {
 
     color: $color-body-text;
     background-color: $color-body-bg;
+
+    &.is-hidden {
+        overflow: hidden;
+    }
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
