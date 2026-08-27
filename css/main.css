@@ -152,7 +152,7 @@ body {
   color: #666;
   background-color: #fff;
 }
-body.is-hidden {
+body.no-scroll, body.sidebar-open {
   overflow: hidden;
 }
 

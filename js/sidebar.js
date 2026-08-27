@@ -19,16 +19,3 @@ export function initSidebar () {
     }
   });
 }
-
-
-// document.addEventListener('DOMContentLoaded', function(){
-//     fetch("./side-menu.html")
-//       .then(response => response.text())
-//       .then((data) => {
-//           const sideMenu = document.getElementById('side-menu-placeholder');
-//           if (sideMenu) {
-//               sideMenu.innerHTML = data;
-//           }
-//       })
-//       .catch((error) => console.error("Unable to load side-menu.html: " + error));
-// })

@@ -23,7 +23,7 @@ body {
     color: $color-body-text;
     background-color: $color-body-bg;
 
-    &.is-hidden {
+    &.no-scroll, &.sidebar-open {
         overflow: hidden;
     }
 }
