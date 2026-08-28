@@ -1,5 +1,6 @@
 @use "../abstracts/index" as *;
 @use "sass:map";
+@use "sass:color";
 
 @include each-accent($banner-btn-colors) using ($key, $color) {
     .btn--#{$key} {
@@ -12,8 +13,8 @@
         &.active,
         &:active {
             color: white;
-            background-color: darken($color, 8%);
-            border-color: darken($color, 12%);
+            background-color: color.adjust($color, $lightness: -8%);
+            border-color: color.adjust($color, $lightness: -12%);
         }
     }
 }

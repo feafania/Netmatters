@@ -1,6 +1,8 @@
 @use "../abstracts/index" as *;
 
 .logo-strip {
+    position: relative;
+    z-index: 1;
     padding: 50px 0;
     text-align: center;
 
@@ -15,6 +17,10 @@
             &:hover {
                 filter: grayscale(0);
             }
+        }
+
+        .slick-list {
+            overflow: visible;
         }
     }
 
@@ -34,5 +40,10 @@
     &__item {
         flex: 0 0 auto;
         margin-right: 50px;
+    }
+
+    .slick-slide,
+    .slick-slide > div {
+        height: 70px;
     }
 }

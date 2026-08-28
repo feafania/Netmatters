@@ -1,6 +1,7 @@
 @use "variables" as vars;
 @use "functions" as fn;
 @use "sass:map";
+@use "sass:list";
 
 @mixin respond-to($from, $to: null, $type: min) {
     $from-is-key: map.has-key(vars.$bps, $from);
@@ -41,8 +42,8 @@
 
         @if $from-is-key and $upto-is-key {
             $range: fn.bp-range($from, $upto);
-            $min: nth($range, 1);
-            $max: nth($range, 2);
+            $min: list.nth($range, 1);
+            $max: list.nth($range, 2);
 
             @media (min-width: #{$min}) and (max-width: #{$max}) {
                 @content;

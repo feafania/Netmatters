@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="slick/slick.css">
+  <link rel="stylesheet" href="slick/slick-theme.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -596,41 +598,6 @@
   </div>
 
   <section class="banner-slider" id="banner-slider" aria-label="Main banner">
-    <div class="banner-slider__track">
-
-      <div class="banner-slider__slide is-active" data-key="web">
-        <div class="banner-slider__pic" role="img" aria-label="Web Design Norwich, Norfolk, Cambridge, North London, Essex, Hertfordshire, Enfield"></div>
-        <div class="banner-slider__content">
-          <div class="container">
-            <div class="banner-slider__text">
-              <h1 class="banner-slider__title h1">Web Design</h1>
-              <p class="banner-slider__lead">For businesses looking to make a strong <br>
-                and effective first impression.</p>
-              <a href="#" class="btn btn--lg btn--web">
-                Find Out More
-                <i class="icon-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="banner-slider__slide" data-key="security">
-        <div class="banner-slider__pic" role="img" aria-label="Cyber Security Norwich, Norfolk, Cambridge, North London, Essex, Hertfordshire, Enfield"></div>
-        <div class="banner-slider__content">
-          <div class="container">
-            <div class="banner-slider__text">
-              <div class="banner-slider__title h1">Cyber Security</div>
-              <p class="banner-slider__lead">Keeping businesses and their customers<br>
-                sensitive information protected.</p>
-              <a href="#" class="btn btn--lg btn--security">
-                Find Out More
-                <i class="icon-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="banner-slider__slide" data-key="company">
         <div class="banner-slider__pic" role="img" aria-label="The East Of England's Leading Technology Company Norwich, Norfolk, Cambridge, North London, Essex, Hertfordshire, Enfield"></div>
@@ -717,19 +684,39 @@
         </div>
       </div>
 
-    </div>
-
-    <div class="banner-slider__controls">
-      <div class="banner-slider__dots" role="tablist">
-        <div class="banner-slider__dot is-active"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
-        <div class="banner-slider__dot"><span></span></div>
+      <div class="banner-slider__slide" data-key="web">
+        <div class="banner-slider__pic" role="img" aria-label="Web Design Norwich, Norfolk, Cambridge, North London, Essex, Hertfordshire, Enfield"></div>
+        <div class="banner-slider__content">
+          <div class="container">
+            <div class="banner-slider__text">
+              <h1 class="banner-slider__title h1">Web Design</h1>
+              <p class="banner-slider__lead">For businesses looking to make a strong <br>
+                and effective first impression.</p>
+              <a href="#" class="btn btn--lg btn--web">
+                Find Out More
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="banner-slider__slide" data-key="security">
+        <div class="banner-slider__pic" role="img" aria-label="Cyber Security Norwich, Norfolk, Cambridge, North London, Essex, Hertfordshire, Enfield"></div>
+        <div class="banner-slider__content">
+          <div class="container">
+            <div class="banner-slider__text">
+              <div class="banner-slider__title h1">Cyber Security</div>
+              <p class="banner-slider__lead">Keeping businesses and their customers<br>
+                sensitive information protected.</p>
+              <a href="#" class="btn btn--lg btn--security">
+                Find Out More
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
   </section>
 
@@ -840,7 +827,62 @@
   <section class="logo-strip">
     <h2 class="visually-hidden"> Our partners</h2>
     <div class="logo-strip__list logo-strip--partners">
-
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture logo-card__picture--grey">
+            <source srcset="assets/images/google-partner-bw.webp" type="image/webp">
+            <source srcset="assets/images/google-partner-bw.jpg" type="image/jpg">
+            <img src="assets/images/google-partner-bw.jpg" alt="Google Partners" class="logo-card__image">
+          </picture>
+          <picture class="logo-card__picture logo-card__picture--colour">
+            <source srcset="assets/images/google-partner.webp" type="image/webp">
+            <source srcset="assets/images/google-partner.jpg" type="image/jpg">
+            <img src="assets/images/google-partner.jpg" alt="Google Partners" class="logo-card__image">
+          </picture>
+        </div>
+      </div>
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture logo-card__picture--grey">
+            <source srcset="assets/images/GBC-bw.webp" type="image/webp">
+            <source srcset="assets/images/GBC-bw.png" type="image/png">
+            <img src="assets/images/GBC-bw.png" alt="Good Business Charter" class="logo-card__image">
+          </picture>
+          <picture class="logo-card__picture logo-card__picture--colour">
+            <source srcset="assets/images/GBC-colour.webp" type="image/webp">
+            <source srcset="assets/images/GBC-colour.png" type="image/png">
+            <img src="assets/images/GBC-colour.png" alt="Good Business Charter" class="logo-card__image">
+          </picture>
+        </div>
+      </div>
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture logo-card__picture--grey">
+            <source srcset="assets/images/norfolk_prohelp_bw.webp" type="image/webp">
+            <source srcset="assets/images/norfolk_prohelp_bw.png" type="image/png">
+            <img src="assets/images/norfolk_prohelp_bw.png" alt="Norfolk Prohelp logo" class="logo-card__image">
+          </picture>
+          <picture class="logo-card__picture logo-card__picture--colour">
+            <source srcset="assets/images/norfolk_prohelp.webp" type="image/webp">
+            <source srcset="assets/images/norfolk_prohelp.png" type="image/png">
+            <img src="assets/images/norfolk_prohelp.png" alt="Norfolk Prohelp logo" class="logo-card__image">
+          </picture>
+        </div>
+      </div>
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture logo-card__picture--grey">
+            <source srcset="assets/images/investing-in-future-growth-bw.webp" type="image/webp">
+            <source srcset="assets/images/investing-in-future-growth-bw.jpg" type="image/jpg">
+            <img src="assets/images/investing-in-future-growth-bw.jpg" alt="Investing In Future Growth" class="logo-card__image">
+          </picture>
+          <picture class="logo-card__picture logo-card__picture--colour">
+            <source srcset="assets/images/investing-in-future-growth.webp" type="image/webp">
+            <source srcset="assets/images/investing-in-future-growth.jpg" type="image/jpg">
+            <img src="assets/images/investing-in-future-growth.jpg" alt="Investing In Future Growth" class="logo-card__image">
+          </picture>
+        </div>
+      </div>
       <div class="logo-strip__item">
         <div class="logo-card">
           <picture class="logo-card__picture logo-card__picture--grey">
@@ -950,62 +992,6 @@
             <source srcset="assets/images/cyber-essentials-colour.webp" type="image/webp">
             <source srcset="assets/images/cyber-essentials-colour.jpg" type="image/png">
             <img src="assets/images/cyber-essentials-colour.jpg" alt="Cyber Essentials" class="logo-card__image" style="opacity: 1;">
-          </picture>
-        </div>
-      </div>
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture logo-card__picture--grey">
-            <source srcset="assets/images/google-partner-bw.webp" type="image/webp">
-            <source srcset="assets/images/google-partner-bw.jpg" type="image/jpg">
-            <img src="assets/images/google-partner-bw.jpg" alt="Google Partners" class="logo-card__image">
-          </picture>
-          <picture class="logo-card__picture logo-card__picture--colour">
-            <source srcset="assets/images/google-partner.webp" type="image/webp">
-            <source srcset="assets/images/google-partner.jpg" type="image/jpg">
-            <img src="assets/images/google-partner.jpg" alt="Google Partners" class="logo-card__image">
-          </picture>
-        </div>
-      </div>
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture logo-card__picture--grey">
-            <source srcset="assets/images/GBC-bw.webp" type="image/webp">
-            <source srcset="assets/images/GBC-bw.png" type="image/png">
-            <img src="assets/images/GBC-bw.png" alt="Good Business Charter" class="logo-card__image">
-          </picture>
-          <picture class="logo-card__picture logo-card__picture--colour">
-            <source srcset="assets/images/GBC-colour.webp" type="image/webp">
-            <source srcset="assets/images/GBC-colour.png" type="image/png">
-            <img src="assets/images/GBC-colour.png" alt="Good Business Charter" class="logo-card__image">
-          </picture>
-        </div>
-      </div>
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture logo-card__picture--grey">
-            <source srcset="assets/images/norfolk_prohelp_bw.webp" type="image/webp">
-            <source srcset="assets/images/norfolk_prohelp_bw.png" type="image/png">
-            <img src="assets/images/norfolk_prohelp_bw.png" alt="Norfolk Prohelp logo" class="logo-card__image">
-          </picture>
-          <picture class="logo-card__picture logo-card__picture--colour">
-            <source srcset="assets/images/norfolk_prohelp.webp" type="image/webp">
-            <source srcset="assets/images/norfolk_prohelp.png" type="image/png">
-            <img src="assets/images/norfolk_prohelp.png" alt="Norfolk Prohelp logo" class="logo-card__image">
-          </picture>
-        </div>
-      </div>
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture logo-card__picture--grey">
-            <source srcset="assets/images/investing-in-future-growth-bw.webp" type="image/webp">
-            <source srcset="assets/images/investing-in-future-growth-bw.jpg" type="image/jpg">
-            <img src="assets/images/investing-in-future-growth-bw.jpg" alt="Investing In Future Growth" class="logo-card__image">
-          </picture>
-          <picture class="logo-card__picture logo-card__picture--colour">
-            <source srcset="assets/images/investing-in-future-growth.webp" type="image/webp">
-            <source srcset="assets/images/investing-in-future-growth.jpg" type="image/jpg">
-            <img src="assets/images/investing-in-future-growth.jpg" alt="Investing In Future Growth" class="logo-card__image">
           </picture>
         </div>
       </div>
@@ -1227,116 +1213,6 @@
       
       <div class="logo-strip__item">
         <div class="logo-card">
-          <picture class="logo-card__picture">
-            <source srcset="assets/images/ashcroftlogo_landscape_goldblack_DP60P-small.webp" type="image/webp">
-            <img src="assets/images/ashcroftlogo_landscape_goldblack_DP60P-small.webp" alt="Ashcroft Logo" class="logo-card__image">
-          </picture>
-
-          <div class="logo-tooltip">
-            <div class="logo-tooltip__box">
-              <h3 class="logo-tooltip__title">Ashcroft Partnership LLP</h3>
-              <p class="logo-tooltip__text">
-                Originally founded in 2006 as Ashcroft Anthony, they became Ashcroft
-                Partnership LLP in 2020 and are one of the top chartered accountancy
-                firms in Cambridge, advising entrepreneurs and families.
-              </p>
-              <a href="#" class="logo-tooltip__button logo-tooltip__button--web btn">
-                View Our Case Study
-                <em class="icon-arrow-right"></em>
-              </a>
-              <div class="logo-tooltip__arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture">
-            <source srcset="assets/images/onetravellerlogo_white_figuire.webp" type="image/webp">
-            <img src="assets/images/onetravellerlogo_white_figuire.webp" alt="One Traveller Logo" class="logo-card__image">
-          </picture>
-
-          <div class="logo-tooltip">
-            <div class="logo-tooltip__box">
-              <h3 class="logo-tooltip__title">One Traveller</h3>
-              <p class="logo-tooltip__text">
-                One Traveller, founded in 2007, is a leading provider of solo
-                holidays for over 50s.
-              </p>
-              <a href="#" class="logo-tooltip__button logo-tooltip__button--web btn">
-                View Our Case Study
-                <em class="icon-arrow-right"></em>
-              </a>
-              <div class="logo-tooltip__arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture">
-            <source srcset="assets/images/searles_logo.webp" type="image/webp">
-            <img src="assets/images/searles_logo.webp" alt="Searles Logo" class="logo-card__image">
-          </picture>
-
-          <div class="logo-tooltip">
-            <div class="logo-tooltip__box">
-              <h3 class="logo-tooltip__title">Searles Leisure Resort</h3>
-              <p class="logo-tooltip__text">
-                Searles Leisure Resort, on the beautiful North Norfolk coast, is an
-                award-winning UK holiday resort for families.
-              </p>
-              <a href="#" class="logo-tooltip__button logo-tooltip__button--digital btn">
-                View Our Case Study
-                <em class="icon-arrow-right"></em>
-              </a>
-              <div class="logo-tooltip__arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture">
-            <source srcset="assets/images/busseys_logo.webp" type="image/webp">
-            <img src="assets/images/busseys_logo.webp" alt="Busseys Logo" class="logo-card__image">
-          </picture>
-
-          <div class="logo-tooltip">
-            <div class="logo-tooltip__box">
-              <h3 class="logo-tooltip__title">Busseys</h3>
-              <p class="logo-tooltip__text">One of the UK's leading Ford dealerships.</p>
-              <div class="logo-tooltip__arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="logo-strip__item">
-        <div class="logo-card">
-          <picture class="logo-card__picture">
-            <source srcset="assets/images/crane_logo.webp" type="image/webp">
-            <img src="assets/images/crane_logo.webp" alt="Crane Garden Buildings Logo" class="logo-card__image">
-          </picture>
-
-          <div class="logo-tooltip">
-            <div class="logo-tooltip__box">
-              <h3 class="logo-tooltip__title">Crane Garden Buildings</h3>
-              <p class="logo-tooltip__text">
-                Leading manufacturer and supplier of high-end garden rooms,
-                summerhouses, workshops and sheds in the UK.
-              </p>
-              <div class="logo-tooltip__arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="logo-strip__item">
-        <div class="logo-card">
           <picture class="logo-card__picture ">
             <source srcset="assets/images/black_swan_logo.webp" type="image/webp">
             <img src="assets/images/black_swan_logo.webp" alt="Black Swan Logo" class="logo-card__image">
@@ -1492,6 +1368,116 @@
         </div>
       </div>
 
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture">
+            <source srcset="assets/images/ashcroftlogo_landscape_goldblack_DP60P-small.webp" type="image/webp">
+            <img src="assets/images/ashcroftlogo_landscape_goldblack_DP60P-small.webp" alt="Ashcroft Logo" class="logo-card__image">
+          </picture>
+
+          <div class="logo-tooltip">
+            <div class="logo-tooltip__box">
+              <h3 class="logo-tooltip__title">Ashcroft Partnership LLP</h3>
+              <p class="logo-tooltip__text">
+                Originally founded in 2006 as Ashcroft Anthony, they became Ashcroft
+                Partnership LLP in 2020 and are one of the top chartered accountancy
+                firms in Cambridge, advising entrepreneurs and families.
+              </p>
+              <a href="#" class="logo-tooltip__button logo-tooltip__button--web btn">
+                View Our Case Study
+                <em class="icon-arrow-right"></em>
+              </a>
+              <div class="logo-tooltip__arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture">
+            <source srcset="assets/images/onetravellerlogo_white_figuire.webp" type="image/webp">
+            <img src="assets/images/onetravellerlogo_white_figuire.webp" alt="One Traveller Logo" class="logo-card__image">
+          </picture>
+
+          <div class="logo-tooltip">
+            <div class="logo-tooltip__box">
+              <h3 class="logo-tooltip__title">One Traveller</h3>
+              <p class="logo-tooltip__text">
+                One Traveller, founded in 2007, is a leading provider of solo
+                holidays for over 50s.
+              </p>
+              <a href="#" class="logo-tooltip__button logo-tooltip__button--web btn">
+                View Our Case Study
+                <em class="icon-arrow-right"></em>
+              </a>
+              <div class="logo-tooltip__arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture">
+            <source srcset="assets/images/searles_logo.webp" type="image/webp">
+            <img src="assets/images/searles_logo.webp" alt="Searles Logo" class="logo-card__image">
+          </picture>
+
+          <div class="logo-tooltip">
+            <div class="logo-tooltip__box">
+              <h3 class="logo-tooltip__title">Searles Leisure Resort</h3>
+              <p class="logo-tooltip__text">
+                Searles Leisure Resort, on the beautiful North Norfolk coast, is an
+                award-winning UK holiday resort for families.
+              </p>
+              <a href="#" class="logo-tooltip__button logo-tooltip__button--digital btn">
+                View Our Case Study
+                <em class="icon-arrow-right"></em>
+              </a>
+              <div class="logo-tooltip__arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture">
+            <source srcset="assets/images/busseys_logo.webp" type="image/webp">
+            <img src="assets/images/busseys_logo.webp" alt="Busseys Logo" class="logo-card__image">
+          </picture>
+
+          <div class="logo-tooltip">
+            <div class="logo-tooltip__box">
+              <h3 class="logo-tooltip__title">Busseys</h3>
+              <p class="logo-tooltip__text">One of the UK's leading Ford dealerships.</p>
+              <div class="logo-tooltip__arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-strip__item">
+        <div class="logo-card">
+          <picture class="logo-card__picture">
+            <source srcset="assets/images/crane_logo.webp" type="image/webp">
+            <img src="assets/images/crane_logo.webp" alt="Crane Garden Buildings Logo" class="logo-card__image">
+          </picture>
+
+          <div class="logo-tooltip">
+            <div class="logo-tooltip__box">
+              <h3 class="logo-tooltip__title">Crane Garden Buildings</h3>
+              <p class="logo-tooltip__text">
+                Leading manufacturer and supplier of high-end garden rooms,
+                summerhouses, workshops and sheds in the UK.
+              </p>
+              <div class="logo-tooltip__arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1601,6 +1587,13 @@
     </div>
   </div>
 </div>
+<div id="side-menu-placeholder" class="sidebar"></div>
+<div class="sidebar-overlay"></div>
+<div id="cookie-placeholder"></div>
 
+<script src="js/jquery-4.0.0.js"></script>
+<script src="slick/slick.js"></script>
+<script src="js/stickify.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

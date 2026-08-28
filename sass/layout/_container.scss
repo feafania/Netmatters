@@ -5,10 +5,10 @@
     background-color: $color-body-bg;
     position: relative;
     z-index: 10;
-    transition: all .5s;
+    transition: left .5s linear;
     left: 0;
 
-    &::after {
+    &::after, , .sticky::after {
         position: absolute;
         top: 0;
         right: 0;
@@ -44,3 +44,32 @@
     }
 
 }
+
+.sticky {
+    box-shadow: 0 5px 35px rgba(0,0,0,.1);
+    left: 0;
+    transition:
+            top .5s ease-in-out,
+            left .5s linear;
+
+}
+
+
+.sidebar-open {
+    #container::after, .sticky::after {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transition: opacity .5s;
+    }
+
+    #container, .sticky {
+        left: -275px;
+        cursor: pointer;
+
+        @include respond-to(md) {
+            left: -350px;
+        }
+    }
+}
+

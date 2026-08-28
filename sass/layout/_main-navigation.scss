@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+@use "sass:map";
 
 .main-navigation {
     display: none;
@@ -34,7 +35,7 @@
                 }
 
                 .main-navigation__sub-menu {
-                    background-color: map-get($nav-sub-menu-accents, $key);
+                    background-color: map.get($nav-sub-menu-accents, $key);
                 }
 
                 &:hover {
@@ -194,4 +195,11 @@
         }
     }
 
+}
+
+.sticky {
+
+    .main-navigation {
+        border-bottom: 0;
+    }
 }
