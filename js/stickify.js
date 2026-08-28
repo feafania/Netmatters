@@ -13,6 +13,7 @@
  *  - reverse (boolean): true to hide element on scroll down and show in scroll up, false to fix the element - false by default
  *  - width (string): in pixels or percentage - 100% by default
  *  - zIndex (numeric): option to control the z-index - 9999 by default
+ *  - offset (numeric): multiplier of the element's height before the sticky behavior is activated.
  *
  */
 
@@ -68,10 +69,12 @@
                   // left: '0',
                   width: opts.width,
                   zIndex: opts.zIndex,
-                  transition:
-                    opts.position + ' ' +
-                    opts.animationDuration +
-                    's ease-in-out'
+                  // transition:
+                  //   opts.position + ' ' +
+                  //   opts.animationDuration +
+                  //   's ease-in-out'
+                  animationDuration: opts.animationDuration + 's',
+                  animationFillMode: 'both'
               });
 
             $selector.after($clone);
