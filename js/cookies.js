@@ -1,7 +1,7 @@
 export default function loadCookieConsent() {
   const cookieModal = document.querySelector('#cookie-placeholder');
   if (cookieModal) {
-    fetch("./cookies.html")
+    fetch("./partials/cookies.html")
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error: ${res.status} ${res.statusText}`);

@@ -849,10 +849,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   background-color: #fff;
   position: relative;
   z-index: 10;
-  transition: all 0.5s;
+  transition: left 0.5s linear;
   left: 0;
 }
-#container::after {
+#container::after, #container .sticky::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -888,11 +888,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .sticky {
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
   left: 0;
-  transition: left 0.5s;
+  transition: top 0.5s ease-in-out, left 0.5s linear;
 }
 
-.sidebar-open #container::after {
+.sidebar-open #container::after, .sidebar-open .sticky::after {
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -1148,6 +1149,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .main-navigation__sub-link-text {
   margin-left: 10px;
+}
+
+.sticky .main-navigation {
+  border-bottom: 0;
 }
 
 .banner-slider {
@@ -1581,6 +1586,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .logo-strip {
+  position: relative;
+  z-index: 1;
   padding: 50px 0;
   text-align: center;
 }
