@@ -1586,6 +1586,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .logo-strip {
+  position: relative;
+  z-index: 1;
   padding: 50px 0;
   text-align: center;
 }
