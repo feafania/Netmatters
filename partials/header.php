@@ -5,7 +5,7 @@
         <div class="header__row">
           <div class="header__row-hero">
             <div class="header__row-hero-logo">
-              <a href="#">
+              <a href="index.php">
                 <picture>
                   <source srcset="assets/images/f-logo.webp" type="image/webp">
                   <source srcset="assets/images/f-logo.png" type="image/png">
