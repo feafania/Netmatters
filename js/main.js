@@ -4,7 +4,9 @@ import loadCookieConsent from "./cookies.js";
 import { initSidebar } from "./sidebar.js";
 
 $(document).ready(function(){
-  initSlick();
+  if ($('.banner-slider').length || $('.logo-strip__list').length) {
+    initSlick();
+  }
   initSticky();
 
   loadCookieConsent();
