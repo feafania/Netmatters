@@ -1,6 +1,25 @@
 <?php
   require_once __DIR__ . '/vendor/autoload.php';
   require_once __DIR__ . '/config/database.php';
+  require_once __DIR__ . '/includes/functions.php';
+
+  /** @var PDO $pdo */
+  $stmt = $pdo->query('
+      SELECT
+          news.*,
+          categories.name AS category,
+          services.name AS service,
+          types.name AS type,
+          authors.name AS author,
+          authors.image AS author_image
+      FROM news
+      JOIN categories ON news.category_id = categories.id
+      JOIN services ON news.service_id = services.id
+      JOIN types ON services.type_id = types.id
+      JOIN authors ON news.author_id = authors.id
+      ORDER BY news.published_at DESC
+  ');
+  $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
@@ -500,128 +519,58 @@
     <div class="latest-news__body">
       <div class="container">
         <div class="latest-news__list">
-          <div class="latest-news__col">
-            <article class="news__card news__card--software">
-              <a class="news__card-link" href="#" aria-label="How Much Could Bespoke Software Add to Your Exit Value?"></a>
-
-              <div class="news__media">
-                <a href="#" class="news__category btn-tooltip" title="View all: Bespoke Software / Insights">
-                  Insights
+          <?php foreach ($news as $post): ?>
+            <div class="latest-news__col">
+              <article class="news__card news__card--<?= htmlspecialchars($post['type']) ?>">
+                <a class="news__card-link"
+                    href="#"
+                    aria-label="<?= htmlspecialchars($post['title']) ?>">
                 </a>
-                <a class="news__image" href="#">
-                  <picture>
-                    <source srcset="assets/images/how-much-could-vKZG.webp" type="image/webp">
-                    <img src="assets/images/how-much-could-vKZG.webp" class="img-responsive" alt="How much could">
-                  </picture>
-                </a>
-              </div>
 
-              <div class="news__content">
-                <h3 class="news__heading">
-                  <a href="#">How Much Could Bespoke Software Add to Your E...</a>
-                </h3>
-                <p class="news__excerpt">If you’re a Managing Director or Senior Manager preparing your business for exit, you know that incr...</p>
-                <a class="news__btn btn" href="#">Read More</a>
-
-                <div class="news__meta">
-                  <div class="news__avatar">
+                <div class="news__media">
+                  <a class="news__category btn-tooltip"
+                      href="#"
+                      title="View all: <?= htmlspecialchars($post['service']) ?> / <?= htmlspecialchars($post['category']) ?>">
+                    <?= htmlspecialchars($post['category']) ?>
+                  </a>
+                  <a class="news__image" href="#">
                     <picture>
-                      <source srcset="assets/images/netmatters-ltd-VXAv.webp" type="image/webp">
-                      <img src="assets/images/netmatters-ltd-VXAv.webp" class="img-responsive" alt="Netmatters">
+                      <source srcset="<?= htmlspecialchars($post['image']) ?>" type="image/webp">
+                      <img src="<?= htmlspecialchars($post['image']) ?>" class="img-responsive" alt="<?= htmlspecialchars($post['title']) ?>">
                     </picture>
-                  </div>
-
-                  <div class="news__meta-details">
-                    <strong class="news__author">Posted by Netmatters</strong>
-                    <span class="news__date">27th June 2025</span>
-                  </div>
+                  </a>
                 </div>
 
-              </div>
+                <div class="news__content">
+                  <h3 class="news__heading">
+                    <a href="#"><?= htmlspecialchars(truncateText($post['title'], 45)) ?></a>
+                  </h3>
+                  <p class="news__excerpt"><?= htmlspecialchars(truncateText($post['content'], 100)) ?></p>
+                  <a class="news__btn btn" href="#">Read More</a>
 
-            </article>
-          </div>
+                  <div class="news__meta">
+                    <div class="news__avatar">
+                      <picture>
+                        <source srcset="<?= htmlspecialchars($post['author_image']) ?>" type="image/webp">
+                        <img src="<?= htmlspecialchars($post['author_image']) ?>"
+                              class="img-responsive"
+                              alt="<?= htmlspecialchars($post['author']) ?>">
+                      </picture>
+                    </div>
 
-          <div class="latest-news__col">
-            <article class="news__card news__card--software">
-              <a class="news__card-link" href="#" aria-label="How Can AI Benefit My Business?"></a>
-
-              <div class="news__media">
-                <a href="#" class="news__category btn-tooltip" title="View all: Bespoke Software / Insights">
-                  Insights
-                </a>
-
-                <a class="news__image" href="#">
-                  <picture>
-                    <source srcset="assets/images/how-can-ai-L9M0.webp" type="image/webp">
-                    <img src="assets/images/how-can-ai-L9M0.webp" class="img-responsive" alt="How much could">
-                  </picture>
-                </a>
-
-              </div>
-
-              <div class="news__content">
-                <h3 class="news__heading">
-                  <a href="#">How Can AI Benefit My Business?</a>
-                </h3>
-
-                <p class="news__excerpt">The idea of integrating AI into your business operations may seem daunting, but there are undeniable...</p>
-                <a class="news__btn btn" href="#">Read More</a>
-
-                <div class="news__meta">
-                  <div class="news__avatar">
-                    <picture>
-                      <source srcset="assets/images/netmatters-ltd-VXAv.webp" type="image/webp">
-                      <img src="assets/images/netmatters-ltd-VXAv.webp" class="img-responsive" alt="Netmatters">
-                    </picture>
+                    <div class="news__meta-details">
+                      <strong class="news__author">Posted by <?= htmlspecialchars($post['author']) ?></strong>
+                      <span class="news__date">
+                        <?= date('jS F Y', strtotime($post['published_at'])) ?>
+                      </span>
+                    </div>
                   </div>
-                  <div class="news__meta-details">
-                    <strong class="news__author">Posted by Netmatters</strong>
-                    <span class="news__date">26th June 2025</span>
-                  </div>
+
                 </div>
 
-              </div>
-
-            </article>
-          </div>
-
-          <div class="latest-news__col">
-            <article class="news__card news__card--it">
-              <a class="news__card-link" href="#" aria-label="1st Line Technician"></a>
-
-              <div class="news__media">
-                <a href="#" class="news__category btn-tooltip" title="View all: IT Support / Careers">
-                  Careers
-                </a>
-                <a class="news__image" href="#">
-                  <img src="assets/images/1st-line-technician-1QNr.png" class="img-responsive" alt="1st line technician">
-                </a>
-              </div>
-
-              <div class="news__content">
-                <h3 class="news__heading">
-                  <a href="#">1st Line Technician</a>
-                </h3>
-
-                <p class="news__excerpt">Salary Range £25,000 -£29,000 + Pension Hours 40 hours per week, Monday - Friday Location Wymondham,...</p>
-                <a class="news__btn btn" href="#">Read More</a>
-
-                <div class="news__meta">
-                  <div class="news__avatar">
-                    <picture>
-                      <source srcset="assets/images/bethany-shakespeare-F6Iu.webp" type="image/webp">
-                      <img src="assets/images/bethany-shakespeare-F6Iu.webp" class="img-responsive" alt="Bethany Shakespeare">
-                    </picture>
-                  </div>
-                  <div class="news__meta-details">
-                    <strong class="news__author">Posted by Bethany Shakespeare</strong>
-                    <span class="news__date">20th June 2025</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+              </article>
+            </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
