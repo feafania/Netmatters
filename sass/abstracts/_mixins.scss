@@ -103,3 +103,21 @@
         @content($key, $color);
     }
 }
+
+@mixin btn-accent($key, $base-map: vars.$btn-accents) {
+    color: vars.$color-btn;
+    background-color: map.get($base-map, $key);
+    border-color: map.get($base-map, $key);
+
+    &.active,
+    &:focus,
+    &:hover {
+        color: vars.$color-link--active;
+        background-color: map.get(vars.$btn-bg-hover, $key);
+        border-color: map.get(vars.$btn-border-hover, $key);
+    }
+
+    &.active {
+        background-image: none;
+    }
+}

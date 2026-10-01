@@ -96,15 +96,7 @@ $color-cookie-shadow: rgba(0,0,0,.5);
 $color-cookie-border: #e5e5e5;
 $color-cookie-content-border: rgba(0,0,0,.2);
 
-$nav-item-accents: (
-        software:           #67809f,
-        it:                 #4183d7,
-        digital:            #2ecc71,
-        telecoms:           #d64541,
-        web:                #926fb1,
-        security:           #f62459,
-        developer-course:   #ce4125
-);
+$color-block-border: #ccc;
 
 $nav-sub-menu-accents: (
         software:           #526781,
@@ -118,6 +110,16 @@ $nav-sub-menu-accents: (
 
 $btn-accents: (
         software:           #f7b322 ,
+        it:                 #4183d7,
+        digital:            #2ecc71,
+        telecoms:           #d64541,
+        web:                #926fb1,
+        security:           #f62459,
+        developer-course:   #ce4125
+);
+
+$nav-item-accents: (
+        software:           #67809f,
         it:                 #4183d7,
         digital:            #2ecc71,
         telecoms:           #d64541,
