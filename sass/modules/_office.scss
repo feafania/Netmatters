@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+$office-accent: map.get($nav-item-accents, web);
+
+.office {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    //flex: 1 0 auto;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0;
+    border: 1px solid $color-block-border;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+    transition: .5s ease;
+
+    text-align: center;
+    text-decoration: none;
+
+    &__img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 30px;
+        text-align: left;
+    }
+
+    &__title {
+        position: relative;
+        font-size: to-rem(20px);
+
+        a {
+            font-weight: 400;
+        }
+    }
+
+    &__address {
+        margin-bottom: 15px;
+        font-size: to-rem(13px);
+        line-height: to-rem(22px);
+        font-weight: 400;
+    }
+
+    &__tel {
+        margin-top: auto;
+    }
+
+    &__tel-link {
+        font-weight: 700;
+        color: $office-accent;
+
+        &:hover,
+        &:focus {
+            color: $office-accent;
+        }
+    }
+
+    &__more-btn.btn {
+        @extend %btn;
+        margin-top: 15px;
+        padding: 5px 30px;
+        font-size: .9em;
+    }
+}
