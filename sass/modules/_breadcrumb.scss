@@ -1,0 +1,47 @@
+@use "../abstracts/index" as *;
+
+.breadcrumb {
+    display: none;
+    border-top: 1px solid $color-heading;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
+    padding: 14px 0 13px;
+
+    @include respond-to(md) {
+        border-top: none;
+    }
+
+    @include respond-to(sm) {
+        display: block;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: none;
+        font-size: to-rem(13px);
+        color: $color-heading;
+    }
+
+    &__item {
+        display: inline-block;
+        color: $color-heading;
+
+        & + & {
+            &::before {
+                content: "/\A0";
+                padding: 0 5px;
+                color: $color-heading;
+            }
+        }
+
+        & a {
+            color: $color-heading;
+            font-weight: 700;
+        }
+    }
+
+    &__link {
+        font-weight: 700;
+    }
+}
