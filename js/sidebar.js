@@ -1,4 +1,4 @@
-export function initSidebar () {
+function initSidebar () {
   $(document).on("click", '[data-toggle="sidebar"]', function (e) {
     e.stopPropagation();
     $("body").toggleClass("sidebar-open");
@@ -18,4 +18,15 @@ export function initSidebar () {
       $('[data-toggle="sidebar"]').removeClass("is-active");
     }
   });
+}
+
+export function loadSideMenu() {
+  $('#side-menu-placeholder').load( "./partials/side-menu.html" ,
+    function( response, status, xhr ) {
+      if ( status === "error" ) {
+        console.error("Unable to load side-menu.html: " + xhr.status + " " + xhr.statusText)
+      } else if ( status === "success" || status === "notmodified" ) {
+        initSidebar();
+      }
+    })
 }
