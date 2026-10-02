@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "../abstracts/index" as *;
 
+$accent-color: map.get($nav-item-accents, web);
+
 .info-block {
     &__label {
         font-weight: 600;
@@ -8,15 +10,12 @@
     }
 
     &__link {
-        font-size: to-rem(26px);
         font-weight: 600;
-        color: map.get($nav-item-accents, web);
+        color: $accent-color;
 
         &:hover,
         &:focus {
-            color: map.get($nav-item-accents, web);
+            color: $accent-color;
         }
     }
-
-    overflow-anchor: none;
 }

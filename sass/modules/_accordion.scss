@@ -3,34 +3,28 @@
 .accordion {
 
     &__question {
-        margin: 0;
-    }
-
-    &__toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-    }
-
-    &__text {
-        margin: 0;
+        font-weight: 600;
     }
 
     &__icon {
-        flex: 0 0 auto;
-        transition: transform .3s ease;
+        font-style: normal;
+        transition: transform .5s ease;
     }
 
     &__answer {
         height: 0;
         overflow: hidden;
         visibility: hidden;
-        transition: height .3s ease, visibility .3s;
+        transition: height .5s ease, visibility .5s;
     }
 
     &__answer-inner {
         overflow: hidden;
+
+        strong {
+            font-weight: 600;
+            color: $color-heading;
+        }
     }
 
     &__item--open {
