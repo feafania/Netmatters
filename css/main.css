@@ -3036,6 +3036,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   height: 100px;
   min-height: 100px;
 }
+.form__control.is-invalid {
+  border-color: #d24d57;
+}
+.form__control.is-invalid:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(210, 77, 87, 0.6);
+}
+.form__control.is-valid {
+  border-color: #3c763d;
+}
 .form__link {
   text-decoration: underline;
 }
@@ -3065,6 +3074,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .form__submit {
   border-color: #333645;
 }
+.form__error {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #d24d57;
+}
+.form__success {
+  display: none;
+  margin: 15px 0 0;
+  color: #3c763d;
+  font-weight: 600;
+}
+.form.is-success .form__success {
+  display: block;
+}
+
 .pretty-checkbox {
   display: flex;
   align-items: flex-start;

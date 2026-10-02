@@ -197,6 +197,8 @@
                 <small class="form__helper"><span class="form__required">*</span> Fields Required</small>
               </div>
 
+              <p class="form__success" role="status">Thank you! Your enquiry has been sent.</p>
+
             </form>
           </div>
 
