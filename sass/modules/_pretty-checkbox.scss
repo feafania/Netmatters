@@ -1,0 +1,52 @@
+@use "../abstracts/index" as *;
+
+.pretty-checkbox {
+    display: flex;
+    align-items: flex-start;
+    line-height: 32px;
+    cursor: pointer;
+
+    &__box {
+        position: relative;
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+        border: 3px solid $color-heading;
+        border-radius: 3px;
+
+        &:has(.pretty-checkbox__input:checked) {
+            background-color: $color-heading;
+        }
+
+        &:has(.pretty-checkbox__input:focus-visible) {
+            outline: 2px solid $color-link-border;
+            outline-offset: 2px;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__icon {
+        display: none;
+        line-height: 26px;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 50%;
+        color: $color-body-bg;
+        pointer-events: none;
+    }
+
+    &__box:has(.pretty-checkbox__input:checked) &__icon {
+        display: block;
+    }
+
+}

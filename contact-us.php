@@ -1,6 +1,11 @@
 <?php
   require_once __DIR__ . '/vendor/autoload.php';
   $offices = require __DIR__ . '/config/offices.php';
+
+  session_start();
+  if (empty($_SESSION['csrf'])) {
+      $_SESSION['csrf'] = bin2hex(random_bytes(32));
+  }
 ?>
 
 <!doctype html>
@@ -138,6 +143,7 @@
 
           <div class="contact__main">
             <form class="form form--contact" id="contact-form" method="POST" action="#" accept-charset="UTF-8" novalidate>
+              <input name="_token" type="hidden" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
 
               <div class="form__row">
                 <div class="form__col">
@@ -175,12 +181,12 @@
               </div>
 
               <div class="form__group">
-                <label class="form__checkbox">
-                  <span class="form__checkbox-box">
-                    <span class="form__checkbox-icon mdi-action-done"></span>
-                    <input class="form__checkbox-input" name="marketing_preference" type="checkbox" value="1">
+                <label class="pretty-checkbox">
+                  <span class="pretty-checkbox__box">
+                    <span class="pretty-checkbox__icon mdi-action-done"></span>
+                    <input class="pretty-checkbox__input" name="marketing_preference" type="checkbox" value="1">
                   </span>
-                  <span class="form__checkbox-text">
+                  <span class="pretty-checkbox__text">
                     Please tick this box if you wish to receive marketing information from us.
                     Please see our <a href="#" target="_blank" class="form__link">Privacy Policy</a>
                     for more information on how we keep your data safe.
