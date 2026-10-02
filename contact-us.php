@@ -99,12 +99,12 @@
             <div class="info-block">
               <p class="info-block__label">Email us on:</p>
               <p class="info-block__value">
-                <a href="mailto:sales@netmatters.com" class="info-block__link">sales@netmatters.com</a>
+                <a href="mailto:sales@netmatters.com" class="info-block__link h3">sales@netmatters.com</a>
               </p>
 
               <p class="info-block__label">Speak to Sales on:</p>
               <p class="info-block__value">
-                <a href="tel:01603515007" class="info-block__link">01603 515007</a>
+                <a href="tel:01603515007" class="info-block__link h3">01603 515007</a>
               </p>
 
               <p class="info-block__label">Business hours:</p>
@@ -115,8 +115,9 @@
               <div class="accordion__item">
                 <h4 class="accordion__question">
                   <a href="#" class="accordion__toggle" data-accordion-toggle>
-                    <span class="accordion__text">Out of Hours IT Support</span>
-                    <span class="accordion__icon fa fa-chevron-down" aria-hidden="true"></span>
+                    <p class="accordion__text">Out of Hours IT Support
+                      <em class="accordion__icon fa fa-chevron-down" aria-hidden="true"></em>
+                    </p>
                   </a>
                 </h4>
                 <div class="accordion__answer">
@@ -211,6 +212,6 @@
 <script src="js/jquery-4.0.0.js"></script>
 <script src="slick/slick.js"></script>
 <script src="js/stickify.js"></script>
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/contact-us.js"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+@use "../abstracts/index" as *;
+
+.contact {
+    padding-top: 0;
+    padding-bottom: 50px;
+
+    overflow-anchor: none;
+
+    &__row {
+        @extend %flex-wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        > * {
+            @extend %grid-base;
+            width: 100%;
+            flex: 0 0 auto;
+            max-width: 100%;
+        }
+    }
+
+    @include respond-to(lg) {
+        &__side {
+            order: 2;
+            width: 33.33333333%;
+        }
+
+        &__main {
+            order: 1;
+            width: 66.66666667%;
+        }
+    }
+}
