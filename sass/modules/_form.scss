@@ -1,0 +1,132 @@
+@use "../abstracts/index" as *;
+
+.form {
+
+    &--contact {
+        background-color: $color-form-bg;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+    &__row {
+        @extend %flex-wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__col {
+        @extend %grid-base;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 100%;
+
+        @include respond-to(md) {
+            width: 50%;
+        }
+    }
+
+    &__group {
+        margin-bottom: 15px;
+    }
+
+    &__label {
+        &--required::after {
+            content: " *";
+            color: $color-required;
+        }
+    }
+
+    &__control {
+        @extend %form-control;
+        @extend %form-output;
+
+        &::placeholder {
+            color: $color-placeholder;
+            opacity: 1;
+        }
+
+        &--textarea {
+            height: 100px;
+            min-height: 100px;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: flex-start;
+        line-height: 32px;
+        cursor: pointer;
+
+        &--active {
+            .form__checkbox-box {
+                background-color: $color-heading;
+            }
+
+            .form__checkbox-icon {
+                display: block;
+                color: $color-body-bg;
+            }
+        }
+    }
+
+    &__checkbox-box {
+        position: relative;
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+        border: 3px solid $color-heading;
+        border-radius: 3px;
+
+        &:has(.form__checkbox-input:focus-visible) {
+            outline: 2px solid $color-link-border;
+            outline-offset: 2px;
+        }
+    }
+
+    &__checkbox-input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__checkbox-icon {
+        display: none;
+        line-height: 26px;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &__checkbox-input:checked + &__checkbox-icon {
+        opacity: 1;
+    }
+
+    &__link {
+        font-weight: 600;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__helper {
+        font-size: 80%;
+        color: $color-heading;
+    }
+
+    &__required {
+        color: $color-danger;
+    }
+
+    &__submit.btn {
+        @extend %btn;
+    }
+}

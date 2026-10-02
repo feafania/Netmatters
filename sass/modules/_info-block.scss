@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+.info-block {
+    &__label {
+        font-weight: 600;
+        color: $color-heading;
+    }
+
+    &__link {
+        font-size: to-rem(26px);
+        font-weight: 600;
+        color: map.get($nav-item-accents, web);
+
+        &:hover,
+        &:focus {
+            color: map.get($nav-item-accents, web);
+        }
+    }
+
+    overflow-anchor: none;
+}

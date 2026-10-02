@@ -1,0 +1,45 @@
+@use "../abstracts/index" as *;
+
+.accordion {
+
+    &__question {
+        margin: 0;
+    }
+
+    &__toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__icon {
+        flex: 0 0 auto;
+        transition: transform .3s ease;
+    }
+
+    &__answer {
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: height .3s ease, visibility .3s;
+    }
+
+    &__answer-inner {
+        overflow: hidden;
+    }
+
+    &__item--open {
+        .accordion__answer {
+            visibility: visible;
+        }
+
+        .accordion__icon {
+            transform: rotate(180deg);
+        }
+    }
+}
