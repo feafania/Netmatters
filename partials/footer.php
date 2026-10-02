@@ -1,3 +1,7 @@
+<?php
+/** @var array $routes */
+/** @var bool $isContactPage */
+?>
 
 <footer class="footer">
   <div class="container">
@@ -38,7 +42,11 @@
             <li class="footer__item"><a class="footer__link" href="#">News</a></li>
             <li class="footer__item"><a class="footer__link" href="#">Our Careers</a></li>
             <li class="footer__item"><a class="footer__link" href="#">Our Team</a></li>
-            <li class="footer__item"><a class="footer__link" href="contact-us.php">Contact Us</a></li>
+            <li class="footer__item"><a class="footer__link"
+                 href="<?= $isContactPage ? '#middle' : $routes['contact'] ?>">
+                 Contact Us
+                 </a>
+            </li>
             <li class="footer__item"><a class="footer__link" href="#">Privacy Policy</a></li>
             <li class="footer__item"><a class="footer__link" href="#">Cookie Policy</a></li>
             <li class="footer__item"><a class="footer__link" href="#">Data Retention</a></li>

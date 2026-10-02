@@ -1,11 +1,19 @@
+<?php
+  $routes = require __DIR__ . '/../config/routes.php';
+
+  $pageName = basename($_SERVER['PHP_SELF']);
+  $isContactPage = $pageName === $routes['contact'];
+  $isHome = $pageName === $routes['home'];
+?>
+
 <div id="header">
-  <header class="header" >
+  <header class="header" data-page-url="<?= $pageName ?>">
     <div class="header__inner">
       <div class="container">
         <div class="header__row">
           <div class="header__row-hero">
             <div class="header__row-hero-logo">
-              <a href="index.php">
+              <a href="<?= $isHome ? '#' : $routes['home'] ?>">
                 <picture>
                   <source srcset="assets/images/f-logo.webp" type="image/webp">
                   <source srcset="assets/images/f-logo.png" type="image/png">
@@ -31,7 +39,10 @@
                 Support
               </a>
 
-              <a href="contact-us.php" class="header__row-group-actions-el btn btn--default">
+              <a
+                href="<?= $isContactPage ? '#' : $routes['contact'] ?>"
+                class="header__row-group-actions-el btn btn--default"
+              >
                 <span class="icon-paperplane"></span>
                 Contact
               </a>
