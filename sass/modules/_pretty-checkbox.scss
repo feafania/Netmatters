@@ -40,13 +40,16 @@
         line-height: 26px;
         text-align: center;
         font-size: 22px;
-        border-radius: 50%;
         color: $color-body-bg;
         pointer-events: none;
     }
 
     &__box:has(.pretty-checkbox__input:checked) &__icon {
         display: block;
+    }
+
+    &__text {
+        min-width: 0;
     }
 
 }

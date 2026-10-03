@@ -47,6 +47,7 @@
         &--textarea {
             height: 100px;
             min-height: 100px;
+            resize: vertical;
         }
 
         &.is-invalid {
@@ -103,6 +104,15 @@
         font-size: to-rem(13px);
         line-height: 1.4;
         color: $color-required;
+
+        &--general {
+            margin: 0 0 15px;
+            padding: 10px 15px;
+            font-size: to-rem(14px);
+            border: 1px solid $color-danger;
+            border-radius: 2px;
+            background-color: $color-body-bg;
+        }
     }
 
     &__success {
