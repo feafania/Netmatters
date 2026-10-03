@@ -24,22 +24,21 @@ export function initFormValidation() {
   });
 
   $form.on("submit", function (event) {
-    event.preventDefault();
-
     let isFormValid = true;
 
     $fields.each(function () {
       const $field = $(this);
       $field.data("touched", true);
-      if (!validateField($field)) isFormValid = false;
+
+      if (!validateField($field)) {
+        isFormValid = false;
+      }
     });
 
     if (!isFormValid) {
+      event.preventDefault();
       $fields.filter(".is-invalid").first().trigger("focus");
-      return;
     }
-
-    $form.addClass("is-success");
   });
 }
 
@@ -59,7 +58,12 @@ function validateField($field) {
   if (!value) return true;
 
   if (rules.minLength && value.length < rules.minLength) {
-    showError($field, rules.message);
+    showError($field, rules.minLengthMessage || rules.message);
+    return false;
+  }
+
+  if (rules.maxLength && value.length > rules.maxLength) {
+    showError($field, rules.maxLengthMessage || rules.message);
     return false;
   }
 
