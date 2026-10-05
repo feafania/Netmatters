@@ -4,22 +4,7 @@
   require_once __DIR__ . '/includes/functions.php';
 
   /** @var PDO $pdo */
-  $stmt = $pdo->query('
-      SELECT
-          news.*,
-          categories.name AS category,
-          services.name AS service,
-          types.name AS type,
-          authors.name AS author,
-          authors.image AS author_image
-      FROM news
-      JOIN categories ON news.category_id = categories.id
-      JOIN services ON news.service_id = services.id
-      JOIN types ON services.type_id = types.id
-      JOIN authors ON news.author_id = authors.id
-      ORDER BY news.published_at DESC
-  ');
-  $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $news = getNews($pdo);
 ?>
 
 <!doctype html>
