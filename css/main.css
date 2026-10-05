@@ -3035,6 +3035,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .form__control--textarea {
   height: 100px;
   min-height: 100px;
+  resize: vertical;
 }
 .form__control.is-invalid {
   border-color: #d24d57;
@@ -3080,6 +3081,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   font-size: 0.8125rem;
   line-height: 1.4;
   color: #d24d57;
+}
+.form__error--general {
+  margin: 0 0 15px;
+  padding: 10px 15px;
+  font-size: 0.875rem;
+  border: 1px solid #a94442;
+  border-radius: 2px;
+  background-color: #fff;
 }
 .form__success {
   display: none;
@@ -3127,12 +3136,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   line-height: 26px;
   text-align: center;
   font-size: 22px;
-  border-radius: 50%;
   color: #fff;
   pointer-events: none;
 }
 .pretty-checkbox__box:has(.pretty-checkbox__input:checked) .pretty-checkbox__icon {
   display: block;
+}
+.pretty-checkbox__text {
+  min-width: 0;
 }
 
 .info-block__label {
