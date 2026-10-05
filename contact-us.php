@@ -1,11 +1,20 @@
 <?php
   require_once __DIR__ . '/vendor/autoload.php';
-  $offices = require __DIR__ . '/config/offices.php';
+  require_once __DIR__ . '/config/database.php';
+  require_once __DIR__ . '/includes/functions.php';
+  require_once __DIR__ . '/includes/validation.php';
 
   session_start();
   if (empty($_SESSION['csrf'])) {
       $_SESSION['csrf'] = bin2hex(random_bytes(32));
   }
+
+  require_once __DIR__ . '/includes/contact-form.php';
+    /** @var array $errors */
+    /** @var boolean $success */
+    /** @var array $formData */
+
+  $offices = require __DIR__ . '/config/offices.php';
 ?>
 
 <!doctype html>
@@ -140,49 +149,97 @@
           </aside>
 
           <div class="contact__main">
-            <form class="form form--contact" id="contact-form" method="POST" action="#" accept-charset="UTF-8" novalidate>
+
+            <form
+                class="form form--contact<?= $success ? ' is-success' : '' ?>"
+                id="contact-form"
+                method="POST"
+                action="contact-us.php#contact-form"
+                accept-charset="UTF-8"
+                novalidate
+            >
+              <?php if (isset($errors['_token']) || isset($errors['form'])): ?>
+                <p class="form__error form__error--general" role="alert">
+                  <?= htmlspecialchars($errors['_token'] ?? $errors['form']) ?>
+                </p>
+              <?php endif; ?>
+
               <input name="_token" type="hidden" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
 
               <div class="form__row">
                 <div class="form__col">
                   <div class="form__group">
                     <label for="name" class="form__label form__label--required">Your Name</label>
-                    <input class="form__control" name="name" type="text" id="name">
+                    <input
+                        class="form__control<?= fieldClass($errors, 'name') ?>"
+                        name="name" type="text" id="name"
+                        value="<?= htmlspecialchars($formData['name']) ?>"
+                        <?= isset($errors['name']) ? 'aria-invalid="true" aria-describedby="name-error"' : '' ?>
+                    >
+                    <?= fieldError($errors, 'name') ?>
                   </div>
                 </div>
 
                 <div class="form__col">
                   <div class="form__group">
                     <label for="company" class="form__label">Company Name</label>
-                    <input class="form__control" name="company" type="text" id="company">
+                    <input
+                        class="form__control<?= fieldClass($errors, 'company') ?>"
+                        name="company" type="text" id="company"
+                        value="<?= htmlspecialchars($formData['company']) ?>"
+                        <?= isset($errors['company']) ? 'aria-invalid="true" aria-describedby="company-error"' : '' ?>
+                    >
+                    <?= fieldError($errors, 'company') ?>
                   </div>
                 </div>
 
                 <div class="form__col">
                   <div class="form__group">
                     <label for="email" class="form__label form__label--required">Your Email</label>
-                    <input class="form__control" name="email" type="email" id="email">
+                    <input
+                        class="form__control<?= fieldClass($errors, 'email') ?>"
+                        name="email" type="email" id="email"
+                        value="<?= htmlspecialchars($formData['email']) ?>"
+                        <?= isset($errors['email']) ? 'aria-invalid="true" aria-describedby="email-error"' : '' ?>
+                    >
+                    <?= fieldError($errors, 'email') ?>
                   </div>
                 </div>
 
                 <div class="form__col">
                   <div class="form__group">
                     <label for="telephone" class="form__label form__label--required">Your Telephone Number</label>
-                    <input class="form__control" name="telephone" type="text" id="telephone">
+                    <input
+                        class="form__control<?= fieldClass($errors, 'telephone') ?>"
+                        name="telephone" type="text" id="telephone"
+                        value="<?= htmlspecialchars($formData['telephone']) ?>"
+                        <?= isset($errors['telephone']) ? 'aria-invalid="true" aria-describedby="telephone-error"' : '' ?>
+                    >
+                    <?= fieldError($errors, 'telephone') ?>
                   </div>
                 </div>
               </div>
 
               <div class="form__group">
                 <label for="message" class="form__label form__label--required">Message</label>
-                <textarea class="form__control form__control--textarea" name="message" cols="50" rows="10" id="message"></textarea>
+                <textarea
+                    class="form__control form__control--textarea<?= fieldClass($errors, 'message') ?>"
+                    name="message"
+                    cols="50"
+                    rows="10"
+                    id="message"
+                    <?= isset($errors['message']) ? 'aria-invalid="true" aria-describedby="message-error"' : '' ?>
+
+                ><?= htmlspecialchars($formData['message']) ?></textarea>
+                <?= fieldError($errors, 'message') ?>
               </div>
 
               <div class="form__group">
                 <label class="pretty-checkbox">
                   <span class="pretty-checkbox__box">
                     <span class="pretty-checkbox__icon mdi-action-done"></span>
-                    <input class="pretty-checkbox__input" name="marketing_preference" type="checkbox" value="1">
+                    <input class="pretty-checkbox__input" name="marketing_preference" type="checkbox" value="1"
+                           <?= $formData['marketing_preference'] ? 'checked' : '' ?>>
                   </span>
                   <span class="pretty-checkbox__text">
                     Please tick this box if you wish to receive marketing information from us.
