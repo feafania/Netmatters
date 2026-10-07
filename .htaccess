@@ -1,0 +1,6 @@
+# Protect sensitive files
+<FilesMatch "^(\.env|composer\.(json|lock)|package(-lock)?\.json)$">
+  Require all denied
+</FilesMatch>
+
+RedirectMatch 404 ^/(config|includes|vendor|node_modules|sass)(/|$)
