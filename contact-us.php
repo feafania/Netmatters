@@ -52,6 +52,7 @@
     </section>
 
     <section class="offices">
+      <h2 class="is-hidden">Our Offices</h2>
       <div class="container">
         <div class="offices__row">
 
@@ -59,6 +60,7 @@
             <div class="offices__col">
 
               <article class="office office--<?= $office['slug'] ?>">
+                <h3 class="is-hidden"><?= $office['name'] ?></h3>
                 <div class="office__image">
                   <a href="#" class="office__image-link">
                     <img src="<?= $office['image'] ?>" alt="<?= $office['name'] ?>" class="office__img">
@@ -66,9 +68,9 @@
                 </div>
 
                 <div class="office__content">
-                  <h2 class="office__title">
+                  <p class="office__title h2">
                     <a href="#" class="office__title-link"><?= $office['name'] ?></a>
-                  </h2>
+                  </p>
 
                   <p class="office__address">
                     <?= implode('<br>', $office['address']) ?>
@@ -103,9 +105,10 @@
     </section>
 
     <section class="contact">
+      <h2 class="is-hidden">Contact Us</h2>
       <div class="container">
         <div class="contact__row">
-
+          <h3 class="is-hidden">Our contacts</h3>
           <aside class="contact__side">
 
             <div class="info-block">
@@ -125,13 +128,13 @@
 
             <div class="accordion">
               <div class="accordion__item">
-                <h4 class="accordion__question">
+                <div class="accordion__question h4">
                   <a href="#" class="accordion__toggle" data-accordion-toggle>
-                    <p class="accordion__text">Out of Hours IT Support
+                    <span class="accordion__text">Out of Hours IT Support
                       <em class="accordion__icon fa fa-chevron-down" aria-hidden="true"></em>
-                    </p>
+                    </span>
                   </a>
-                </h4>
+                </div>
                 <div class="accordion__answer">
                   <div class="accordion__answer-inner">
                     <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>

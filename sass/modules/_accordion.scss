@@ -36,4 +36,10 @@
             transform: rotate(180deg);
         }
     }
+
+    &__text {
+        display: block;
+        line-height: to-rem(30px);
+        margin: 0 0 25px;
+    }
 }
