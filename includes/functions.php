@@ -25,6 +25,7 @@ function getNews(PDO $pdo): array
         JOIN types ON services.type_id = types.id
         JOIN authors ON news.author_id = authors.id
         ORDER BY news.published_at DESC
+        LIMIT 3
     ');
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
