@@ -18,6 +18,10 @@
         transition: height 0.25s ease;
     }
 
+    &:not(.slick-initialized) &__slide:not(:first-child) {
+        display: none !important;
+    }
+
     &__slide {
         width: 100%;
         min-height: 550px;

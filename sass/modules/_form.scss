@@ -1,0 +1,128 @@
+@use "../abstracts/index" as *;
+
+.form {
+    &--contact {
+        background-color: $color-form-bg;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+    &__row {
+        @extend %flex-wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    &__col {
+        @extend %grid-base;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 100%;
+
+        @include respond-to(md) {
+            width: 50%;
+        }
+    }
+
+    &__group {
+        margin-bottom: 15px;
+    }
+
+    &__label {
+        &--required::after {
+            content: " *";
+            color: $color-required;
+        }
+    }
+
+    &__control {
+        @extend %form-control;
+        @extend %form-output;
+
+        &::placeholder {
+            color: $color-placeholder;
+            opacity: 1;
+        }
+
+        &--textarea {
+            height: 100px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        &.is-invalid {
+            border-color: $color-required;
+
+            &:focus {
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba($color-required, .6);
+            }
+        }
+
+        &.is-valid {
+            border-color: $color-valid;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+
+        @include respond-to(376px) {
+            flex-direction: row;
+        }
+    }
+
+    &__helper {
+        color: $color-heading;
+        margin-bottom: 10px;
+
+        @include respond-to(376px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__required {
+        color: $color-danger;
+    }
+
+    &__submit {
+        border-color: $color-btn-primary-bg;
+        &.btn {
+            @extend %btn;
+        }
+    }
+
+    &__error {
+        display: block;
+        margin-top: 5px;
+        font-size: to-rem(13px);
+        line-height: 1.4;
+        color: $color-required;
+
+        &--general {
+            margin: 0 0 15px;
+            padding: 10px 15px;
+            font-size: to-rem(14px);
+            border: 1px solid $color-danger;
+            border-radius: 2px;
+            background-color: $color-body-bg;
+        }
+    }
+
+    &__success {
+        display: none;
+        margin: 15px 0 0;
+        color: $color-valid;
+        font-weight: 600;
+    }
+
+    &.is-success &__success {
+        display: block;
+    }
+}

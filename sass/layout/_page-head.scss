@@ -1,0 +1,25 @@
+@use "../abstracts/index" as *;
+
+.page-head {
+    background-color: $color-heading;
+    padding: 24px 0;
+    margin-bottom: 50px;
+
+    @include respond-to(md) {
+        background-color: inherit;
+        padding: 50px 0 0;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        max-width: 750px;
+        margin: 0;
+
+        color: $color-body-bg;
+
+        @include respond-to(md) {
+            margin-bottom: 28px;
+            color: $color-heading;
+        }
+    }
+}

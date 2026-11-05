@@ -55,20 +55,12 @@
         }
     }
 
+    &--web {
+        @include btn-accent(web);
+    }
+
     &--it {
-        color: $color-btn;
-        background-color: map.get($nav-item-accents,it);
-        border-color: map.get($nav-item-accents,it);
-
-        &.active, &:focus, &:hover {
-            color: $color-link--active;
-            background-color: map.get($btn-bg-hover,it);
-            border-color: map.get($btn-border-hover,it);
-        }
-        &.active {
-            background-image: none;
-        }
-
+        @include btn-accent(it, $nav-item-accents);
     }
 
     &--inverse {

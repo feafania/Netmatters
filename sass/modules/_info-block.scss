@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+$accent-color: map.get($nav-item-accents, web);
+
+.info-block {
+    &__label {
+        font-weight: 600;
+        color: $color-heading;
+    }
+
+    &__link {
+        font-weight: 600;
+        color: $accent-color;
+
+        &:hover,
+        &:focus {
+            color: $accent-color;
+        }
+    }
+}
